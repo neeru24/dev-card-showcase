@@ -10,6 +10,10 @@
   --card-bg: #1e293b;
   --border-color: #334155;
   --primary-color: #38bdf8;
+  --github-color: #333;
+  --github-light: #f6f8fa;
+  --github-dark: #24292e;
+  --github-hover: #444;
 }
 
 /* Light Theme */
@@ -20,6 +24,10 @@ body.light-mode {
   --card-bg: #ffffff;
   --border-color: #e2e8f0;
   --primary-color: #0284c7;
+  --github-color: #24292e;
+  --github-light: #ffffff;
+  --github-dark: #0366d6;
+  --github-hover: #1a7f37;
 }
 
 
@@ -27,7 +35,7 @@ body.light-mode {
    GLOBAL STYLES
    ========================================= */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
   margin: 0;
@@ -87,6 +95,8 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
   position: relative;
   overflow: hidden;
 }
@@ -169,13 +179,35 @@ h1 {
   pointer-events: auto !important;
 }
 
+/* Card highlight states */
+.card.shared-highlight {
+    animation: githubGlow 2s ease;
+    border: 2px solid var(--primary-color);
+}
 /* Card Image */
 
+.card.random-highlight {
+    animation: highlightPulse 1s ease-in-out;
+}
 
-
+@keyframes githubGlow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
+    }
+}
 
 /* --- IMAGE STYLES (Circular & Centered) --- */
 .card-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -201,6 +233,14 @@ h1 {
 }
 
 .card .role {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin-bottom: 16px;
   color: var(--primary-color);
   font-weight: 600;
   font-size: 0.85rem;
@@ -215,6 +255,84 @@ h1 {
 
 .card p {
 
+.card p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--secondary-text);
+    margin-bottom: 26px;
+    flex-grow: 1;
+}
+
+/* =========================================
+   CARD BUTTONS STYLES
+   ========================================= */
+.card-actions {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    margin-top: auto;
+}
+
+.card-btn {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--primary-color);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    background: transparent;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.card-btn:hover {
+    background: rgba(56, 189, 248, 0.12);
+    transform: translateY(-1px);
+}
+
+/* GitHub Share Button */
+.share-btn {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--github-light);
+    background: var(--github-color);
+    border: 1px solid var(--github-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.share-btn span {
+    font-size: 1.1em;
+}
+
+/* GitHub button hover effect */
+.share-btn:hover {
+    background: var(--github-hover);
+    border-color: var(--github-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.share-btn:active {
+    transform: translateY(0);
   color: var(--secondary-text);
   font-size: 0.9rem;
   line-height: 1.6;
@@ -256,12 +374,60 @@ h1 {
   transform: scale(0.97);
 }
 
+/* Light mode specific GitHub button */
+body.light-mode .share-btn {
+    background: var(--github-dark);
+    border-color: var(--github-dark);
+    color: white;
+}
+
+body.light-mode .share-btn:hover {
+    background: var(--github-hover);
+    border-color: var(--github-hover);
+}
+
+/* GitHub button pseudo-element for subtle animation */
+.share-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.share-btn:focus:not(:active)::after {
+    animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(20, 20);
+        opacity: 0;
+    }
+}
 
 /* =========================================
    CUSTOM STYLES FOR SPECIFIC CARDS
    ========================================= */
 
 .prithwish-custom-style:hover {
+    box-shadow: 0 0 20px var(--primary-color);
+    animation: glow 1.25s infinite alternate;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 0px var(--primary-color); }
+    100% { box-shadow: 0 0 20px var(--primary-color); }
   box-shadow: 0px 0px 20px var(--primary-color);
   animation: glow 1.25s infinite alternate;
 }
@@ -305,6 +471,10 @@ h1 {
 }
 
 .nav-logo {
+    color: var(--primary-color);
+    font-size: 1.45rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
   color: var(--primary-color);
   font-size: 1.45rem;
   font-weight: 700;
@@ -323,6 +493,26 @@ h1 {
 }
 
 .nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    position: relative;
+    transition: color 0.25s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
   text-decoration: none;
   color: var(--secondary-text);
   font-weight: 500;
@@ -364,6 +554,12 @@ h1 {
 }
 
 .hamburger span {
+    height: 3px;
+    width: 25px;
+    background: var(--primary-color);
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
   height: 3px;
   width: 25px;
   background: var(--primary-color);
@@ -419,6 +615,20 @@ h1 {
     transition: background-color 0.2s ease;
   }
 
+    .nav-links li:hover { background: rgba(56,189,248,0.08); }
+    .nav-links a { width: 100%; display: block; }
+    
+    /* Mobile card buttons */
+    .card-actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .card-btn,
+    .share-btn {
+        width: 100%;
+    }
+}
   .nav-links li:hover {
     background: rgba(56, 189, 248, 0.08);
   }
@@ -461,6 +671,27 @@ h1 {
    FOOTER
    ========================================= */
 .footer {
+    margin-top: 60px;
+    padding: 15px 20px;
+    text-align: center;
+    background-color: var(--card-bg);
+    border-top: 1px solid rgba(77, 81, 85, 0.3);
+    border-radius: 12px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer p {
+    margin: 8px 0;
+    color: var(--secondary-text);
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
   margin-top: 60px;
   padding: 20px;
   text-align: center;
@@ -502,20 +733,22 @@ h1 {
 }
 
 /* 🔍 Glassy Search Bar */
-/* 🔍 Glassy Search Bar (Theme Aware) */
 #searchInput {
     padding: 14px 18px;
     width: 340px;
     max-width: 90%;
     margin: 30px auto;
     display: block;
-
-  font-size: 16px;
-  color: var(--text-color);
-
+    font-size: 16px;
+    color: var(--text-color);
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    outline: none;
+    box-shadow: 0 8px 32px rgba(31,38,135,0.25);
+    transition: all 0.3s ease;
 
   border: 1px solid var(--border-color);
   border-radius: 30px;
@@ -524,12 +757,10 @@ h1 {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-
 /* Placeholder */
 #searchInput::placeholder {
   color: var(--secondary-text);
 }
-
 
 #searchInput:focus {
   border-color: var(--primary-color);
@@ -555,6 +786,17 @@ h1 {
    TYPEWRITER EFFECT (Enhanced)
    ========================================= */
 #typewriter {
+    border-right: 3px solid var(--primary-color);
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    letter-spacing: 2px;
+    font-weight: bold;
+    animation: blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
   border-right: 3px solid var(--primary-color);
   white-space: nowrap;
   overflow: hidden;
@@ -809,8 +1051,6 @@ html {
   color: var(--bg-color);
   transform: scale(1.05);
 }
-
-
 
 /* =========================================
    IMPROVED CONTRIBUTE PAGE STYLES
@@ -1334,6 +1574,9 @@ body.light-mode {
     --success-color: #059669;
 }
 
+/* =========================================
+   CIRCLE ANIMATION BACKGROUND
+   ========================================= */
 .circle-container {
   position: fixed;
   top: 0;
@@ -1341,7 +1584,7 @@ body.light-mode {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 9999; 
+  z-index: -1; 
 }
 
 .circle {
@@ -1358,6 +1601,7 @@ body.light-mode {
   transition: transform 0.1s, left 0.1s, top 0.1s;
 }
 
+/* =========================================
 .theme-toggle:active {
   transform: scale(0.95);
 }
@@ -1449,7 +1693,7 @@ body.light-mode {
 }
 /* ==========================
    CONTRIBUTOR STATS
-   ========================== */
+   ========================================= */
 .stats-container {
     display: flex;
     justify-content: center;
@@ -1480,6 +1724,414 @@ body.light-mode {
 }
 
 /* =========================================
+   RANDOM BUTTON STYLES
+   ========================================= */
+.random-button-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.random-btn {
+    padding: 14px 32px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.random-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+.random-btn:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+.random-btn span {
+    font-size: 1.3rem;
+    animation: spinSlow 4s linear infinite;
+}
+
+.random-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s;
+    z-index: -1;
+}
+
+.random-btn:hover::before {
+    left: 100%;
+}
+
+/* Random card highlight animation */
+.card.random-highlight {
+    animation: highlightPulse 1s ease-in-out;
+    position: relative;
+    z-index: 10;
+}
+
+.card.random-highlight::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, #ff0080, #ff8c00, #40e0d0);
+    border-radius: 15px;
+    z-index: -1;
+    animation: borderGlow 2s linear infinite;
+}
+
+.card.random-highlight::after {
+    content: '🎉 Random Pick!';
+    position: absolute;
+    top: -15px;
+    right: -10px;
+    background: linear-gradient(135deg, #ff0080, #ff8c00);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    animation: bounce 0.5s ease-in-out 3;
+}
+
+/* Light mode support for random button */
+body.light-mode .random-btn {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.2);
+}
+
+body.light-mode .random-btn:hover {
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3);
+}
+
+body.light-mode .card.random-highlight::before {
+    background: linear-gradient(45deg, #ec4899, #f59e0b, #10b981);
+}
+
+body.light-mode .card.random-highlight::after {
+    background: linear-gradient(135deg, #ec4899, #f59e0b);
+}
+
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+@keyframes highlightPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.1);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.1);
+    }
+}
+
+@keyframes borderGlow {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes spinSlow {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design for random button */
+@media (max-width: 768px) {
+    .random-btn {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+    
+    .random-btn span {
+        font-size: 1.2rem;
+    }
+    
+    .card.random-highlight::after {
+        font-size: 0.7rem;
+        padding: 4px 10px;
+        top: -12px;
+        right: -8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .random-button-container {
+        margin: 1.5rem auto;
+    }
+    
+    .random-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* =========================================
+   SHARE NOTIFICATION STYLES
+   ========================================= */
+.share-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 15px 20px;
+    display: none;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    animation: slideIn 0.3s ease-out;
+    max-width: 400px;
+    width: 90%;
+}
+
+.share-notification.show {
+    display: flex;
+}
+
+.share-notification-content {
+    flex: 1;
+}
+
+.share-notification h4 {
+    margin: 0 0 5px 0;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.share-notification p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    word-break: break-all;
+}
+
+.notification-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.copy-btn, .close-btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.copy-btn {
+    background: var(--primary-color);
+    color: white;
+    border: 1px solid var(--primary-color);
+}
+
+.copy-btn:hover {
+    background: transparent;
+    color: var(--primary-color);
+}
+
+.close-btn {
+    background: transparent;
+    color: var(--secondary-text);
+    border: 1px solid var(--border-color);
+}
+
+.close-btn:hover {
+    background: var(--border-color);
+    color: var(--text-color);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .share-notification {
+        left: 20px;
+        right: 20px;
+        width: auto;
+        bottom: 70px;
+    }
+}
+
+/* =========================================
+   SHARE DROPDOWN MENU
+   ========================================= */
+.share-container {
+    position: relative;
+    flex: 1;
+}
+
+.share-dropup {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    animation: dropdownFade 0.2s ease-out;
+}
+
+.share-dropup.show {
+    display: block;
+}
+
+.share-dropup a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--text-color);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    margin-bottom: 5px;
+    font-size: 0.85rem;
+}
+
+.share-dropup a:last-child {
+    margin-bottom: 0;
+}
+
+.share-dropup a:hover {
+    background: rgba(56, 189, 248, 0.15);
+    color: var(--primary-color);
+    transform: translateX(3px);
+}
+
+.share-dropup a i {
+    width: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* WhatsApp specific color */
+.share-dropup a:nth-child(1):hover {
+    color: var(--whatsapp-color);
+    background: rgba(37, 211, 102, 0.1);
+}
+
+/* LinkedIn specific color */
+.share-dropup a:nth-child(2):hover {
+    color: var(--linkedin-color);
+    background: rgba(0, 119, 181, 0.1);
+}
+
+/* Twitter specific color */
+.share-dropup a:nth-child(3):hover {
+    color: var(--twitter-color);
+    background: rgba(29, 161, 242, 0.1);
+}
+
+/* Facebook specific color */
+.share-dropup a:nth-child(4):hover {
+    color: var(--facebook-color);
+    background: rgba(24, 119, 242, 0.1);
+}
+
+/* Copy Link specific color */
+.share-dropup a:nth-child(5):hover {
+    color: var(--success-color);
+    background: rgba(16, 185, 129, 0.1);
+}
+
+/* Arrow indicator for dropdown */
+.share-dropup::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: var(--card-bg) transparent transparent transparent;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+}
+
+@media (max-width: 768px) {
+    .share-dropup {
+        left: -50px;
+        right: -50px;
+        bottom: 100%;
+        margin-bottom: 5px;
+    }
+    
+    .share-dropup::after {
+        left: 50%;
+    }
+}
    FILTER & SORT CONTROLS
    ========================================= */
 
