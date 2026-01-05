@@ -2222,3 +2222,126 @@ body.light-mode .controls {
         width: 100%;
     }
 }
+
+/* =========================================
+   SCROLL REVEAL ANIMATIONS
+   ========================================= */
+
+/* Base card animation styles */
+.card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Animation states */
+.card.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Different animation delays for staggered effect */
+.card.revealed:nth-child(odd) {
+    transition-delay: 0.1s;
+}
+
+.card.revealed:nth-child(even) {
+    transition-delay: 0.2s;
+}
+
+/* Scale animation for a subtle effect */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Slide from left animation */
+@keyframes slideFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Slide from right animation */
+@keyframes slideFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply different animations to cards for visual interest */
+.card:nth-child(3n+1).revealed {
+    animation: scaleIn 0.6s ease-out forwards;
+}
+
+.card:nth-child(3n+2).revealed {
+    animation: slideFromLeft 0.6s ease-out forwards;
+}
+
+.card:nth-child(3n+3).revealed {
+    animation: slideFromRight 0.6s ease-out forwards;
+}
+
+/* Reduce motion preference support */
+@media (prefers-reduced-motion: reduce) {
+    .card,
+    .card.revealed {
+        opacity: 1;
+        transform: none;
+        transition: none;
+        animation: none;
+    }
+    
+    .card.revealed {
+        animation: none;
+    }
+}
+
+/* Ensure cards are visible when printed */
+@media print {
+    .card {
+        opacity: 1;
+        transform: none;
+        break-inside: avoid;
+    }
+}
+
+/* Performance optimization */
+.card {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Smooth scrolling for the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animation for filter/sort interactions */
+.card {
+    transition: opacity 0.3s ease, transform 0.3s ease, display 0.3s ease allow-discrete;
+}
+
+@starting-style {
+    .card[style*="display: block"] {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}

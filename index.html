@@ -1819,6 +1819,97 @@ function animateValue(element, start, end, duration) {
             }, 3000);
         }
 
+document.addEventListener("DOMContentLoaded", updateContributorStats);
+/* =========================================
+   SCROLL REVEAL ANIMATIONS
+   ========================================= */
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    // If user prefers reduced motion, skip animations
+    if (prefersReducedMotion) {
+        document.querySelectorAll('.card').forEach(card => {
+            card.classList.add('revealed');
+        });
+        return;
+    }
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+        threshold: 0.1, // Trigger when 10% of the card is visible
+        rootMargin: '50px 0px -50px 0px' // Adjust trigger point
+    };
+
+    const observer = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const card = entry.target;
+                
+                // Add a small delay based on position for staggered effect
+                const rect = card.getBoundingClientRect();
+                const delay = Math.min(rect.top / 1000, 0.3);
+                
+                setTimeout(() => {
+                    card.classList.add('revealed');
+                    
+                    // Stop observing once animated
+                    observer.unobserve(card);
+                }, delay * 1000);
+            }
+        });
+    }, observerOptions);
+
+    // Observe all cards
+    document.querySelectorAll('.card').forEach(card => {
+        observer.observe(card);
+    });
+
+    // Re-observe cards after filtering/sorting
+    const reobserveCards = () => {
+        document.querySelectorAll('.card').forEach(card => {
+            if (!card.classList.contains('revealed')) {
+                observer.observe(card);
+            }
+        });
+    };
+
+    // Re-run observer after search/filter operations
+    const searchInput = document.getElementById('searchInput');
+    const roleFilter = document.getElementById('roleFilter');
+    const sortSelect = document.getElementById('sortSelect');
+    const resetBtn = document.getElementById('resetFilters');
+
+    if (searchInput) searchInput.addEventListener('input', reobserveCards);
+    if (roleFilter) roleFilter.addEventListener('change', reobserveCards);
+    if (sortSelect) sortSelect.addEventListener('change', reobserveCards);
+    if (resetBtn) resetBtn.addEventListener('click', reobserveCards);
+
+    // Re-observe when cards are shown/hidden by filters
+    const originalApplyFilters = applyFilters;
+    applyFilters = function() {
+        originalApplyFilters();
+        setTimeout(reobserveCards, 100); // Small delay to ensure DOM is updated
+    };
+
+    // Handle window resize to re-trigger animations if needed
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(reobserveCards, 250);
+    });
+
+    // Initialize stats with animation
+    const updateContributorStatsWithAnimation = () => {
+        updateContributorStats();
+        reobserveCards();
+    };
+    
+    // Replace the original stats update if it exists
+    if (typeof updateContributorStats === 'function') {
+        document.addEventListener('DOMContentLoaded', updateContributorStatsWithAnimation);
+    }
         if (randomCardBtn) {
             randomCardBtn.addEventListener("click", selectRandomCard);
         }
