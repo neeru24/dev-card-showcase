@@ -2422,3 +2422,121 @@ html {
     color: var(--bg-primary);
     transform: scale(1.05);
 }
+
+
+/* ===============================
+   PROJECTS PAGE
+   =============================== */
+
+.projects-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.projects-header h1 {
+    font-size: 2.8rem;
+}
+
+.projects-header p {
+    color: var(--text-secondary);
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+.projects-container {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Project Card */
+.project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: 18px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.project-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.project-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+/* Tags */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.project-tags span {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 50px;
+    background: rgba(56, 189, 248, 0.15);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Links */
+.project-links {
+    display: flex;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.project-links a {
+    flex: 1;
+    text-align: center;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    border: 1px solid var(--border-primary);
+    transition: all 0.3s ease;
+}
+
+.project-links a:hover {
+    background: var(--primary-color);
+    color: var(--bg-primary);
+}
+
+/* Footer */
+.project-footer {
+    margin-top: 15px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.project-footer a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.project-footer a:hover {
+    text-decoration: underline;
+}
