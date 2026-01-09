@@ -921,6 +921,67 @@
             </div>
         </section>
 
+        <section id="add-testimonial">
+  <h2>💬 Share Your Feedback</h2>
+  <p>Your words help us grow 🌱</p>
+
+  <div class="testimonial-form">
+    <input
+      type="text"
+      id="username"
+      placeholder="Your Name"
+    >
+
+    <textarea id="feedback" placeholder="Write your feedback..."></textarea>
+
+    <button onclick="addTestimonial()">
+      Submit Feedback
+    </button>
+  </div>
+
+  <div id="testimonial-list"></div>
+</section>
+
+<script>
+function addTestimonial() {
+  const name = document.getElementById('username').value.trim();
+  const feedback = document.getElementById('feedback').value.trim();
+
+  if (!name || !feedback) {
+    alert("Please fill both fields 😊");
+    return;
+  }
+
+  const testimonialList = document.getElementById('testimonial-list');
+
+  const card = document.createElement('div');
+  card.className = 'testimonial-card';
+  card.innerHTML = `<h3>${name}</h3><p>"${feedback}"</p>`;
+
+  testimonialList.prepend(card);
+
+  const saved = JSON.parse(localStorage.getItem('testimonials') || '[]');
+  saved.unshift({ name, feedback });
+  localStorage.setItem('testimonials', JSON.stringify(saved));
+
+  document.getElementById('username').value = '';
+  document.getElementById('feedback').value = '';
+}
+
+window.onload = () => {
+  const saved = JSON.parse(localStorage.getItem('testimonials') || '[]');
+  const testimonialList = document.getElementById('testimonial-list');
+
+  saved.forEach(t => {
+    const card = document.createElement('div');
+    card.className = 'testimonial-card';
+    card.innerHTML = `<h3>${t.name}</h3><p>"${t.feedback}"</p>`;
+    testimonialList.appendChild(card);
+  });
+};
+</script>
+
+
         <!-- Minimal footer -->
         <footer class="footer">
             <div class="footer-social">
