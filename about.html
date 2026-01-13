@@ -852,12 +852,8 @@
         <div class="circle"></div>
         <div class="circle"></div>
     </div>
-
-    <!-- INLINE JS -->
     <script>
-        // Circle animation
         document.addEventListener("DOMContentLoaded", function () {
-            // Circle animation
             const coords = { x: 0, y: 0 };
             const circles = document.querySelectorAll(".circle");
 
@@ -868,15 +864,15 @@
 
             window.addEventListener("mousemove", function (e) {
                 coords.x = e.pageX;
-                coords.y = e.pageY;
+                coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
             });
 
             function animateCircles() {
                 let x = coords.x;
                 let y = coords.y;
                 circles.forEach(function (circle, index) {
-                    circle.style.left = x - 12 + "px";
-                    circle.style.top = y - 12 + "px";
+                    circle.style.left = `${x - 12}px`;
+                    circle.style.top = `${y - 12}px`;
                     circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
                     const nextCircle = circles[index + 1] || circles[0];
                     circle.x = x;
@@ -889,60 +885,9 @@
             }
 
             animateCircles();
-
-            // Navbar toggle
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.nav-links');
-            
-            if (hamburger) {
-                hamburger.addEventListener('click', function() {
-                    this.classList.toggle('active');
-                    navLinks.classList.toggle('active');
-                });
-
-                // Close menu when clicking outside
-                document.addEventListener('click', function(event) {
-                    if (!hamburger.contains(event.target) && !navLinks.contains(event.target)) {
-                        hamburger.classList.remove('active');
-                        navLinks.classList.remove('active');
-                    }
-                });
-            }
-
-            // Theme toggle
-            const themeToggle = document.getElementById('themeToggle');
-            
-            if (themeToggle) {
-                themeToggle.addEventListener('click', function() {
-                    document.body.classList.toggle('light-mode');
-                    
-                    if (document.body.classList.contains('light-mode')) {
-                        this.textContent = '☀️';
-                        localStorage.setItem('theme', 'light');
-                    } else {
-                        this.textContent = '🌙';
-                        localStorage.setItem('theme', 'dark');
-                    }
-                });
-
-                // Load saved theme
-                const savedTheme = localStorage.getItem('theme');
-                if (savedTheme === 'light') {
-                    document.body.classList.add('light-mode');
-                    themeToggle.textContent = '☀️';
-                }
-            }
-
-            // Close mobile menu when clicking a link
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    hamburger.classList.remove('active');
-                    navLinks.classList.remove('active');
-                });
-            });
         });
-    </script>
 
+    </script>
     <!-- NAVBAR START -->
     <nav class="navbar">
         <div class="nav-logo">🚀 Community</div>
