@@ -1502,6 +1502,43 @@
     "name": "PavanKarthik",
     "github": "https://github.com/pavanakarthik12"
   }
+},
+{
+  "title": "Weekly Productivity Reflection 📝",
+  "description": "A calm reflection page that helps users review their weekly productivity and identify improvements.",
+  "tags": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Productivity",
+    "Self Reflection"
+  ],
+  "links": {
+    "live": "./projects/weekly-productivity-reflection/index.html"
+  },
+  "author": {
+    "name": "Sneha Amballa",
+    "github": "https://github.com/your-github-username"
+  }
+},
+{
+  "title": "Distractions Tracker 🎯",
+  "description": "A simple tracker that helps users identify common distractions and improve focus during study sessions.",
+  "tags": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Productivity",
+    "Focus"
+  ],
+  "links": {
+    "live": "./projects/distractions-tracker/index.html"
+  },
+  "author": {
+    "name": "Sneha Amballa",
+    "github": "https://github.com/your-github-username"
+  }
 }
+
 
 ]
