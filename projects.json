@@ -1606,6 +1606,24 @@
   }
 },
 {
+  "title": "Draw a Prefect Circle 🎯",
+  "description": "A fun interactive activity that challenges users to draw a perfect circle freehand and provides feedback on their accuracy.",
+  "tags": [
+    "HTML",
+    "CSS",
+    "Productivity",
+    "Education",
+    "Student Wellness"
+  ],
+  "links": {
+    "live": "./projects/draw-perfect-circle/index.html"
+  },
+  "author": {
+    "name": "Omkar",
+    "github": "https://github.com/omkarhole"
+  }
+},
+{
   "title": "Study–Rest Balance Guide ⚖️",
   "description": "A visual guide that explains the importance of balancing study time with proper rest and recovery.",
   "tags": [
