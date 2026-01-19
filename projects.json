@@ -3646,6 +3646,8 @@
   }
 },
 {
+  "title": "Timeline Ordering Game 🕒",
+  "description": "A drag-and-drop game where users arrange events into the correct order.",
   "title": "Guess Your Friend 🎯😄",
   "description": "A fun game where users predict how their friend would answer questions.",
   "title": "Continuous Line Drawing Challenge ✍️",
@@ -3669,6 +3671,11 @@
   "links": {
     "live": "./projects/continuous-line-drawing-challenge/index.html"
     "Game",
+    "Logic",
+    "Education"
+  ],
+  "links": {
+    "live": "./projects/timeline-ordering-game/index.html"
     "Social",
     "Empathy"
   ],
