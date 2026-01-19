@@ -1388,6 +1388,22 @@
         }
     },
     {
+        "title": "Image Jigsaw Puzzle",
+        "description": "An interactive jigsaw puzzle game where users can upload their own images and solve puzzles with customizable difficulty levels. Features drag-and-drop functionality, move tracking, timer, and responsive design.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/image jigsaw/index.html"
+        },
+        "author": {
+            "name": "CodeMaster",
+            "github": "https://github.com/CodeMaster"
+        }
+    },
+    {
         "title": "Extreme chess",
         "description": "A web-based chess game that allows two players to play against each other with a user-friendly interface and basic game rules implemented.",
         "tags": [
