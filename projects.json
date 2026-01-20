@@ -3975,6 +3975,8 @@
   }
 },
 {
+    "title": "Simplified Tetris Game",
+    "description": "A simplified Tetris-style puzzle game featuring falling blocks, rotation mechanics, row-clearing logic, and game over detection built using HTML Canvas.",
     "title": "Two-Player Neon Pong",
     "description": "A classic two-player Pong game with neon retro visuals, keyboard-controlled paddles, ball physics, collision detection, and score tracking built using HTML Canvas.",
     "title": "Brick Breaker Arcade Game",
@@ -3988,6 +3990,7 @@
         "Canvas",
         "Game",
         "Retro",
+        "Puzzle"
         "Multiplayer"
     ],
     "links": {
