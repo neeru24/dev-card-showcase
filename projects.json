@@ -4286,12 +4286,19 @@
     }
 },
 {
+  "title": "instinctengine",
+  "description": "instinctengine is an interactive simulation that demonstrates instinct-based decision making. It shows how simple reactive rules can produce complex behavior using pure HTML, CSS, and JavaScript.",
   "title": "voidrun",
   "description": "voidrun is a fast-paced endless runner game set in a minimal void environment. It challenges players to react quickly and survive increasing difficulty using pure HTML, CSS, and JavaScript.",
   "tags": [
     "HTML",
     "CSS",
     "JavaScript",
+    "Simulation",
+    "Behavior"
+  ],
+  "links": {
+    "live": "./projects/instinctengine/index.html"
     "Game",
     "Endless Runner"
   ],
