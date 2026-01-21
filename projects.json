@@ -4142,6 +4142,8 @@
 {
     "title": "Flappy Bird Retro Game",
     "description": "A Flappy Bird–style retro arcade game featuring gravity-based movement, keyboard-controlled jumps, random pipe generation, and distance-based scoring built using HTML Canvas.",
+    "title": "Maze Collector Retro Game",
+    "description": "A grid-based retro maze game where players collect items, avoid enemies, and score points using keyboard controls, inspired by classic Pac-Man-style gameplay.",
     "tags": [
         "HTML",
         "CSS",
@@ -4149,6 +4151,8 @@
         "Canvas",
         "Game",
         "Retro"
+        "Retro",
+        "Maze"
     ],
     "links": {
         "live": "#"
