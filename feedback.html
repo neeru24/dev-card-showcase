@@ -1,27 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Feedback • Dev Card Showcase</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="Hall of Fame (1).png">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="./css/feedback.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  
-</head>
-<body >
+  <head>
+    <meta charset="UTF-8" />
+    <title>Feedback • Dev Card Showcase</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="Hall of Fame (1).png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/feedback.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
 
-  <!-- Background Elements -->
-  <div class="bg-elements">
-    <div class="bg-circle"></div>
-    <div class="bg-circle"></div>
-  </div>
+  <body>
+    <!-- Background Elements -->
+    <div class="bg-elements">
+      <div class="bg-circle"></div>
+      <div class="bg-circle"></div>
+    </div>
 
-  <!-- Cursor Trail Container -->
-  <div class="circle-container">
+    <!-- Cursor Trail Container -->
+    <div class="circle-container">
       <div class="circle"></div>
       <div class="circle"></div>
       <div class="circle"></div>
@@ -52,184 +56,201 @@
       <div class="circle"></div>
       <div class="circle"></div>
       <div class="circle"></div>
-  </div>
+    </div>
 
-  <!-- NAVBAR START -->
-  <nav class="navbar">
-    <div class="nav-logo">🚀 Community</div>
+    <!-- NAVBAR START -->
+    <nav class="navbar">
+      <div class="nav-logo">🚀 Community</div>
 
-    <!-- Hamburger Icon -->
-    <button class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
+      <!-- Hamburger Icon -->
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contribute.html">Contribute</a></li>
+        <li>
+          <a
+            href="https://github.com/Jayanta2004/dev-card-showcase"
+            target="_blank"
+            >GitHub</a
+          >
+        </li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="statistics.html">Statistics</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="guidelines.html">Guidelines</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="bug-report.html">Bug Report</a></li>
+        <li><a href="feature-request.html">Feature Request</a></li>
+        <li><a href="analytics.html">Analytics</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+      </ul>
+      <button id="themeToggle" class="theme-toggle">☀️</button>
+    </nav>
+    <!-- NAVBAR END -->
+
+    <!-- Success Message -->
+    <div class="success-message" id="successMessage">
+      <i class="fas fa-check-circle"></i>
+      <div>
+        <strong>Thank you!</strong>
+        <div style="font-size: 14px">Your feedback has been submitted.</div>
+      </div>
+    </div>
+
+    <div class="feedback-wrapper">
+      <div class="feedback-container">
+        <div class="header">
+          <div class="header-icon">
+            <i class="fas fa-comment-dots"></i>
+          </div>
+          <h1>Share Your Feedback</h1>
+          <p class="subtitle">
+            Help us improve Dev Card Showcase and shape the future of our
+            community
+          </p>
+        </div>
+
+        <form onsubmit="submitFeedback(event)" id="feedbackForm">
+          <div class="form-group">
+            <label><i class="fas fa-user"></i> Your Name (optional)</label>
+            <input type="text" placeholder="Enter your name" id="userName" />
+          </div>
+
+          <div class="form-group">
+            <label><i class="fas fa-envelope"></i> Email (optional)</label>
+            <input type="email" placeholder="you@example.com" id="userEmail" />
+          </div>
+
+          <div class="form-group">
+            <label><i class="fas fa-star"></i> Rating</label>
+            <div class="rating-group" id="ratingGroup">
+              <div class="star" data-value="1">
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="star" data-value="2">
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="star" data-value="3">
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="star" data-value="4">
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="star" data-value="5">
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+            <div class="rating-labels">
+              <span>Poor</span>
+              <span>Excellent</span>
+            </div>
+            <input type="hidden" id="ratingValue" value="0" />
+          </div>
+
+          <div class="form-group">
+            <label><i class="fas fa-comment"></i> Your Feedback</label>
+            <textarea
+              placeholder="Tell us what you think about the website, features, or suggestions for improvement..."
+              id="feedbackText"
+              required
+              maxlength="500"
+            ></textarea>
+            <div class="char-counter" id="charCounter">
+              <span id="charCount">0</span>/500 characters
+            </div>
+          </div>
+
+          <button type="submit" id="submitBtn">
+            <i class="fas fa-paper-plane"></i>
+            Submit Feedback
+          </button>
+        </form>
+
+        <div class="back-link">
+          <a href="index.html">
+            <i class="fas fa-arrow-left"></i>
+            Back to Home
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-container">
+          <!-- Brand Section -->
+          <div class="footer-brand">
+            <h3>
+              <i class="fa-solid fa-file-lines"></i>
+              Dev-Card-Showcase
+            </h3>
+            <p>Contribute with Projects & Add Your Contribution Card</p>
+
+            <div class="footer-social-icons">
+              <a href="https://github.com/Jayanta2004"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <a href="https://x.com/JayantaG2004"
+                ><i class="fa-brands fa-twitter"></i
+              ></a>
+              <a href="https://www.instagram.com/jayantaghosh2004"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/jayantaghosh2004"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="#">Feedback</a></li>
+            </ul>
+          </div>
+
+          <!-- Resources -->
+          <div class="footer-links">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="analytics.html">Analytics</a></li>
+              <li><a href="guidelines.html">Guidelines</a></li>
+              <li><a href="bug-report.html">Bug Report</a></li>
+              <li><a href="feature-request.html">Feature Request</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+            </ul>
+          </div>
+
+          <!-- Legal -->
+          <div class="footer-links">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 Dev-Card-Showcase. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+
+    <!--Scroll to Top button-->
+    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
+      <i class="fas fa-arrow-up"></i>
     </button>
-    
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="contribute.html">Contribute</a></li>
-            <li><a href="https://github.com/Jayanta2004/dev-card-showcase" target="_blank">GitHub</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="statistics.html">Statistics</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="guidelines.html">Guidelines</a></li>
-            <li><a href="feedback.html">Feedback</a></li>
-            <li><a href="bug-report.html">Bug Report</a></li>
-            <li><a href="feature-request.html">Feature Request</a></li>
-            <li><a href="analytics.html">Analytics</a></li>
-            <li><a href="roadmap.html">Roadmap</a></li>
-        </ul>
-    <button id="themeToggle" class="theme-toggle">☀️</button>
-  </nav>
-  <!-- NAVBAR END -->
-
-  <!-- Success Message -->
-  <div class="success-message" id="successMessage">
-    <i class="fas fa-check-circle"></i>
-    <div>
-      <strong>Thank you!</strong>
-      <div style="font-size: 14px;">Your feedback has been submitted.</div>
-    </div>
-  </div>
-
-  <div class="feedback-wrapper">
-    <div class="feedback-container">
-      <div class="header">
-        <div class="header-icon">
-          <i class="fas fa-comment-dots"></i>
-        </div>
-        <h1>Share Your Feedback</h1>
-        <p class="subtitle">Help us improve Dev Card Showcase and shape the future of our community</p>
-      </div>
-
-      <form onsubmit="submitFeedback(event)" id="feedbackForm">
-        <div class="form-group">
-          <label><i class="fas fa-user"></i> Your Name (optional)</label>
-          <input type="text" placeholder="Enter your name" id="userName" />
-        </div>
-
-        <div class="form-group">
-          <label><i class="fas fa-envelope"></i> Email (optional)</label>
-          <input type="email" placeholder="you@example.com" id="userEmail" />
-        </div>
-
-        <div class="form-group">
-          <label><i class="fas fa-star"></i> Rating</label>
-          <div class="rating-group" id="ratingGroup">
-            <div class="star" data-value="1">
-              <i class="fas fa-star"></i>
-            </div>
-            <div class="star" data-value="2">
-              <i class="fas fa-star"></i>
-            </div>
-            <div class="star" data-value="3">
-              <i class="fas fa-star"></i>
-            </div>
-            <div class="star" data-value="4">
-              <i class="fas fa-star"></i>
-            </div>
-            <div class="star" data-value="5">
-              <i class="fas fa-star"></i>
-            </div>
-          </div>
-          <div class="rating-labels">
-            <span>Poor</span>
-            <span>Excellent</span>
-          </div>
-          <input type="hidden" id="ratingValue" value="0">
-        </div>
-
-        <div class="form-group">
-          <label><i class="fas fa-comment"></i> Your Feedback</label>
-          <textarea placeholder="Tell us what you think about the website, features, or suggestions for improvement..." 
-                    id="feedbackText" 
-                    required
-                    maxlength="500"></textarea>
-          <div class="char-counter" id="charCounter">
-            <span id="charCount">0</span>/500 characters
-          </div>
-        </div>
-
-        <button type="submit" id="submitBtn">
-          <i class="fas fa-paper-plane"></i>
-          Submit Feedback
-        </button>
-      </form>
-
-      <div class="back-link">
-        <a href="index.html">
-          <i class="fas fa-arrow-left"></i>
-          Back to Home
-        </a>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-container">
-    
-        <!-- Brand Section -->
-        <div class="footer-brand">
-          <h3>
-            <i class="fa-solid fa-file-lines"></i>
-            Dev-Card-Showcase
-          </h3>
-          <p>Contribute with Projects & Add Your Contribution Card</p>
-    
-          <div class="footer-social-icons">
-            <a href="https://github.com/Jayanta2004"><i class="fa-brands fa-github"></i></a>
-            <a href="https://x.com/JayantaG2004"><i class="fa-brands fa-twitter"></i></a>
-            <a href="https://www.instagram.com/jayantaghosh2004"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/jayantaghosh2004"><i class="fa-brands fa-linkedin-in"></i></a>
-          </div>
-        </div>
-    
-        <!-- Quick Links -->
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="#">Feedback</a></li>
-          </ul>
-        </div>
-    
-        <!-- Resources -->
-        <div class="footer-links">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="analytics.html">Analytics</a></li>
-            <li><a href="guidelines.html">Guidelines</a></li>
-            <li><a href="bug-report.html">Bug Report</a></li>
-            <li><a href="feature-request.html">Feature Request</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-          </ul>
-        </div>
-    
-        <!-- Legal -->
-        <div class="footer-links">
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Cookie Policy</a></li>
-          </ul>
-        </div>
-    
-      </div>
-    
-      <div class="footer-bottom">
-        <p>© 2026 Dev-Card-Showcase. All rights reserved.</p>
-      </div>
-    </footer>
-  </div>
-
-  <!--Scroll to Top button-->
-  <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-  <script src="./js/feedback.js"></script>
-</body>
+    <script src="./js/feedback.js"></script>
+  </body>
 </html>
