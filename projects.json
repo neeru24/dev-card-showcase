@@ -5091,5 +5091,23 @@
         "name": "Gupta-02",
         "github": "https://github.com/Gupta-02"
     }
+},
+{
+    "title": "Retro Snake Reloaded",
+    "description": "A retro-styled Snake game with pixel graphics, keyboard controls, and progressive difficulty. Inspired by classic Nokia Snake games with modern HTML5 Canvas implementation.",
+    "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Canvas",
+        "Game"
+    ],
+    "links": {
+        "live": "./projects/Retro-Snake-Reloaded/index.html"
+    },
+    "author": {
+        "name": "Sneha Amballa",
+        "github": "https://github.com/Sneha-Amballa"
+    }
 }
 ]
