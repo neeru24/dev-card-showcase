@@ -349,6 +349,22 @@
         }
     },
     {
+        "title": "AI Story Generator",
+        "description": "A web application that generates creative stories based on user-provided nouns.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/story-generator/index.html"
+        },
+        "author": {
+            "name": "Neeru",
+            "github": "https://github.com/neeru24"
+        }
+    },
+    {
         "title": "Untangle Puzzle Game",
         "description": "An engaging untangle puzzle game where players must rearrange interconnected nodes to eliminate overlapping lines. Features multiple difficulty levels, timer, and move counter for an immersive experience.",
         "tags": [
