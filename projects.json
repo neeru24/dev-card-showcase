@@ -2067,6 +2067,22 @@
             "github": "https://github.com/omkarhole"
         }
     },
+      {
+        "title": "AI chatbot",
+        "description": "A web application that simulates a simple AI chatbot using predefined responses to user inputs.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/AI-ChatBot/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
     {
         "title": "Sudoku Solver",
         "description": "A web application that solves Sudoku puzzles using backtracking algorithm and provides a user-friendly interface for inputting puzzles.",
