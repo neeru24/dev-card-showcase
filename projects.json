@@ -1924,6 +1924,22 @@
         }
     },
     {
+        "title": "Tilting Maze Game",
+        "description": "A maze game where players navigate a ball through a maze by tilting their device or using arrow keys, avoiding obstacles and reaching the goal.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/tilting-maze/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
+    {
         "title": "Typing speed test",
         "description": "A web-based typing speed test that measures words per minute (WPM) and accuracy. Features a countdown timer, real-time feedback, and a summary of results at the end.",
         "tags": [
@@ -5218,6 +5234,8 @@
     "author": {
         "name": "PavanKarthik",
         "github": "https://github.com/pavanakarthik12"
+    }
+},{
     "title": "AI-Style Image Captioner",
     "description": "Upload an image and get a creative, AI-style caption generated for it. Features dynamic caption generation with templates and keywords.",
     "tags": [
