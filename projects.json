@@ -968,7 +968,22 @@
     }
     },
 
-
+            {
+        "title": "Water Flow Simulation",
+        "description": "A visually stunning water flow simulation with realistic physics and interactive controls.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/WaterFlowAnimation/index.html"
+        },
+        "author": {
+            "name": "Neeru",
+            "github": "https://github.com/neeru24"
+        }
+    },
     {
         "title": "Hangman Game",
         "description": "A classic Hangman game where players guess letters to reveal a hidden word before running out of attempts. Features multiple categories, hints, and a scoring system.",
