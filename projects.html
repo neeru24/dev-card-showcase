@@ -111,6 +111,10 @@
         <button class="filter-btn" data-tech="javascript">JavaScript</button>
       </div>
 
+      <select id="contributorFilter" class="sort-select">
+        <option value="">All Contributors</option>
+      </select>
+
       <select id="sortSelect" class="sort-select">
         <option value="az">A–Z</option>
         <option value="za">Z–A</option>
@@ -142,17 +146,23 @@
       // Load projects from JSON
       async function loadProjects() {
         try {
-          const response = await fetch('projects.json');
-          if (!response.ok) throw new Error("Failed to load projects");
-          projectsData = await response.json();
-          renderProjects(projectsData);
-          
-          // If there is search/filter state, re-apply it?
-          if (activeFilter !== 'all' || document.getElementById('searchInput').value) {
-             runFilter(document.getElementById('searchInput').value.toLowerCase(), activeFilter);
-          }
+          const [projectsResponse, contributorsResponse] = await Promise.all([
+            fetch('projects.json'),
+            fetch('contributors.json')
+          ]);
+
+          const projects = await projectsResponse.json();
+          const contributors = await contributorsResponse.json();
+
+          projectsData = projects; // set global
+
+          // Create contributor filter dropdown
+          createContributorFilter(contributors, projects);
+
+          // Display projects
+          renderProjects(projects);
         } catch (error) {
-          console.error("Error loading projects:", error);
+          console.error('Error loading projects:', error);
           const container = document.getElementById("projectsContainer");
           if (container) {
              container.innerHTML = '<div class="loading">Error loading projects. Please refresh the page.</div>';
@@ -160,30 +170,261 @@
         }
       }
 
+      function createContributorFilter(contributors, projects) {
+        // Populate the existing contributor dropdown
+        const contributorSelect = document.getElementById('contributorFilter');
+        const contributorMap = new Map();
+
+        // Build contributor map from projects
+        projects.forEach(project => {
+          if (project.author && project.author.name) {
+            contributorMap.set(project.author.name, project.author);
+          }
+        });
+
+        // Add options
+        contributorMap.forEach((author, name) => {
+          const option = document.createElement('option');
+          option.value = name;
+          option.textContent = name;
+          contributorSelect.appendChild(option);
+        });
+      }
+
       function renderProjects(projects) {
         const container = document.getElementById("projectsContainer");
         container.innerHTML = "";
         projectCards = [];
 
-        // Add all the project cards that were originally in the HTML
-        const staticProjects = [
-          {
-            title: "Advanced Text Case Converter",
-            description:
-              "A powerful text utility that converts text into multiple cases including uppercase, lowercase, sentence case, title case, and toggle case with live preview, undo history, and keyboard shortcuts.",
-            tags: ["HTML", "CSS", "JavaScript", "Utility Tool"],
-            links: {
-              github:
-                "https://github.com/Sneha-Amballa/advanced-text-case-converter",
-              live: "https://sneha-amballa.github.io/advanced-text-case-converter/",
-            },
-            author: {
-              name: "Amballa Sneha",
-              github: "https://github.com/Sneha-Amballa",
-            },
-          },
-          {
-            title: "Traffic Rules Quiz",
+        // Add project cards from the provided projects array
+        projects.forEach((project, index) => {
+          const card = createProjectCard(project, index);
+          container.appendChild(card);
+        });
+
+        // Append Empty State Element
+        const emptyState = document.createElement("div");
+        emptyState.id = "noProjectsState";
+        emptyState.className = "empty-state";
+        emptyState.innerHTML = '<i class="fas fa-search"></i><h3>No projects found</h3><p>Try adjusting your search or filters.</p>';
+        container.appendChild(emptyState);
+
+        // After rendering, update view mode if needed
+        if (typeof isCompact !== 'undefined' && isCompact) {
+          const projectsContainer = document.querySelector(".projects-container");
+          if(projectsContainer) projectsContainer.classList.add("compact-view");
+        }
+      }
+
+      function createProjectCard(project, index) {
+        const projectCard = document.createElement('div');
+        projectCard.className = 'project-card';
+
+        const projectLink = project.links?.live || project.links?.github || '#';
+        const authorName = project.author?.name || 'Unknown';
+        const authorGithub = project.author?.github || '#';
+
+        projectCard.innerHTML = `
+          <div class="project-header">
+            <h3 class="project-title">${project.title}</h3>
+            <div class="project-author">
+              <span>by </span>
+              <a href="${authorGithub}" target="_blank" rel="noopener">${authorName}</a>
+            </div>
+          </div>
+          <p class="project-description">${project.description}</p>
+          <div class="project-tags">
+            ${project.tags ? project.tags.map(tag => `<span class="tag">${tag}</span>`).join('') : ''}
+          </div>
+          <div class="project-links">
+            ${project.links?.live ? `<a href="${project.links.live}" target="_blank" class="btn btn-primary">Live Demo</a>` : ''}
+            ${project.links?.github ? `<a href="${project.links.github}" target="_blank" class="btn btn-secondary">Source Code</a>` : ''}
+          </div>
+        `;
+
+        projectCards.push(projectCard);
+        return projectCard;
+      }
+
+      // 1. Navbar Hamburger Menu Logic
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+
+      if (hamburger) {
+        hamburger.addEventListener("click", () => {
+          navLinks.classList.toggle("active");
+        });
+      }
+
+      // 2. View Toggle (Grid vs List) Logic
+      const viewToggleBtn = document.getElementById("viewToggleBtn");
+      const projectsContainer = document.querySelector(".projects-container");
+      let isCompact = false;
+
+      if (viewToggleBtn) {
+        viewToggleBtn.addEventListener("click", () => {
+          isCompact = !isCompact;
+          projectsContainer.classList.toggle("compact-view");
+          viewToggleBtn.innerHTML = isCompact
+            ? '<i class="fas fa-th-list"></i>'
+            : '<i class="fas fa-th-large"></i>';
+        });
+      }
+
+      // 3. Search, Filter, and Sort Logic
+      const searchInput = document.getElementById("searchInput");
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const sortSelect = document.getElementById("sortSelect");
+
+      // --- Search Event ---
+      searchInput.addEventListener("input", () => {
+        const query = searchInput.value.toLowerCase();
+        runFilter(query, activeFilter);
+      });
+
+      // --- Filter Button Events ---
+      filterButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Update UI: remove active class from all, add to clicked
+          filterButtons.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          // Update filter state and run logic
+          activeFilter = btn.dataset.tech;
+          runFilter(searchInput.value.toLowerCase(), activeFilter);
+        });
+      });
+
+      // --- Contributor Filter Event ---
+      const contributorFilter = document.getElementById("contributorFilter");
+      contributorFilter.addEventListener("change", () => {
+        runFilter(searchInput.value.toLowerCase(), activeFilter);
+      });
+
+      // --- Sort Event ---
+      sortSelect.addEventListener("change", () => {
+        const visibleCards = projectCards.filter(
+          (card) => card.style.display !== "none"
+        );
+
+        const sorted = visibleCards.sort((a, b) => {
+          const nameA = a.querySelector("h2").innerText.toLowerCase();
+          const nameB = b.querySelector("h2").innerText.toLowerCase();
+
+          if (sortSelect.value === "az") {
+            return nameA.localeCompare(nameB);
+          } else {
+            return nameB.localeCompare(nameA);
+          }
+        });
+
+        // Re-inject cards into the DOM in the new sorted order
+        const container = document.querySelector(".projects-container");
+        sorted.forEach((card) => container.appendChild(card));
+
+        // Ensure empty state remains at the bottom
+        const emptyState = document.getElementById("noProjectsState");
+        if(emptyState) container.appendChild(emptyState);
+      });
+
+      // --- Core Filtering Function ---
+      function runFilter(query, tech) {
+        const contributorFilter = document.getElementById("contributorFilter").value.toLowerCase();
+        let visibleCount = 0;
+        projectCards.forEach((card) => {
+          const title = card.querySelector("h2").innerText.toLowerCase();
+          const tags = card.querySelector(".project-tags").innerText.toLowerCase();
+          const author = card.querySelector(".project-footer").innerText.toLowerCase();
+
+          // Check if it matches search text
+          const matchesSearch = title.includes(query) ||
+            tags.includes(query) ||
+            author.includes(query);
+
+          // Check if it matches selected technology
+          const matchesTech = (tech === "all") || tags.includes(tech.toLowerCase());
+
+          // Check if it matches selected contributor
+          const matchesContributor = !contributorFilter || author.includes(contributorFilter);
+
+          // Update visibility: matches all conditions?
+          if (matchesSearch && matchesTech && matchesContributor) {
+            card.style.display = "";
+            visibleCount++;
+          } else {
+            card.style.display = "none";
+          }
+        });
+
+        // Show/Hide empty state
+        const emptyState = document.getElementById("noProjectsState");
+        if (emptyState) {
+          if (visibleCount === 0) {
+            emptyState.classList.add("visible");
+          } else {
+            emptyState.classList.remove("visible");
+          }
+        }
+      }
+
+      // Theme Toggle Script
+      document.addEventListener("DOMContentLoaded", function () {
+        const themeToggle = document.getElementById("themeToggle");
+        const body = document.body;
+
+        function setTheme(theme) {
+          body.setAttribute("data-theme", theme);
+          localStorage.setItem("theme", theme);
+          themeToggle.textContent = theme === "dark" ? "🌙" : "☀️";
+        }
+
+        function toggleTheme() {
+          const currentTheme = body.getAttribute("data-theme") || "dark";
+          const newTheme = currentTheme === "dark" ? "light" : "dark";
+          setTheme(newTheme);
+        }
+
+        const savedTheme = localStorage.getItem("theme") || "dark";
+        setTheme(savedTheme);
+
+        themeToggle.addEventListener("click", toggleTheme);
+
+        // Load projects when page loads
+        loadProjects();
+
+        // Mouse trail animation
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
+
+        circles.forEach(function (circle) {
+          circle.x = 0;
+          circle.y = 0;
+        });
+
+        window.addEventListener("mousemove", function (e) {
+          coords.x = e.pageX;
+          coords.y = e.pageY - window.scrollY;
+        });
+
+        function animateCircles() {
+          let x = coords.x;
+          let y = coords.y;
+          circles.forEach(function (circle, index) {
+            circle.style.left = `${x - 12}px`;
+            circle.style.top = `${y - 12}px`;
+            circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+            const nextCircle = circles[index + 1] || circles[0];
+            circle.x = x;
+            circle.y = y;
+            x += (nextCircle.x - x) * 0.3;
+            y += (nextCircle.y - y) * 0.3;
+          });
+
+          requestAnimationFrame(animateCircles);
+        }
+
+        animateCircles();
+      });
             description:
               "An interactive traffic awareness quiz that helps users test and reinforce their knowledge of road safety rules through multiple-choice questions, instant scoring, and performance-based feedback.",
             tags: ["HTML", "CSS", "JavaScript", "Education", "Quiz"],
@@ -1720,6 +1961,12 @@
         });
       });
 
+      // --- Contributor Filter Event ---
+      const contributorFilter = document.getElementById("contributorFilter");
+      contributorFilter.addEventListener("change", () => {
+        runFilter(searchInput.value.toLowerCase(), activeFilter);
+      });
+
       // --- Sort Event ---
       sortSelect.addEventListener("change", () => {
         const visibleCards = projectCards.filter(
@@ -1756,6 +2003,7 @@
 
       // --- Core Filtering Function ---
       function runFilter(query, tech) {
+        const contributorFilter = document.getElementById("contributorFilter").value.toLowerCase();
         let visibleCount = 0;
         projectCards.forEach((card) => {
           const title = card.querySelector("h2").innerText.toLowerCase();
@@ -1770,8 +2018,11 @@
           // Check if it matches selected technology
           const matchesTech = (tech === "all") || tags.includes(tech.toLowerCase());
 
-          // Update visibility: matches both conditions?
-          if (matchesSearch && matchesTech) {
+          // Check if it matches selected contributor
+          const matchesContributor = !contributorFilter || author.includes(contributorFilter);
+
+          // Update visibility: matches all conditions?
+          if (matchesSearch && matchesTech && matchesContributor) {
             card.style.display = "";
             visibleCount++;
           } else {
@@ -1848,132 +2099,6 @@
 
         animateCircles();
       });
-
-      // Contributor-based filtering for projects
-      async function loadProjects() {
-        try {
-          const [projectsResponse, contributorsResponse] = await Promise.all([
-            fetch('projects.json'),
-            fetch('contributors.json')
-          ]);
-
-          const projects = await projectsResponse.json();
-          const contributors = await contributorsResponse.json();
-
-          // Create contributor filter dropdown
-          createContributorFilter(contributors, projects);
-
-          // Display projects
-          displayProjects(projects);
-        } catch (error) {
-          console.error('Error loading projects:', error);
-        }
-      }
-
-      function createContributorFilter(contributors, projects) {
-        const filterContainer = document.querySelector('.filter-section') || document.createElement('div');
-        filterContainer.className = 'filter-section';
-        filterContainer.innerHTML = `
-          <div class="filter-controls">
-            <select id="contributorFilter" class="filter-select">
-              <option value="">All Contributors</option>
-            </select>
-            <input type="text" id="projectSearch" placeholder="Search projects..." class="search-input">
-          </div>
-        `;
-
-        // Insert after search section if it exists, otherwise at the top
-        const searchSection = document.querySelector('.search-section');
-        if (searchSection) {
-          searchSection.insertAdjacentElement('afterend', filterContainer);
-        } else {
-          const container = document.querySelector('.container');
-          if (container) {
-            container.insertBefore(filterContainer, container.firstChild);
-          }
-        }
-
-        // Populate contributor dropdown
-        const contributorSelect = document.getElementById('contributorFilter');
-        const contributorMap = new Map();
-
-        // Build contributor map from projects
-        projects.forEach(project => {
-          if (project.author && project.author.name) {
-            contributorMap.set(project.author.name, project.author);
-          }
-        });
-
-        // Add options
-        contributorMap.forEach((author, name) => {
-          const option = document.createElement('option');
-          option.value = name;
-          option.textContent = name;
-          contributorSelect.appendChild(option);
-        });
-
-        // Add event listeners
-        contributorSelect.addEventListener('change', () => filterProjects(projects));
-        document.getElementById('projectSearch').addEventListener('input', () => filterProjects(projects));
-      }
-
-      function filterProjects(projects) {
-        const contributorFilter = document.getElementById('contributorFilter').value;
-        const searchTerm = document.getElementById('projectSearch').value.toLowerCase();
-
-        const filteredProjects = projects.filter(project => {
-          const matchesContributor = !contributorFilter || project.author?.name === contributorFilter;
-          const matchesSearch = !searchTerm ||
-            project.title.toLowerCase().includes(searchTerm) ||
-            project.description.toLowerCase().includes(searchTerm) ||
-            (project.tags && project.tags.some(tag => tag.toLowerCase().includes(searchTerm)));
-
-          return matchesContributor && matchesSearch;
-        });
-
-        displayProjects(filteredProjects);
-      }
-
-      function displayProjects(projects) {
-        const container = document.getElementById('projectsContainer');
-        if (!container) return;
-
-        container.innerHTML = '';
-
-        if (projects.length === 0) {
-          container.innerHTML = '<div class="no-projects">No projects found matching your criteria.</div>';
-          return;
-        }
-
-        projects.forEach(project => {
-          const projectCard = document.createElement('div');
-          projectCard.className = 'project-card';
-
-          const projectLink = project.links?.live || project.links?.github || '#';
-          const authorName = project.author?.name || 'Unknown';
-          const authorGithub = project.author?.github || '#';
-
-          projectCard.innerHTML = `
-            <div class="project-header">
-              <h3 class="project-title">${project.title}</h3>
-              <div class="project-author">
-                <span>by </span>
-                <a href="${authorGithub}" target="_blank" rel="noopener">${authorName}</a>
-              </div>
-            </div>
-            <p class="project-description">${project.description}</p>
-            <div class="project-tags">
-              ${project.tags ? project.tags.map(tag => `<span class="tag">${tag}</span>`).join('') : ''}
-            </div>
-            <div class="project-links">
-              ${project.links?.live ? `<a href="${project.links.live}" target="_blank" class="btn btn-primary">Live Demo</a>` : ''}
-              ${project.links?.github ? `<a href="${project.links.github}" target="_blank" class="btn btn-secondary">Source Code</a>` : ''}
-            </div>
-          `;
-
-          container.appendChild(projectCard);
-        });
-      }
     </script>
   </body>
 </html>
