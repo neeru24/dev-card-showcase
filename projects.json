@@ -5778,6 +5778,25 @@
         "name": "PavanKarthik",
         "github": "https://github.com/pavanakarthik12"
     }
+},
+{
+    "title": "Skyrail Surfer (3D)",
+    "description": "Grind and jump across floating rails high above the clouds in this fast-paced 3D game. Auto-grind rails, manual jumps, mid-air tricks for score.",
+    "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Three.js",
+        "Game",
+        "3D"
+    ],
+    "links": {
+        "live": "./projects/skyrail-surfer-3d/index.html"
+    },
+    "author": {
+        "name": "Gupta-02",
+        "github": "https://github.com/Gupta-02"
+    }
 }
 ]
 
