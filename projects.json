@@ -327,6 +327,22 @@
         }
     },
     {
+        "title": "Spin the Wheel",
+        "description": "An interactive and game-like spin-the-wheel utility that helps users make fun decisions. Features smooth animations, accurate pointer-aligned results, and a polished arcade-style UI for an engaging experience.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/spin-the-wheel/"
+        },
+        "author": {
+            "name": "Anvesha",
+            "github": "https://github.com/your-github-username"
+        }
+        },
+    {
         "title": "Advanced Text Case Converter",
         "description": "A powerful text utility that converts text into multiple cases including uppercase, lowercase, sentence case, title case, and toggle case with live preview, undo history, and keyboard shortcuts.",
         "tags": [
