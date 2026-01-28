@@ -1566,7 +1566,14 @@
             "github": "https://github.com/CodeMaster11000"
         }
     },
-            {
+    { "title": "Task Master", 
+    "description": "A productivity app that helps users manage tasks with features like adding, editing, deleting, and marking tasks as complete. Includes priority levels and due dates for effective task management.", 
+    "tags": [ "HTML", "CSS", "JavaScript" ], 
+    "links": { "live": "./projects/task-master/index.html" }, 
+    "author": { "name": "CodeMaster", 
+    "github": "https://github.com/CodeMaster" } 
+    },
+    {
         "title": "Virtual Coffee Maker",
         "description": "A fun and interactive virtual coffee maker where users can customize their drink with various options like temperature, sugar level, and toppings.",
         "tags": [
