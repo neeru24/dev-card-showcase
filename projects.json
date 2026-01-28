@@ -1358,6 +1358,22 @@
         }
     },
     {
+        "title": "Balance Game",
+        "description": "A fun and challenging game where players balance objects on a beam to achieve equilibrium.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/BalanceGame/index.html"
+        },
+        "author": {
+            "name": "Neeru",
+            "github": "https://github.com/neeru24"
+        }
+    },
+    {
         "title": "Self Destructing Notes",
         "description": "A note-taking app where notes automatically delete after a set time, encouraging users to be more mindful of their digital footprint.",
         "tags": [
@@ -1388,6 +1404,22 @@
         "author": {
             "name": "Armaan",
             "github": "https://github.com/iarmaanx"
+        }
+    },
+    {
+        "title": "Shy UI",
+        "description": "A minimalist user interface that reveals additional options and information only when interacted with, providing a clean and distraction-free experience.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/ShyUI/index.html"
+        },
+        "author": {
+            "name": "Neeru",
+            "github": "https://github.com/neeru24"
         }
     },
     {
