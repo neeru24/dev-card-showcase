@@ -6893,23 +6893,23 @@
     }
   },
   {
-    "title": "Dog Cursor Chaser",
-    "description": "A playful dog that runs after the mouse cursor, creating a fun and interactive experience.",
+    "title": "CRT Screen Effect Simulator",
+    "description": "A CRT television screen effect simulator with CSS scanlines, screen flicker animation, and slight distortion effects. Enhances storytelling and retro-themed projects visually.",
     "tags": [
       "HTML",
       "CSS",
       "JavaScript",
       "Animation",
-      "Game",
-      "Interactive",
-      "Fun"
+      "Retro",
+      "Visual Effects",
+      "CRT"
     ],
     "links": {
-      "live": "./projects/Dog-Cursor-Chaser/"
+      "live": "./projects/CRT-Screen-Effect-Simulator/"
     },
     "author": {
-      "name": "Gupta",
-      "github": "https://github.com/Gupta-02"
+      "name": "Sneha-Amballa",
+      "github": "https://github.com/Sneha-Amballa"
     }
   }
 ]
