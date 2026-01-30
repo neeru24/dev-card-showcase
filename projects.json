@@ -6927,19 +6927,19 @@
     }
   },
   {
-    "title": "CRT Screen Effect Simulator",
-    "description": "A CRT television screen effect simulator with CSS scanlines, screen flicker animation, and slight distortion effects. Enhances storytelling and retro-themed projects visually.",
+    "title": "Mood-Based Background",
+    "description": "Background color adapts based on user interaction level, creating dynamic and responsive UI feedback that enhances UX experimentation.",
     "tags": [
       "HTML",
       "CSS",
       "JavaScript",
       "Animation",
-      "Retro",
-      "Visual Effects",
-      "CRT"
+      "Interactive",
+      "UX",
+      "Dynamic"
     ],
     "links": {
-      "live": "./projects/CRT-Screen-Effect-Simulator/"
+      "live": "./projects/Mood-Based-Background/"
     },
     "author": {
       "name": "Sneha-Amballa",
