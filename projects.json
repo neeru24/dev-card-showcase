@@ -7305,6 +7305,61 @@
       "name": "Gupta",
       "github": "https://github.com/Gupta-02"
     }
+  },
+  {
+    "title": "Breathing Exercise UI 🫁",
+    "description": "An interactive guided breathing exercise application with multiple techniques including 4-7-8 breathing, box breathing, and deep breathing. Features animated breath cycles, voice guidance, customizable patterns, session tracking, and relaxation tips for stress relief and mindfulness practice.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Breathing Exercises",
+      "Meditation",
+      "Wellness",
+      "Animation",
+      "Voice Guidance",
+      "Stress Relief",
+      "Mindfulness",
+      "Health",
+      "Relaxation",
+      "Timer",
+      "Responsive",
+      "Local Storage"
+    ],
+    "links": {
+      "live": "./projects/breathing-exercise/"
+    },
+    "author": {
+      "name": "Gupta",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Body Temperature Log 🌡️",
+    "description": "A comprehensive body temperature tracking application for health monitoring during illness. Features temperature logging with multiple measurement methods, trend charts, fever alerts, health status indicators, and medical export functionality. Supports both Celsius and Fahrenheit with professional health insights.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Chart.js",
+      "Health Monitoring",
+      "Temperature Tracking",
+      "Medical",
+      "Data Visualization",
+      "Local Storage",
+      "Responsive",
+      "Fever Alerts",
+      "Wellness",
+      "Healthcare",
+      "Vital Signs"
+    ],
+    "links": {
+      "live": "./projects/body-temperature-log/"
+    },
+    "author": {
+      "name": "Gupta",
+      "github": "https://github.com/Gupta-02"
+    }
   }
 ]
 
