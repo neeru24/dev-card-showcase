@@ -7037,6 +7037,32 @@
       "name": "Gupta",
       "github": "https://github.com/Gupta-02"
     }
+  },
+  {
+    "title": "Screen Time Tracker UI",
+    "description": "A comprehensive digital wellness application that helps users monitor and manage their screen time across different apps and activities. Features detailed analytics, category breakdowns, daily limits tracking, and personalized wellness tips to promote healthier digital habits. Includes interactive charts for usage trends and app distribution.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Chart.js",
+      "Digital Wellness",
+      "Screen Time",
+      "Analytics",
+      "Productivity",
+      "Health Monitoring",
+      "Responsive",
+      "Local Storage",
+      "Glassmorphism",
+      "Wellness"
+    ],
+    "links": {
+      "live": "./projects/screen-time-tracker/"
+    },
+    "author": {
+      "name": "Gupta",
+      "github": "https://github.com/Gupta-02"
+    }
   }
 ]
 
