@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 body {
     :root {
       color-scheme: light;
@@ -776,5 +776,5 @@ textarea {
   .hero__stats {
     grid-template-columns: 1fr;
   }
->>>>>>> 73c78289c0ee789ee94920252717b50ec5729bea
+
 }

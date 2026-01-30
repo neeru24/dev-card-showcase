@@ -220,29 +220,7 @@ const resetBreathing = () => {
   renderBreathing();
 };
 
-const renderAnalytics = () => {
-  const weeklyRoutines = filterDays(7);
-  const routineCount = weeklyRoutines.length;
-  const progress = Math.min((routineCount / state.weeklyGoal) * 100, 100);
 
-  elements.consistencyRate.textContent = `${Math.round(progress)}%`;
-  elements.consistencyBar.style.width = `${progress}%`;
-
-  const moodScores = state.moods.slice(0, 7).map((m) => m.score);
-  const average = moodScores.length
-    ? moodScores.reduce((sum, score) => sum + score, 0) / moodScores.length
-    : 3;
-  const balance = average >= 4 ? "Positive" : average >= 3 ? "Neutral" : "Needs care";
-  elements.moodBalance.textContent = balance;
-
-  elements.moodChart.innerHTML = "";
-  const max = Math.max(...moodScores, 1);
-  moodScores.forEach((score) => {
-    const bar = document.createElement("span");
-    bar.style.height = `${(score / max) * 100}%`;
-    elements.moodChart.appendChild(bar);
-  });
-};
 
 const renderBadges = () => {
   const badges = [];
