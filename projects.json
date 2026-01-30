@@ -2589,6 +2589,22 @@
             "github": "https://github.com/omkarhole"
         }
     },
+     {
+        "title": "common logical fallacies explorer",
+        "description": "Simple logical Fallacies explorer.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/common-logical-fallacies-explorer/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkar"
+        }
+    },
     {
         "title": "Number Challenge",
         "description": "A fun and challenging number memory game where players memorize a sequence of numbers and recall them correctly within a limited time. Boosts focus, memory, and concentration.",
@@ -2848,6 +2864,22 @@
             "github": "https://github.com/Gupta-02"
         }
     },
+     {
+        "title": "Cogntive load visulizer",
+        "description": "A web application that generates random gradient patterns for backgrounds, allowing users to copy the CSS code for use in their own projects.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/cognitive-load-visualizer/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkar"
+        }
+    },
     {
         "title": "Gradent Pattern",
         "description": "A web application that generates random gradient patterns for backgrounds, allowing users to copy the CSS code for use in their own projects.",
@@ -2960,6 +2992,22 @@
             "github": "https://github.com/omkarhole"
         }
     },
+    {
+    "title": "Code Snippet Expiry Vault",
+    "description": "A secure web application that allows users to store code snippets with an expiration time. Snippets are automatically deleted after the set time, ensuring privacy and security.",
+    "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+    ],
+    "links": {
+        "live": "./projects/Code-Snippet-Expiry-Vault/index.html"
+    },
+    "author" : {
+        "name":"Omkar",
+        "github": "https://github.com/omkarhole"
+    }
+},
     {
         "title": "Ultimate Ride Game",
         "description": "Ultimate Ride Game is an exciting web-based game where players navigate a vehicle through challenging terrains, avoiding obstacles and collecting rewards to achieve the highest score possible.",
@@ -6718,6 +6766,25 @@
     }
 },
 {
+    "title": "Cloud IDE",
+    "description": "A browser-based code editor with syntax highlighting, file management, and live preview features. Supports multiple programming languages and real-time collaboration.",
+    "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Editor",
+        "Collaboration",
+        "Live Preview"
+    ],
+    "links": {
+        "live": "./projects/Cloud-IDE/index.html"
+    },
+    "author": {
+        "name": "Omkar",
+        "github": "https://github.com/omkarhole"
+    }
+},
+{
     "title": "Balloon Rise",
     "description": "Guide a balloon upward in this vertical scroller with gentle physics. Hold space or tap to rise, use arrow keys to drift laterally, and avoid spikes and wind gusts while reaching new heights.",
     "tags": [
@@ -6970,7 +7037,7 @@
     "author": {
       "name": "Gupta-02",
       "github": "https://github.com/Gupta-02"
-///
+
     }
   },
   {
