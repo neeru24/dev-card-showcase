@@ -23,6 +23,24 @@
         }
     },
     {
+        "title": "Breathing Circle",
+        "description": "A minimalist breathing exercise tool designed to promote calm and focus. Features a smooth inhale–hold–exhale animation cycle, soft wellness-inspired visuals, and a fully responsive layout for a distraction-free experience across devices.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "UI/UX",
+            "Wellness"
+        ],
+        "links": {
+            "live": "./projects/breathing-circle/"
+        },
+        "author": {
+            "name": "Anvesha",
+            "github": "https://github.com/your-github-username"
+  }
+},
+    {
         "title": "DrumsJS - Auto-Play Drum Machine",
         "description": "A lightweight, single-file drum machine with auto-play functionality. Features 8 drum pads (Kick, Snare, Hi-Hat, Tom, Clap, Cymbal, Percussion, Bass) playable via mouse clicks or keyboard keys (Q,W,E,R,A,S,D,F). Includes 5 beat patterns (Rock, Funk, Hip-Hop, Reggae, Disco), adjustable tempo (60-180 BPM), and smooth visual feedback with glassmorphism design.",
         "tags": [
