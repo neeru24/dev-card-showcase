@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozy Coin Log | Gentle Finance Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cozy Coin Log</h1>
+            <p class="tagline">Gentle finance tracking for a mindful life</p>
+        </header>
+        
+        <aside class="sidebar">
+            <div class="gratitude-box">
+                <h3><i class="fas fa-heart"></i> Today's Cozy Moment</h3>
+                <textarea id="gratitudeNote" placeholder="What warmed your heart today? A warm drink, a good book, a moment of peace...">Enjoyed a quiet morning with tea and my favorite cozy blanket while planning the week ahead.</textarea>
+            </div>
+            
+            <h2>Monthly Overview</h2>
+            <div class="stats-box">
+                <div class="stat-item">
+                    <div class="stat-value" id="totalExpenses">$0.00</div>
+                    <div class="stat-label">Total Spent</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="remainingBudget">$1,500.00</div>
+                    <div class="stat-label">Remaining Budget</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="topCategory">-</div>
+                    <div class="stat-label">Top Category</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="dailyAverage">$0.00</div>
+                    <div class="stat-label">Daily Average</div>
+                </div>
+            </div>
+            
+            <h2>Expense Categories</h2>
+            <ul class="category-list">
+                <li class="category-home" data-category="home">
+                    <div class="category-name">
+                        <div class="category-icon icon-home">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <span>Home & Hearth</span>
+                    </div>
+                    <span class="category-amount" id="cat-home">$0</span>
+                </li>
+                <li class="category-food" data-category="food">
+                    <div class="category-name">
+                        <div class="category-icon icon-food">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <span>Nourishment</span>
+                    </div>
+                    <span class="category-amount" id="cat-food">$0</span>
+                </li>
+                <li class="category-care" data-category="care">
+                    <div class="category-name">
+                        <div class="category-icon icon-care">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <span>Gentle Care</span>
+                    </div>
+                    <span class="category-amount" id="cat-care">$0</span>
+                </li>
+                <li class="category-savings" data-category="savings">
+                    <div class="category-name">
+                        <div class="category-icon icon-savings">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <span>Future Comfort</span>
+                    </div>
+                    <span class="category-amount" id="cat-savings">$0</span>
+                </li>
+                <li class="category-transport" data-category="transport">
+                    <div class="category-name">
+                        <div class="category-icon icon-transport">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <span>Journeying</span>
+                    </div>
+                    <span class="category-amount" id="cat-transport">$0</span>
+                </li>
+                <li class="category-media" data-category="media">
+                    <div class="category-name">
+                        <div class="category-icon icon-media">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <span>Comfort Media</span>
+                    </div>
+                    <span class="category-amount" id="cat-media">$0</span>
+                </li>
+            </ul>
+            
+            <div class="warmth-fund">
+                <h3><i class="fas fa-mug-hot"></i> Warmth Fund</h3>
+                <p>For little treats that add coziness to your life</p>
+                <div class="stat-value positive">$45.00</div>
+            </div>
+        </aside>
+        
+        <main class="main-content">
+            <h2>Add New Expense</h2>
+            <div class="form-container">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="expenseName"><i class="fas fa-pen"></i> Description</label>
+                        <input type="text" id="expenseName" placeholder="What was this cozy expense for?">
+                    </div>
+                    <div class="form-group">
+                        <label for="expenseAmount"><i class="fas fa-coins"></i> Amount ($)</label>
+                        <input type="number" id="expenseAmount" placeholder="0.00" step="0.01">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="expenseCategory"><i class="fas fa-tags"></i> Category</label>
+                        <select id="expenseCategory">
+                            <option value="home">Home & Hearth</option>
+                            <option value="food">Nourishment</option>
+                            <option value="care">Gentle Care</option>
+                            <option value="savings">Future Comfort</option>
+                            <option value="transport">Journeying</option>
+                            <option value="media">Comfort Media</option>
+                            <option value="gifts">Heartwarming Gifts</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="expenseDate"><i class="far fa-calendar"></i> Date</label>
+                        <input type="date" id="expenseDate">
+                    </div>
+                </div>
+                
+                <button class="btn btn-primary" id="addExpenseBtn">
+                    <i class="fas fa-plus-circle"></i> Add Cozy Expense
+                </button>
+            </div>
+            
+            <h2>Recent Expenses</h2>
+            <div class="expense-list" id="expenseList">
+                <!-- Expenses will be added here by JavaScript -->
+                <div class="no-expenses">
+                    <i class="fas fa-feather-alt"></i>
+                    <p>No expenses recorded yet. Add your first cozy expense to begin your gentle finance journey.</p>
+                </div>
+            </div>
+            
+            <div class="expense-summary">
+                <div class="summary-item">
+                    <div class="summary-value positive" id="monthlyBudget">$1,500.00</div>
+                    <div class="summary-label">Monthly Budget</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-value negative" id="monthlySpent">$0.00</div>
+                    <div class="summary-label">Spent This Month</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-value" id="expenseCount">0</div>
+                    <div class="summary-label">Total Expenses</div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Cozy Coin Log &copy; 2026 | Gentle finance tracking for a mindful life</p>
+            <p class="cozy-message">Take a deep breath, brew some tea, and track your expenses with kindness.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
