@@ -252,6 +252,24 @@
         }
     },
     {
+  "title": "Stress Level Self-Check",
+  "description": "A visually engaging self-assessment tool that helps users gauge their current stress levels through emoji-based questions. Features animated gradient backgrounds, glassmorphism UI, and a circular stress indicator for an intuitive and calming experience.",
+  "tags": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "UI/UX",
+    "Wellness"
+  ],
+  "links": {
+    "live": "./projects/stress-level-self-check/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+    {
         "title": "Temperature Converter",
         "description": "A visually driven temperature conversion tool featuring a climate dial interface. Converts Celsius to Fahrenheit and Kelvin in real time with dynamic UI feedback that adapts to temperature ranges, offering an intuitive and engaging user experience.",
         "tags": [
