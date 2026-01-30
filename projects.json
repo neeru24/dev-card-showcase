@@ -7039,22 +7039,51 @@
     }
   },
   {
-    "title": "Workout Planner",
-    "description": "Comprehensive workout planning and tracking interface with exercise schedules, progress visualization, and fitness tips. Create custom workout plans, track calories burned with interactive charts, monitor weekly progress, and get expert workout tips to improve consistency and effectiveness.",
+    "title": "Habit Tracker UI",
+    "description": "A modern habit tracking web application that helps users build and maintain positive habits through streak visualization, progress tracking, and motivational feedback. Features flexible scheduling (daily, weekdays, weekends, custom), interactive charts showing weekly completion rates, and a beautiful glassmorphism design.",
     "tags": [
       "HTML",
       "CSS",
       "JavaScript",
-      "Fitness",
-      "Workout Planning",
-      "Progress Tracking",
-      "Charts",
-      "Exercise Database",
-      "Health",
-      "Local Storage"
+      "Chart.js",
+      "Habit Tracking",
+      "Productivity",
+      "Streak Counter",
+      "Progress Visualization",
+      "Responsive",
+      "Local Storage",
+      "Glassmorphism",
+      "Motivation",
+      "Wellness"
     ],
     "links": {
-      "live": "./projects/workout-planner/"
+      "live": "./projects/habit-tracker/"
+    },
+    "author": {
+      "name": "Gupta",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Blood Pressure Monitor UI",
+    "description": "A comprehensive blood pressure tracking web application that helps users monitor their cardiovascular health through systematic BP recording, trend visualization, and risk assessment based on American Heart Association guidelines. Features systolic/diastolic input, heart rate tracking, interactive charts, and color-coded risk levels.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Chart.js",
+      "Health Monitoring",
+      "Blood Pressure",
+      "Medical",
+      "Cardiovascular",
+      "Risk Assessment",
+      "Responsive",
+      "Local Storage",
+      "Glassmorphism",
+      "Wellness"
+    ],
+    "links": {
+      "live": "./projects/blood-pressure-monitor/"
     },
     "author": {
       "name": "Gupta",
