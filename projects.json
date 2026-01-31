@@ -99,6 +99,24 @@
         }
     },
     {
+  "title": "Truth & Dare Mini Game",
+  "description": "A fun and interactive Truth & Dare mini game with a gamified scoring system, animated cards, and a clean modern UI. Designed to be fully responsive and engaging, making it ideal for casual play and party-style interactions across devices.",
+  "tags": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Game",
+    "UI/UX"
+  ],
+  "links": {
+    "live": "./projects/truth-dare/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+    {
         "title": "Parkour Grid",
         "description": "Time-based parkour challenges in abstract 3D blocks with momentum-based movement, wall-runs, slides, checkpoints, and replay ghosts. Features modular level design and endless mode.",
         "tags": [
