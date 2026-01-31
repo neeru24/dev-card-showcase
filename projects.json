@@ -7602,6 +7602,26 @@
       "name": "Gupta",
       "github": "https://github.com/Gupta-02"
     }
+  },
+  {
+    "title": "Hygiene Routine Tracker",
+    "description": "A personal hygiene habit tracker with daily checklists, consistency charts, and reminders to encourage healthy routines.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Health",
+      "Habits",
+      "Tracker",
+      "Charts"
+    ],
+    "links": {
+      "live": "./projects/Hygiene-Routine-Tracker/"
+    },
+    "author": {
+      "name": "Gupta",
+      "github": "https://github.com/Gupta-02"
+    }
   }
 ]
 
