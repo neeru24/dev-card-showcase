@@ -209,6 +209,24 @@
             "github": "https://github.com/omkarhole"
         }
     },
+    {
+        "title": "Lucky Color of the Day",
+        "description": "A playful and interactive mini app that reveals a user’s lucky color for the day. Features a fun, bubbly UI, daily color logic, luck points, and progression levels to create a delightful and engaging experience.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Fun UI",
+            "Gamification"
+        ],
+        "links": {
+            "live": "./projects/lucky-color/"
+        },
+        "author": {
+            "name": "Anvesha",
+            "github": "https://github.com/your-github-username"
+  }
+},
          {
         "title": "ClamRoute",
         "description": "A web-based bio sphere simulator that allows users to create and manage a self-sustaining ecosystem. Users can add plants, animals, and environmental factors to observe interactions and balance within the bio sphere.",
