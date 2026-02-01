@@ -76,6 +76,25 @@
             "github": "https://github.com/your-github-username"
   }
 },
+{
+    "title": "Memory Timer",
+    "description": "A responsive brain-training game that challenges users to memorize and recall words within a time limit. The game evaluates answers in real time on space key press, features multiple difficulty levels, accuracy tracking, streaks, and persistent high scores for an engaging, keyboard-first experience.",
+    "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Game",
+        "Productivity",
+        "Memory Training"
+    ],
+    "links": {
+        "live": "./projects/memory-timer/"
+    },
+    "author": {
+        "name": "Anvesha",
+        "github": "https://github.com/your-github-username"
+    }
+},
     {
         "title": "DrumsJS - Auto-Play Drum Machine",
         "description": "A lightweight, single-file drum machine with auto-play functionality. Features 8 drum pads (Kick, Snare, Hi-Hat, Tom, Clap, Cymbal, Percussion, Bass) playable via mouse clicks or keyboard keys (Q,W,E,R,A,S,D,F). Includes 5 beat patterns (Rock, Funk, Hip-Hop, Reggae, Disco), adjustable tempo (60-180 BPM), and smooth visual feedback with glassmorphism design.",
