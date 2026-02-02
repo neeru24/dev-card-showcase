@@ -94,3 +94,12 @@ window.addEventListener("resize", () => {
 
   renderer.setSize(sizes.width, sizes.height);
 });
+
+
+// Mobile sidebar toggle
+const menuToggle = document.getElementById("menuToggle");
+const sidebar = document.querySelector(".sidebar");
+
+menuToggle.addEventListener("click", () => {
+  sidebar.classList.toggle("active");
+});
