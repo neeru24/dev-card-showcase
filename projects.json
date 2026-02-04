@@ -37,6 +37,24 @@
         }
     },
     {
+        "title": "ULTRA-INTELLIGENCE v9.4",
+        "description": "An AI that answers your questions differently.",
+        "tags": [ 
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Gamification",
+            "Learning"
+        ],
+        "links": {
+            "live": "./projects/NEURO-GEN v9.4/"
+        },
+        "author": {
+            "name": "Sai Sathvik",
+            "github": "https://github.com/Saisathvik94"
+        }
+    },
+    {
     "title": "Queue Management Simulator Game",
     "description": "A gamified queue management game where users add, serve, and remove people from a virtual queue. Features random events like VIP arrivals, unexpected departures, a points and level-up system, and a visually engaging neon-style interface with interactive animations for a fun arcade-like experience.",
     "tags": [
