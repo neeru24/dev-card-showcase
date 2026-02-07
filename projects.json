@@ -2457,6 +2457,26 @@
         }
     },
     {
+    "title": "Suspicious Login Pattern Detector",
+    "description": "A cybersecurity-themed tool that analyzes login behavior to detect suspicious patterns based on location, device, and time. Features a real-time risk scoring engine, anomaly alerts, login history tracking, and a neon cyber UI for an engaging security dashboard experience.",
+    "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Cybersecurity",
+        "UI/UX",
+        "Security",
+        "Visualization"
+    ],
+    "links": {
+        "live": "./projects/suspicious-login-pattern-detector/"
+    },
+    "author": {
+        "name": "Anvesha",
+        "github": "https://github.com/your-github-username"
+    }
+},
+    {
         "title": "ClickRipple Animation",
         "description": "Interactive tool that creates beautiful ripple animations on click with customizable patterns, colors, and sound effects.",
         "tags": [
