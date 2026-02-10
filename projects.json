@@ -995,6 +995,23 @@
             "github": "https://github.com/omkarhole"
         }
     },
+         {
+        "title": "Patricle in Tornado Animation",
+        "description": "An animated particle tornado effect using HTML, CSS, and JavaScript. Features smooth particle movement, customizable colors, and responsive design for an engaging visual experience.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Utility Tool"
+        ],
+        "links": {
+            "live": "./projects/Particles-Tornado/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
     {
         "title": "Budget Survival Game",
         "description": "A real-life financial survival simulator that challenges players to manage cash flow, savings, and health under unpredictable daily expenses. Features dynamic income generation, user-defined earnings, emergency handling through savings, and a modern dark cyber-themed UI—transforming budgeting concepts into an engaging game-like experience.",
