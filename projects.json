@@ -989,6 +989,23 @@
             "github": "https://github.com/omkarhole"
         }
     },
+      {
+        "title": "CSS schema finder",
+        "description": "A web application that allows users to input a CSS property and returns the corresponding schema information, including syntax, values, and examples. Features a user-friendly interface and real-time search functionality for efficient reference.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Utility Tool"
+        ],
+        "links": {
+            "live": "./projects/CSS-Scheme-Finder/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
     {
         "title": "2D Transform Playground",
         "description": "A web application that allows users to experiment with CSS 2D transform properties. Users can adjust values for translate, rotate, scale, and skew to see the effects on elements in real time.",
