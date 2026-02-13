@@ -129,56 +129,52 @@ class ProductivityAnalyzer {
     renderChart() {
         const timeRange = parseInt(document.getElementById('timeRange').value);
         const filteredTasks = this.getTasksInRange(timeRange);
-        const hourlyData = this.calculateHourlyData(filteredTasks);
+        const heatmapData = this.calculateHeatmapData(filteredTasks);
 
-        const ctx = document.getElementById('productivityChart').getContext('2d');
+        const heatmapGrid = document.getElementById('heatmapGrid');
+        heatmapGrid.innerHTML = '';
 
-        if (this.chart) {
-            this.chart.destroy();
-        }
+        // Create header row with day labels
+        const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+        heatmapGrid.appendChild(this.createCell('', 'header-corner'));
 
-        this.chart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: Array.from({length: 24}, (_, i) => `${i}:00`),
-                datasets: [{
-                    label: 'Tasks Completed',
-                    data: hourlyData,
-                    backgroundColor: 'rgba(56, 161, 105, 0.6)',
-                    borderColor: 'rgba(56, 161, 105, 1)',
-                    borderWidth: 1,
-                    borderRadius: 4,
-                    borderSkipped: false,
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    title: {
-                        display: true,
-                        text: `Tasks Completed by Hour (Last ${timeRange} days)`
-                    },
-                    legend: {
-                        display: false
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        ticks: {
-                            stepSize: 1
-                        }
-                    },
-                    x: {
-                        title: {
-                            display: true,
-                            text: 'Hour of Day'
-                        }
-                    }
-                }
-            }
+        days.forEach(day => {
+            heatmapGrid.appendChild(this.createCell(day, 'day-label'));
         });
+
+        // Create grid rows
+        for (let hour = 0; hour < 24; hour++) {
+            // Hour label
+            heatmapGrid.appendChild(this.createCell(`${hour}:00`, 'hour-label'));
+
+            // Data cells for each day
+            for (let day = 0; day < 7; day++) {
+                const count = heatmapData[day][hour] || 0;
+                const cell = this.createCell('', 'data-cell');
+                cell.style.backgroundColor = this.getHeatmapColor(count);
+                cell.setAttribute('data-count', count);
+                cell.setAttribute('data-hour', hour);
+                cell.setAttribute('data-day', day);
+                cell.title = `${days[day]} ${hour}:00 - ${count} tasks`;
+                heatmapGrid.appendChild(cell);
+            }
+        }
+    }
+
+    createCell(content, className) {
+        const cell = document.createElement('div');
+        cell.className = `heatmap-cell ${className}`;
+        cell.textContent = content;
+        return cell;
+    }
+
+    getHeatmapColor(count) {
+        if (count === 0) return '#f7fafc';
+        if (count === 1) return '#c6f6d5';
+        if (count === 2) return '#9ae6b4';
+        if (count === 3) return '#68d391';
+        if (count === 4) return '#48bb78';
+        return '#38a169'; // 5+
     }
 
     getTasksInRange(days) {
@@ -197,6 +193,24 @@ class ProductivityAnalyzer {
         });
 
         return hourlyCounts;
+    }
+
+    calculateHeatmapData(tasks) {
+        // Initialize 7x24 grid (7 days x 24 hours)
+        const heatmapData = Array.from({length: 7}, () => Array(24).fill(0));
+
+        tasks.forEach(task => {
+            const taskDate = new Date(task.time);
+            const dayOfWeek = taskDate.getDay(); // 0 = Sunday, 1 = Monday, etc.
+            const hour = taskDate.getHours();
+
+            // Convert to Monday-first (0 = Monday, 6 = Sunday)
+            const adjustedDay = dayOfWeek === 0 ? 6 : dayOfWeek - 1;
+
+            heatmapData[adjustedDay][hour]++;
+        });
+
+        return heatmapData;
     }
 
     updatePeakHours() {
