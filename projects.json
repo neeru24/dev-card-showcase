@@ -42,6 +42,26 @@
         }
     },
     {
+        "title": "HDL vs LDL Comparison Dashboard",
+        "description": "Compare HDL and LDL cholesterol trends with dual-line graphs and safe range indicators. Track lipid balance shifts over time to support heart health monitoring and cardiovascular risk assessment.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Health",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage"
+        ],
+        "links": {
+            "live": "./hdl-vs-ldl-comparison-dashboard/hdl-vs-ldl-comparison-dashboard.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
+    },
+    {
         "title": "Digital Overstimulation Tracker",
         "description": "Track overstimulation symptoms from digital overload and correlate them with screen time. Log symptoms like headache, eye strain, irritability, and fatigue to identify digital fatigue patterns and encourage mindful usage.",
         "tags": [
