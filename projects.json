@@ -998,6 +998,23 @@
             "github": "https://github.com/your-github-username"
         }
     },
+        {
+        "title": "CSS Sprite Animation Switcher",
+        "description": "A web application that demonstrates CSS sprite animations and allows switching between different animation states. Features include multiple animation frames, smooth transitions, and responsive design.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Utility Tool"
+        ],
+        "links": {
+            "live": "./projects/CSS-Sprite-Animation-Switcher/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
     {
         "title": "Memory Timer",
         "description": "A responsive brain-training game that challenges users to memorize and recall words within a time limit. The game evaluates answers in real time on space key press, features multiple difficulty levels, accuracy tracking, streaks, and persistent high scores for an engaging, keyboard-first experience.",
