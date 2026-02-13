@@ -10472,5 +10472,27 @@
             "name": "Gupta",
             "github": "https://github.com/Gupta-02"
         }
+    },
+    {
+        "title": "Emotional Recovery Time Tracker",
+        "description": "Measure your emotional resilience by tracking recovery time from stressful events, identify patterns, and build greater emotional intelligence. Log stress events with intensity levels and monitor how quickly you bounce back.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Health",
+            "Mental Health",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage",
+            "Emotional Intelligence"
+        ],
+        "links": {
+            "live": "./emotional-recovery-time-tracker/emotional-recovery-time-tracker.html"
+        },
+        "author": {
+            "name": "Gupta",
+            "github": "https://github.com/Gupta-02"
+        }
     }
 ]
