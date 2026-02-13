@@ -878,6 +878,23 @@
             "github": "https://github.com/omkarhole"
         }
     },
+     {
+        "title": "3D model selector",
+        "description": "An interactive 3D model selector with preview capabilities. Users can choose from various 3D models, materials, environments, and backgrounds to see live previews in native select dropdowns.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Animation"
+        ],
+        "links": {
+            "live": "./projects/3D-Model-Selector/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
     {
         "title": "Trials in Forms",
         "description": "A web application that demonstrates various form validation techniques and interactive form elements. Users can explore different input types, validation rules, and dynamic form behaviors.",
