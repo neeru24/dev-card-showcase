@@ -154,8 +154,17 @@ function updateMetrics() {
         document.getElementById('bestGrip').textContent = `${bestGrip}kg`;
         document.getElementById('avgGrip').textContent = `${avgGrip}kg`;
 
-        // Calculate improvement (last 5 vs first 5)
-        if (totalTests >= 10) {
+        // Calculate improvement (compare last 4 weeks vs first 4 weeks of available data)
+        const weeklyData = groupSessionsByWeek(gripSessions);
+        if (weeklyData.length >= 8) {
+            const firstFourWeeks = weeklyData.slice(0, 4);
+            const lastFourWeeks = weeklyData.slice(-4);
+            const firstAvg = firstFourWeeks.reduce((sum, w) => sum + w.avgStrength, 0) / 4;
+            const lastAvg = lastFourWeeks.reduce((sum, w) => sum + w.avgStrength, 0) / 4;
+            const improvement = (lastAvg - firstAvg).toFixed(1);
+            document.getElementById('improvement').textContent = `${improvement > 0 ? '+' : ''}${improvement}kg`;
+        } else if (totalTests >= 10) {
+            // Fallback to session-based calculation
             const firstFive = gripSessions.slice(0, 5);
             const lastFive = gripSessions.slice(-5);
             const firstAvg = firstFive.reduce((sum, s) => sum + s.strength, 0) / 5;
@@ -239,53 +248,151 @@ function updateChart() {
     if (!canvas) return;
 
     const ctx = canvas.getContext('2d');
-    const width = canvas.width = canvas.offsetWidth;
-    const height = canvas.height = canvas.offsetHeight;
-
-    ctx.clearRect(0, 0, width, height);
 
     if (gripSessions.length < 2) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = 'var(--text-secondary)';
         ctx.font = '16px Arial';
         ctx.textAlign = 'center';
-        ctx.fillText('Log more grip tests to see trends', width / 2, height / 2);
+        ctx.fillText('Log more grip tests to see weekly progression', canvas.width / 2, canvas.height / 2);
         return;
     }
 
-    // Simple line chart for grip strength over time
-    const sessions = gripSessions.slice(-20); // Last 20 sessions
-    const maxStrength = Math.max(...sessions.map(s => s.strength));
-    const minDate = new Date(Math.min(...sessions.map(s => new Date(s.date))));
-    const maxDate = new Date(Math.max(...sessions.map(s => new Date(s.date))));
+    // Group sessions by week
+    const weeklyData = groupSessionsByWeek(gripSessions);
 
-    ctx.strokeStyle = 'var(--primary-color)';
-    ctx.lineWidth = 2;
-    ctx.beginPath();
+    // Use Chart.js for better visualization
+    if (window.progressionChart) {
+        window.progressionChart.destroy();
+    }
 
-    sessions.forEach((session, index) => {
-        const x = (index / (sessions.length - 1)) * (width - 40) + 20;
-        const y = height - 20 - (session.strength / maxStrength) * (height - 40);
+    window.progressionChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: weeklyData.map(week => week.label),
+            datasets: [{
+                label: 'Average Grip Strength (kg)',
+                data: weeklyData.map(week => week.avgStrength),
+                borderColor: '#38a169',
+                backgroundColor: 'rgba(56, 161, 105, 0.1)',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.4,
+                pointBackgroundColor: '#38a169',
+                pointBorderColor: '#fff',
+                pointBorderWidth: 2,
+                pointRadius: 5,
+                pointHoverRadius: 7
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Weekly Grip Strength Progression',
+                    font: {
+                        size: 16,
+                        weight: 'bold'
+                    }
+                },
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        title: function(context) {
+                            return `Week of ${context[0].label}`;
+                        },
+                        label: function(context) {
+                            const week = weeklyData[context.dataIndex];
+                            return [
+                                `Average: ${context.parsed.y.toFixed(1)} kg`,
+                                `Tests: ${week.count}`,
+                                `Best: ${week.maxStrength.toFixed(1)} kg`,
+                                `Range: ${week.minStrength.toFixed(1)} - ${week.maxStrength.toFixed(1)} kg`
+                            ];
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: false,
+                    title: {
+                        display: true,
+                        text: 'Grip Strength (kg)'
+                    },
+                    grid: {
+                        color: 'rgba(0, 0, 0, 0.1)'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Week'
+                    },
+                    grid: {
+                        display: false
+                    }
+                }
+            },
+            interaction: {
+                intersect: false,
+                mode: 'index'
+            }
+        }
+    });
+}
 
-        if (index === 0) {
-            ctx.moveTo(x, y);
-        } else {
-            ctx.lineTo(x, y);
+function groupSessionsByWeek(sessions) {
+    // Sort sessions by date
+    const sortedSessions = sessions.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+    const weeklyGroups = {};
+
+    sortedSessions.forEach(session => {
+        const date = new Date(session.date);
+        // Get the Monday of the week containing this date
+        const monday = new Date(date);
+        monday.setDate(date.getDate() - date.getDay() + 1);
+        const weekKey = monday.toISOString().split('T')[0];
+
+        if (!weeklyGroups[weekKey]) {
+            weeklyGroups[weekKey] = {
+                sessions: [],
+                monday: monday
+            };
         }
 
-        // Draw point
-        ctx.fillStyle = 'var(--primary-color)';
-        ctx.beginPath();
-        ctx.arc(x, y, 3, 0, 2 * Math.PI);
-        ctx.fill();
+        weeklyGroups[weekKey].sessions.push(session);
     });
 
-    ctx.stroke();
+    // Convert to array and calculate weekly stats
+    return Object.values(weeklyGroups)
+        .sort((a, b) => a.monday - b.monday)
+        .slice(-12) // Show last 12 weeks
+        .map(week => {
+            const strengths = week.sessions.map(s => s.strength);
+            const avgStrength = strengths.reduce((sum, s) => sum + s, 0) / strengths.length;
+            const minStrength = Math.min(...strengths);
+            const maxStrength = Math.max(...strengths);
 
-    // Add labels
-    ctx.fillStyle = 'var(--text-secondary)';
-    ctx.font = '12px Arial';
-    ctx.textAlign = 'center';
-    ctx.fillText('Recent Grip Tests', width / 2, height - 5);
+            // Format week label
+            const endOfWeek = new Date(week.monday);
+            endOfWeek.setDate(week.monday.getDate() + 6);
+
+            const label = `${week.monday.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} - ${endOfWeek.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`;
+
+            return {
+                label: label,
+                avgStrength: Math.round(avgStrength * 10) / 10,
+                minStrength: Math.round(minStrength * 10) / 10,
+                maxStrength: Math.round(maxStrength * 10) / 10,
+                count: strengths.length
+            };
+        });
 }
 
 function updateInsights() {
@@ -307,7 +414,24 @@ function updateInsights() {
 
     // Progress trend
     const trendElement = document.getElementById('progressTrend');
-    if (gripSessions.length >= 5) {
+    const weeklyData = groupSessionsByWeek(gripSessions);
+    if (weeklyData.length >= 4) {
+        const recentWeeks = weeklyData.slice(-4);
+        const earlierWeeks = weeklyData.slice(-8, -4);
+
+        if (earlierWeeks.length > 0) {
+            const recentAvg = recentWeeks.reduce((sum, w) => sum + w.avgStrength, 0) / recentWeeks.length;
+            const earlierAvg = earlierWeeks.reduce((sum, w) => sum + w.avgStrength, 0) / earlierWeeks.length;
+            const change = recentAvg - earlierAvg;
+
+            const direction = change > 0.5 ? 'improving' : change < -0.5 ? 'declining' : 'stable';
+            const changeText = change > 0 ? '+' : '';
+            trendElement.innerHTML = `<p>Your weekly average is <strong>${direction}</strong> (${changeText}${change.toFixed(1)}kg change over last 4 weeks).</p>`;
+        } else {
+            trendElement.innerHTML = `<p>Continue logging to track your progress trend.</p>`;
+        }
+    } else if (gripSessions.length >= 5) {
+        // Fallback to session-based trend
         const recent = gripSessions.slice(-5);
         const earlier = gripSessions.slice(-10, -5);
 
