@@ -51,7 +51,7 @@
 
             <!-- Performance Heatmap -->
             <section class="productivity-section performance-heatmap">
-                <h2><i data-lucide="bar-chart-3"></i> Hourly Performance Heatmap</h2>
+                <h2><i data-lucide="grid-3x3"></i> Productivity Heatmap</h2>
                 <div class="chart-controls">
                     <select id="timeRange">
                         <option value="7">Last 7 days</option>
@@ -63,7 +63,24 @@
                     </button>
                 </div>
                 <div class="chart-container">
-                    <canvas id="productivityChart"></canvas>
+                    <div id="heatmapContainer" class="heatmap-container">
+                        <div class="heatmap-grid" id="heatmapGrid">
+                            <!-- Heatmap will be generated here -->
+                        </div>
+                        <div class="heatmap-legend">
+                            <span>Less</span>
+                            <div class="legend-colors">
+                                <div class="legend-color" style="background-color: #f7fafc;"></div>
+                                <div class="legend-color" style="background-color: #c6f6d5;"></div>
+                                <div class="legend-color" style="background-color: #9ae6b4;"></div>
+                                <div class="legend-color" style="background-color: #68d391;"></div>
+                                <div class="legend-color" style="background-color: #48bb78;"></div>
+                                <div class="legend-color" style="background-color: #38a169;"></div>
+                            </div>
+                            <span>More</span>
+                        </div>
+                    </div>
+                    <canvas id="productivityChart" style="display: none;"></canvas>
                 </div>
             </section>
 
