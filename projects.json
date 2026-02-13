@@ -21,6 +21,27 @@
         }
     },
     {
+        "title": "Recovery Heart Rate Monitor",
+        "description": "Track your heart rate recovery after exercise to measure cardiovascular fitness. Log post-workout heart rates and visualize your recovery curve for better training insights.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Fitness",
+            "Health",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage"
+        ],
+        "links": {
+            "live": "./recovery-heart-rate-monitor/recovery-heart-rate-monitor.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
+    },
+    {
         "title": "Digital Overstimulation Tracker",
         "description": "Track overstimulation symptoms from digital overload and correlate them with screen time. Log symptoms like headache, eye strain, irritability, and fatigue to identify digital fatigue patterns and encourage mindful usage.",
         "tags": [
