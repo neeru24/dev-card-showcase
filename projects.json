@@ -10753,6 +10753,52 @@
         }
     },
     {
+        "title": "Cognitive Recovery Time Tracker",
+        "description": "Track time required for mental recovery after intensive cognitive work sessions. Log work sessions with cognitive load levels and monitor recovery patterns to optimize deep work scheduling and maintain mental capacity.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Health",
+            "Mental Health",
+            "Productivity",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage",
+            "Cognitive Science"
+        ],
+        "links": {
+            "live": "./cognitive-recovery-time-tracker/cognitive-recovery-time-tracker.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
+    },
+    {
+        "title": "Indoor Air Quality Impact Tracker",
+        "description": "Monitor perceived health effects of indoor air conditions. Track ventilation, humidity, and temperature correlations with symptoms like headaches, fatigue, and respiratory issues for better indoor environment management.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Health",
+            "Environmental",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage",
+            "Air Quality",
+            "Wellness"
+        ],
+        "links": {
+            "live": "./indoor-air-quality-impact-tracker/indoor-air-quality-impact-tracker.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
+    },
+    {
         "title": "Joint Pain Pattern Analyzer",
         "description": "Log joint pain episodes and visualize patterns correlated with weather, activity levels, and posture to identify triggers and improve management. Track pain severity, duration, and environmental factors for comprehensive joint health monitoring.",
         "tags": [
