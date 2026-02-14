@@ -7335,6 +7335,22 @@
             "github": "https://github.com/CodeMaster11000"
         }
     },
+      {
+        "title": "Glass displacement effect",
+        "description": "An interactive glass-like effect that displaces content when hovering over elements, creating a dynamic and visually appealing UI.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/Glass-displacement-effect/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
     {
         "title": "Smart Progress Tracker",
         "description": "A smart progress tracking tool that helps users monitor tasks and goals using dynamic progress bars, priority levels, due dates, and persistent storage, all presented in a clean card-based interface.",
