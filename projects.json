@@ -10955,8 +10955,8 @@
         }
     },
     {
-        "title": "Post-Injury Mobility Score",
-        "description": "Track your rehabilitation progress with objective range-of-motion scoring and milestone tracking. Monitor mobility recovery after injury with pain levels and functionality assessments for physiotherapy guidance.",
+        "title": "Recovery Soreness Scale Tracker",
+        "description": "Track delayed onset muscle soreness (DOMS) to optimize training frequency and prevent overtraining. Monitor soreness levels across different muscle groups with trend analysis and recovery insights.",
         "tags": [
             "HTML",
             "CSS",
@@ -10964,13 +10964,13 @@
             "Chart.js",
             "Data Visualization",
             "LocalStorage",
-            "Wellness",
+            "Fitness",
             "Health Monitoring",
-            "Rehabilitation",
-            "Physiotherapy"
+            "Recovery Tracking",
+            "Training Optimization"
         ],
         "links": {
-            "live": "./post-injury-mobility-score/post-injury-mobility-score.html"
+            "live": "./recovery-soreness-scale-tracker/recovery-soreness-scale-tracker.html"
         },
         "author": {
             "name": "Gupta-02",
