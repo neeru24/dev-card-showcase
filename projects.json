@@ -11288,5 +11288,29 @@
             "name": "Gupta-02",
             "github": "https://github.com/Gupta-02"
         }
+    },
+    {
+        "title": "Cardiac Recovery Rate Tracker",
+        "description": "Measure heart rate recovery after exercise to assess cardiovascular fitness. Input peak heart rate and 1-minute recovery heart rate to calculate recovery percentage, fitness level, and track improvement over time.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Health",
+            "Fitness",
+            "Cardiovascular",
+            "Heart Rate",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage",
+            "Athletic Performance"
+        ],
+        "links": {
+            "live": "./projects/cardiac-recovery-rate-tracker/cardiac-recovery-rate-tracker.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
     }
 ]
