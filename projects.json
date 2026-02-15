@@ -11131,5 +11131,28 @@
             "name": "Gupta-02",
             "github": "https://github.com/Gupta-02"
         }
+    },
+    {
+        "title": "Hill Performance Analyzer",
+        "description": "Track your incline running performance with detailed metrics including grade percentage, pace analysis, heart rate monitoring, and terrain-specific insights for hill training optimization.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Fitness",
+            "Running",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage",
+            "Hill Training",
+            "Performance Analytics"
+        ],
+        "links": {
+            "live": "./hill-performance-analyzer/hill-performance-analyzer.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
     }
 ]
