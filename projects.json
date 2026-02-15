@@ -11288,5 +11288,28 @@
             "name": "Gupta-02",
             "github": "https://github.com/Gupta-02"
         }
+    },
+    {
+        "title": "Pelvic Stability Monitor",
+        "description": "Track core and pelvic strength metrics with exercise logging and stability score tracking. Monitor progress over time with personalized insights for preventing back pain and improving posture. Perfect for postpartum recovery and rehabilitation.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Health",
+            "Fitness",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage",
+            "Core Strength",
+            "Rehabilitation"
+        ],
+        "links": {
+            "live": "./pelvic-stability-monitor/pelvic-stability-monitor.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
     }
 ]
