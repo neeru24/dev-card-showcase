@@ -11173,5 +11173,28 @@
             "name": "Gupta-02",
             "github": "https://github.com/Gupta-02"
         }
+    },
+    {
+        "title": "Cold Exposure Adaptation Tracker",
+        "description": "Track your cold exposure sessions including ice baths and cold showers. Monitor adaptation progress with comfort ratings, duration trends, and personalized insights for improving cold tolerance over time.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Health",
+            "Fitness",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage",
+            "Cold Exposure",
+            "Adaptation Tracking"
+        ],
+        "links": {
+            "live": "./cold-exposure-adaptation-tracker/cold-exposure-adaptation-tracker.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
     }
 ]
