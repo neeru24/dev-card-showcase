@@ -7026,6 +7026,24 @@
             "github": "https://github.com/omkarhole"
         }
     },
+       {
+        "title": "Color Palette Generator \ud83c\udf3a",
+        "description": "A fun interactive activity that generates and displays color palettes.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "Productivity",
+            "Education",
+            "Student Wellness"
+        ],
+        "links": {
+            "live": "./projects/Color-Palette/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
     {
         "title": "Study\u2013Rest Balance Guide \u2696\ufe0f",
         "description": "A visual guide that explains the importance of balancing study time with proper rest and recovery.",
