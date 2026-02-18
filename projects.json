@@ -11987,5 +11987,27 @@
             "name": "Gupta-02",
             "github": "https://github.com/Gupta-02"
         }
+    },
+    {
+        "title": "Metabolic Flexibility Score",
+        "description": "Estimates your ability to switch between carbohydrate and fat metabolism using fasting duration and exercise intensity inputs. Provides advanced metabolic analytics and personalized insights.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Health",
+            "Metabolism",
+            "Fitness",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage"
+        ],
+        "links": {
+            "live": "./metabolic-flexibility-score.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
     }
 ]
