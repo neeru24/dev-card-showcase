@@ -12157,5 +12157,26 @@
             "name": "Gupta-02",
             "github": "https://github.com/Gupta-02"
         }
+    },
+    {
+        "title": "Foot Arch Stability Tracker",
+        "description": "Monitor arch strength and stability exercises with completion logs and pain reduction scores. Track progress for runners and flat-foot correction to prevent knee and back pain.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Fitness",
+            "Foot Health",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage"
+        ],
+        "links": {
+            "live": "./foot-arch-stability-tracker.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
     }
 ]
