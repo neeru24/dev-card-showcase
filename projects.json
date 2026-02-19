@@ -12558,6 +12558,28 @@
         }
     },
     {
+        "title": "Protein Quality Score",
+        "description": "Evaluate the amino acid completeness of your diet. Track protein sources and get a quality score based on essential amino acid profiles to ensure optimal nutrition, especially for plant-based diets.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Nutrition",
+            "Health",
+            "Diet",
+            "Amino Acids",
+            "Plant-Based",
+            "LocalStorage"
+        ],
+        "links": {
+            "live": "./projects/protein-quality-score/protein-quality-score.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
+    },
+    {
         "title": "Emotional Recovery Timer",
         "description": "Track the time required to emotionally stabilize after stressful events. Log events with stress levels and monitor recovery patterns for better emotional resilience and therapy tracking.",
         "tags": [
