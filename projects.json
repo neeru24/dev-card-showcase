@@ -13275,5 +13275,30 @@
             "name": "Gupta-02",
             "github": "https://github.com/Gupta-02"
         }
+    },
+    {
+        "title": "Nutritional Timing Optimizer",
+        "description": "Optimize meal timing and nutrient distribution for health goals. Track macronutrients, energy levels, and meal purposes to calculate timing scores and receive personalized recommendations for optimal nutrient utilization windows.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Health",
+            "Nutrition",
+            "Meal Timing",
+            "Macronutrients",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage",
+            "Wellness",
+            "Diet Optimization"
+        ],
+        "links": {
+            "live": "./projects/nutritional-timing-optimizer/nutritional-timing-optimizer.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
     }
 ]
