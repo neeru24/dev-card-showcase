@@ -12472,5 +12472,28 @@
             "name": "Gupta-02",
             "github": "https://github.com/Gupta-02"
         }
+    },
+    {
+        "title": "Longevity Habit Consistency Index",
+        "description": "Track adherence to longevity-enhancing habits with weighted scoring. Monitor completion rates, calculate longevity impact scores, and build sustainable habits that compound over time for optimal healthspan.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Health",
+            "Fitness",
+            "Habits",
+            "Longevity",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage"
+        ],
+        "links": {
+            "live": "./longevity-habit-consistency-index/longevity-habit-consistency-index.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
     }
 ]
