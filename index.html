@@ -115,27 +115,73 @@
 
     <!-- 🔍 SEARCH & FILTER SECTION -->
     <section class="search-filter-container">
-        <input type="text" id="searchInput" placeholder="🔍 Search by name..." onkeyup="filterCards()"
-            autocomplete="off">
-
-        <div class="filter-buttons">
-            <button class="filter-btn active" onclick="filterByRole('all')">All</button>
-            <button class="filter-btn" onclick="filterByRole('developer')">Developers</button>
-            <button class="filter-btn" onclick="filterByRole('contributor')">Contributors</button>
-            <button class="filter-btn" onclick="filterByRole('maintainer')">Maintainers</button>
+        <div class="search-box">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="searchInput" placeholder="Search name, skills, bio..." onkeyup="filterCards()"
+                autocomplete="off">
         </div>
 
-        <select id="sortSelect" class="sort-select" onchange="sortCards()">
-            <option value="default">Sort: Default</option>
-            <option value="az">A-Z</option>
-            <option value="za">Z-A</option>
-            <option value="newest">Newest First</option>
-        </select>
-        <button id="viewToggle" class="view-toggle-btn" aria-label="Toggle View">
-            <i class="fas fa-list"></i>
+        <div class="filter-group">
+            <span class="filter-label"><i class="fas fa-user-tag"></i> Role</span>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-role="all" onclick="filterByRole('all')">All</button>
+                <button class="filter-btn" data-role="developer" onclick="filterByRole('developer')">Developers</button>
+                <button class="filter-btn" data-role="contributor" data-role="contributor"
+                    onclick="filterByRole('contributor')">Contributors</button>
+                <button class="filter-btn" data-role="maintainer"
+                    onclick="filterByRole('maintainer')">Maintainers</button>
+            </div>
+        </div>
+
+
+        <div class="filter-group">
+            <span class="filter-label"><i class="fas fa-code"></i> Tech Stack</span>
+            <select id="stackSelect" class="sort-select" onchange="filterByStack(this.value)">
+                <option value="all">All Stacks</option>
+                <option value="frontend">Frontend</option>
+                <option value="backend">Backend</option>
+                <option value="fullstack">Full Stack</option>
+                <option value="react">React</option>
+                <option value="python">Python</option>
+                <option value="javascript">JavaScript</option>
+                <option value="java">Java</option>
+                <option value="django">Django</option>
+                <option value="ai">AI / ML</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <span class="filter-label"><i class="fas fa-sort-amount-down"></i> Sort</span>
+            <select id="sortSelect" class="sort-select" onchange="sortCards()">
+                <option value="default">Default</option>
+                <option value="az">A-Z</option>
+                <option value="za">Z-A</option>
+                <option value="newest">Newest First</option>
+            </select>
+        </div>
+
+        <button class="reset-btn" onclick="resetFilters()" title="Reset all filters">
+            <i class="fas fa-sync-alt"></i>
         </button>
 
+        <button id="viewToggle" class="view-toggle-btn" aria-label="Toggle View" title="Toggle Grid/List View">
+            <i class="fas fa-list"></i>
+        </button>
     </section>
+
+    <!-- No Results Message -->
+    <div id="noResults" class="no-results">
+        <div class="no-results-content">
+            <div class="no-results-icon">
+                <i class="fas fa-search-minus"></i>
+            </div>
+            <h3>No results found</h3>
+            <p>We couldn't find any contributors matching your current filters. Try adjusting your search or filters.
+            </p>
+            <button class="reset-link-btn" onclick="resetFilters()">Clear all filters</button>
+        </div>
+    </div>
+
 
 
     <!-- Main heading of the website -->
@@ -184,7 +230,7 @@
                 </a>
             </div>
         </div>
-        
+
         <div class="card">
             <img src="images/mohit-yadav.jpg" alt="Mohit Yadav's Photo" class="card-img">
             <h2>Mohit Yadav</h2>
@@ -511,7 +557,7 @@
             <p>"Hello world! This is my first PR."</p>
             <a href="https://github.com/Samina2005" class="card-btn" target="_blank">GitHub</a>
         </div>
-            <div class="card">
+        <div class="card">
             <img src="images/Souradeep858.png" alt="Souradeep's Photo" class="card-img">
             <h2>Souradeep Chakraborty</h2>
             <span class="role">Contributor</span>
@@ -566,14 +612,14 @@
                 <a href="https://github.com/Vaishnav-K-12" class="card-btn" target="_blank">View Github Profile</a>
             </div>
         </div>
-          
+
         <div class="card">
             <div class="card-inner">
                 <img src="images/ritika-mahato.png" alt="Ritika Photo" class="card-img">
                 <h2>Ritika Mahato</h2>
                 <span class="role">Open Source Contributor</span>
                 <p>"Hello world! Building skills, one commit."</p>
-               <a href="https://github.com/ritikamahato924" class="card-btn" target="_blank">GitHub</a>
+                <a href="https://github.com/ritikamahato924" class="card-btn" target="_blank">GitHub</a>
             </div>
         </div>
 
@@ -596,7 +642,7 @@
                 <a href="http://github.com/nur-hasin/" class="card-btn" target="_blank">View Profile</a>
             </div>
         </div>
-        
+
 
         <!-- ADD YOUR NEW CARD ABOVE THIS COMMENT -->
 
@@ -640,7 +686,9 @@
     <!-- 🔍 ENHANCED SEARCH & FILTER SCRIPT -->
     <script>
         let currentFilter = 'all';
+        let currentStack = 'all';
         let currentSearch = '';
+        let isListView = false;
 
         function filterCards() {
             currentSearch = document.getElementById("searchInput").value.toLowerCase();
@@ -652,9 +700,29 @@
 
             // Update active button
             document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active');
+                btn.classList.toggle('active', btn.getAttribute('data-role') === role);
             });
-            event.target.classList.add('active');
+
+            applyFilters();
+        }
+
+        function filterByStack(stack) {
+            currentStack = stack;
+            applyFilters();
+        }
+
+        function resetFilters() {
+            currentFilter = 'all';
+            currentStack = 'all';
+            currentSearch = '';
+
+            document.getElementById("searchInput").value = '';
+            document.getElementById("stackSelect").value = 'all';
+
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.innerText === 'All') btn.classList.add('active');
+            });
 
             applyFilters();
         }
@@ -665,17 +733,24 @@
             let visibleCount = 0;
 
             cards.forEach(card => {
+                // Skip admin card if needed, but usually we filter all
                 const name = card.querySelector("h2").innerText.toLowerCase();
-                const role = card.querySelector(".role").innerText.toLowerCase();
+                const role = card.querySelector(".role")?.innerText.toLowerCase() || "";
+                const bio = card.querySelector("p")?.innerText.toLowerCase() || "";
 
-                const matchesSearch = name.includes(currentSearch);
-                const matchesFilter = currentFilter === 'all' ||
-                    (currentFilter === 'developer' && role.includes('developer')) ||
-                    (currentFilter === 'contributor' && role.includes('contributor')) ||
-                    (currentFilter === 'maintainer' && role.includes('maintainer'));
+                const matchesSearch = name.includes(currentSearch) ||
+                    role.includes(currentSearch) ||
+                    bio.includes(currentSearch);
 
-                if (matchesSearch && matchesFilter) {
-                    card.style.display = "block";
+                const matchesRole = currentFilter === 'all' ||
+                    role.includes(currentFilter);
+
+                const matchesStack = currentStack === 'all' ||
+                    role.includes(currentStack) ||
+                    bio.includes(currentStack);
+
+                if (matchesSearch && matchesRole && matchesStack) {
+                    card.style.display = "flex"; // Changed from display: block for card consistency
                     card.classList.add('loading');
                     visibleCount++;
                 } else {
@@ -689,6 +764,26 @@
             } else {
                 noResults.classList.remove('show');
             }
+
+            // Pulse the count if stats are visible
+            updateContributorStats();
+        }
+
+        // List/Grid View Toggle
+        const viewToggle = document.getElementById('viewToggle');
+        if (viewToggle) {
+            viewToggle.addEventListener('click', () => {
+                const container = document.querySelector(".card-container");
+                isListView = !isListView;
+                container.classList.toggle('list-view', isListView);
+
+                const icon = viewToggle.querySelector('i');
+                if (isListView) {
+                    icon.className = 'fas fa-th-large';
+                } else {
+                    icon.className = 'fas fa-list';
+                }
+            });
         }
 
         // Scroll to Top Functionality
@@ -701,13 +796,16 @@
 
         window.addEventListener('scroll', () => {
             const scrollBtn = document.getElementById('scrollToTop');
-            if (window.pageYOffset > 300) {
-                scrollBtn.classList.add('show');
-            } else {
-                scrollBtn.classList.remove('show');
+            if (scrollBtn) {
+                if (window.pageYOffset > 300) {
+                    scrollBtn.classList.add('show');
+                } else {
+                    scrollBtn.classList.remove('show');
+                }
             }
         });
     </script>
+
 
     <script>
         // ----- TYPEWRITER LOOP -----
