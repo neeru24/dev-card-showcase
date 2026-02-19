@@ -13178,5 +13178,29 @@
             "name": "Gupta-02",
             "github": "https://github.com/Gupta-02"
         }
+    },
+    {
+        "title": "Anti-Inflammatory Habit Index",
+        "description": "Track daily habits that reduce chronic inflammation. Monitor nutrition quality, exercise consistency, sleep patterns, stress management, and lifestyle factors to optimize your anti-inflammatory lifestyle score and reduce inflammation risk.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Health",
+            "Nutrition",
+            "Anti-Inflammatory",
+            "Lifestyle",
+            "Chronic Disease Prevention",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage"
+        ],
+        "links": {
+            "live": "./projects/anti-inflammatory-habit-index/anti-inflammatory-habit-index.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
     }
 ]
