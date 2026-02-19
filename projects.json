@@ -22,6 +22,29 @@
         }
     },
     {
+        "title": "Mental Overload Warning System",
+        "description": "Detects high stress and cognitive load accumulation to prevent burnout. Monitor mental workload with daily assessments, risk scoring, and personalized alerts for professionals and students.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Health",
+            "Mental Health",
+            "Stress",
+            "Burnout Prevention",
+            "Calculator",
+            "LocalStorage",
+            "Chart.js"
+        ],
+        "links": {
+            "live": "./projects/mental-overload-warning-system/mental-overload-warning-system.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
+    },
+    {
         "title": "Sprint Fatigue Curve Analyzer",
         "description": "Track fatigue across repeated sprint intervals and visualize performance decline during HIIT workouts. Input sprint times to analyze fatigue curves and get insights for optimizing training intensity.",
         "tags": [
