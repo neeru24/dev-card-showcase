@@ -2569,6 +2569,26 @@
         }
     },
     {
+        "title": "Stress Trigger Frequency Map",
+        "description": "Visual map of recurring stress triggers through tag-based event logging and frequency heatmap. Track stress patterns, identify common triggers, and develop behavior modification strategies for better stress management.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Data Visualization",
+            "Chart.js",
+            "Mental Health",
+            "LocalStorage"
+        ],
+        "links": {
+            "live": "./projects/stress-trigger-frequency-map/stress-trigger-frequency-map.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
+    },
+    {
         "title": "Temperature Converter",
         "description": "A visually driven temperature conversion tool featuring a climate dial interface. Converts Celsius to Fahrenheit and Kelvin in real time with dynamic UI feedback that adapts to temperature ranges, offering an intuitive and engaging user experience.",
         "tags": [
