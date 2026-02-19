@@ -1,5 +1,27 @@
 [
     {
+        "title": "Heat Recovery Speed Monitor",
+        "description": "Track how quickly your body cools after heat exposure. Monitor temperature readings over time to calculate recovery rate and assess heat stress recovery for outdoor athletes.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Health",
+            "Heat",
+            "Recovery",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage"
+        ],
+        "links": {
+            "live": "./projects/heat-recovery-speed-monitor/heat-recovery-speed-monitor.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
+    },
+    {
         "title": "Neck Mobility Progress Log",
         "description": "Track cervical spine flexibility over time with range-of-motion measurements. Log flexion, extension, lateral flexion, and rotation to monitor progress and prevent desk worker stiffness.",
         "tags": [
