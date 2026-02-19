@@ -1,5 +1,27 @@
 [
     {
+        "title": "Neck Mobility Progress Log",
+        "description": "Track cervical spine flexibility over time with range-of-motion measurements. Log flexion, extension, lateral flexion, and rotation to monitor progress and prevent desk worker stiffness.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Health",
+            "Mobility",
+            "Fitness",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage"
+        ],
+        "links": {
+            "live": "./projects/neck-mobility-progress-log/neck-mobility-progress-log.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
+    },
+    {
         "title": "Lactate Clearance Estimator",
         "description": "Estimate recovery time from high-intensity sessions based on exercise intensity, duration, and fitness level. Features a visual lactate clearance curve chart and personalized recovery phase timeline to prevent underestimating metabolic recovery needs.",
         "tags": [
