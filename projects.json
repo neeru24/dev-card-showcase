@@ -11717,6 +11717,27 @@
         }
     },
     {
+        "title": "Cognitive Drift Monitor",
+        "description": "Track cognitive sharpness decline throughout the day with scheduled mini-tests (reaction time, memory, math). Monitor mental performance drift, identify optimal work windows, and get insights for maintaining productivity.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Cognitive Science",
+            "Productivity",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage"
+        ],
+        "links": {
+            "live": "./projects/cognitive-drift-monitor/cognitive-drift-monitor.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
+    },
+    {
         "title": "Indoor Air Quality Impact Tracker",
         "description": "Monitor perceived health effects of indoor air conditions. Track ventilation, humidity, and temperature correlations with symptoms like headaches, fatigue, and respiratory issues for better indoor environment management.",
         "tags": [
