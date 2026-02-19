@@ -13178,5 +13178,29 @@
             "name": "Gupta-02",
             "github": "https://github.com/Gupta-02"
         }
+    },
+    {
+        "title": "Mental Reset Timer",
+        "description": "Track mental fatigue levels and monitor the effectiveness of reset activities. Time your mental recovery sessions, log pre/post mental states, and optimize your cognitive restoration strategies for better mental health and productivity.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Health",
+            "Mental Health",
+            "Productivity",
+            "Cognitive Recovery",
+            "Stress Management",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage"
+        ],
+        "links": {
+            "live": "./projects/mental-reset-timer/mental-reset-timer.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
     }
 ]
