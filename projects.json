@@ -9041,6 +9041,22 @@
             "github": "https://github.com/your-github-username"
         }
     },
+        {
+        "title": "CSS-3D maze",
+        "description": "An interactive 3D maze built entirely with CSS transforms and animations. Navigate through the maze using keyboard controls.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/CSS-3D-Maze/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
     {
         "title": "Todo List",
         "description": "A simple and interactive To-Do List application that allows users to add, manage, and track their daily tasks with ease.",
