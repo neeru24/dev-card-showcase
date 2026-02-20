@@ -12,16 +12,12 @@
     },
     "size-limit": [
         {
-            "path": "dev-card-showcase/js/static-projects.js",
-            "limit": "150 kB"
+            "path": "js/index.js",
+            "limit": "50 kB"
         },
         {
-            "path": "dev-card-showcase/js/projects.js",
-            "limit": "30 kB"
-        },
-        {
-            "path": "dev-card-showcase/style.css",
-            "limit": "120 kB"
+            "path": "style.css",
+            "limit": "200 kB"
         }
     ]
 }
