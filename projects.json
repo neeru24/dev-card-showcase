@@ -13448,5 +13448,30 @@
             "name": "Gupta-02",
             "github": "https://github.com/Gupta-02"
         }
+    },
+    {
+        "title": "Gut Recovery Phase Log",
+        "description": "Track your gut recovery journey through different phases after disruptions. Monitor symptoms, diet changes, and recovery progress after antibiotics, illness, or dietary modifications.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Health",
+            "Gut Health",
+            "Recovery",
+            "Symptoms",
+            "Diet",
+            "Wellness",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage"
+        ],
+        "links": {
+            "live": "./gut-recovery-phase-log/gut-recovery-phase-log.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
     }
 ]
