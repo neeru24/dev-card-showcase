@@ -13522,5 +13522,29 @@
             "name": "Gupta-02",
             "github": "https://github.com/Gupta-02"
         }
+    },
+    {
+        "title": "Adaptive Focus Duration Tracker",
+        "description": "Track your focus sessions with an adaptive system that learns from your performance to recommend optimal session durations. Factors in energy levels, sleep, and caffeine to personalize focus recommendations.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Productivity",
+            "Focus",
+            "Time Management",
+            "Adaptive Learning",
+            "Wellness",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage"
+        ],
+        "links": {
+            "live": "./adaptive-focus-duration-tracker/adaptive-focus-duration-tracker.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
     }
 ]
