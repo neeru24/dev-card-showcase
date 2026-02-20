@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          submodules: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -16,9 +18,7 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        working-directory: ./dev-card-showcase
-        run: npm ci
+        run: npm install
 
       - name: Check Bundle Size
-        working-directory: ./dev-card-showcase
         run: npx size-limit
