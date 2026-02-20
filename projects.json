@@ -1,5 +1,30 @@
 [
     {
+        "title": "Stimulus Recovery Window Tracker",
+        "description": "Monitor and optimize your recovery windows after various stimuli. Track how long it takes to recover from physical exercise, mental stress, emotional challenges, and other stimuli to understand your recovery patterns and improve overall resilience.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Health",
+            "Wellness",
+            "Recovery",
+            "Psychology",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage",
+            "Resilience",
+            "Stress Management"
+        ],
+        "links": {
+            "live": "./projects/stimulus-recovery-window-tracker/stimulus-recovery-window-tracker.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
+    },
+    {
         "title": "Kinetic Chain Integrity Log",
         "description": "Monitor and optimize your kinetic chain integrity by tracking how body segments work together in coordinated movement patterns. Identify movement compensations, assess biomechanical efficiency, and develop strategies for improved movement quality and injury prevention.",
         "tags": [
