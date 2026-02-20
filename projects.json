@@ -1,5 +1,31 @@
 [
     {
+        "title": "Psychological Load Redistribution Planner",
+        "description": "Optimize your mental workload by strategically distributing psychological load across tasks and time periods. Prevent mental fatigue by balancing high-load activities with recovery periods and identifying optimal task sequencing.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Health",
+            "Mental Health",
+            "Productivity",
+            "Task Management",
+            "Load Balancing",
+            "Wellness",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage",
+            "Psychology"
+        ],
+        "links": {
+            "live": "./projects/psychological-load-redistribution-planner/psychological-load-redistribution-planner.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
+    },
+    {
         "title": "Sensory Overload Threshold Profiler",
         "description": "Determine your threshold for sensory overload by gradually increasing visual and auditory stimuli. Click 'I'm Overloaded' when you feel overwhelmed. Track your sensory processing capacity over time.",
         "tags": [
