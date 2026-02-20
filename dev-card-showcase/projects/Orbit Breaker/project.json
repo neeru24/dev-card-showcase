@@ -1,8 +1,0 @@
-{
-  "name": "Orbit Breaker",
-  "category": "Game",
-  "description": "A spatial puzzle game where players collapse rotating energy orbits using timed pulses.",
-  "tech": ["HTML", "CSS", "JavaScript"],
-  "controls": ["Mouse"],
-  "files": 6
-}
