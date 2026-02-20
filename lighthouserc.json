@@ -1,0 +1,43 @@
+{
+    "ci": {
+        "collect": {
+            "staticDistDir": "./dev-card-showcase",
+            "url": [
+                "http://localhost/index.html",
+                "http://localhost/projects.html"
+            ],
+            "numberOfRuns": 3
+        },
+        "assert": {
+            "assertions": {
+                "categories:performance": [
+                    "warn",
+                    {
+                        "minScore": 0.8
+                    }
+                ],
+                "categories:accessibility": [
+                    "warn",
+                    {
+                        "minScore": 0.9
+                    }
+                ],
+                "first-contentful-paint": [
+                    "warn",
+                    {
+                        "maxNumericValue": 2000
+                    }
+                ],
+                "interactive": [
+                    "warn",
+                    {
+                        "maxNumericValue": 3500
+                    }
+                ]
+            }
+        },
+        "upload": {
+            "target": "temporary-public-storage"
+        }
+    }
+}
