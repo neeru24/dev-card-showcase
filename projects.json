@@ -13425,5 +13425,28 @@
             "name": "Gupta-02",
             "github": "https://github.com/Gupta-02"
         }
+    },
+    {
+        "title": "Decision Confidence Tracker",
+        "description": "Track your confidence levels in decisions you make. Log important decisions, rate your confidence on a scale of 1-10, and analyze patterns over time to improve your decision-making process.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Personal Development",
+            "Decision Making",
+            "Confidence",
+            "Data Visualization",
+            "Chart.js",
+            "LocalStorage",
+            "Productivity"
+        ],
+        "links": {
+            "live": "./decision-confidence-tracker.html"
+        },
+        "author": {
+            "name": "Gupta-02",
+            "github": "https://github.com/Gupta-02"
+        }
     }
 ]
