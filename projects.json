@@ -14032,5 +14032,28 @@
             "name": "Tanmayi",
             "github": "https://github.com/Tanmayi30"
         }
+    },
+    {
+        "title": "Botany Sim: Time-Series Engine",
+        "description": "An interactive web-based simulation that mathematically models plant growth over time. Cultivate a virtual garden, manage resources like water and fertilizer, and use a global timeline slider to dynamically calculate and visualize plant maturity stages.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Simulation",
+            "Botany",
+            "Time-Series",
+            "State Machine",
+            "UI/UX",
+            "Flexbox"
+        ],
+        "links": {
+            "live": "./botany-sim/index.html"
+        },
+        "author": {
+            "name": "Tanmayi",
+            "github": "https://github.com/Tanmayi30"
+        }
     }
 ]
+
