@@ -12013,5 +12013,34 @@
       "name": "Gupta-02",
       "github": "https://github.com/Gupta-02"
     }
+  },
+  {
+    "title": "Joint Loading Pattern Tracker",
+    "description": "Monitor how your joints are loaded during exercises and track loading patterns over time. Assess balance between left and right sides for shoulders, elbows, hips, knees, and ankles. Identify imbalances that could lead to injury and optimize your training for joint health and longevity.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Health",
+      "Fitness",
+      "Joint Health",
+      "Biomechanics",
+      "Injury Prevention",
+      "Loading Patterns",
+      "Balance Assessment",
+      "Physical Therapy",
+      "Sports Medicine",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Progress Tracking"
+    ],
+    "links": {
+      "live": "./joint-loading-pattern-tracker/joint-loading-pattern-tracker.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
   }
 ]
