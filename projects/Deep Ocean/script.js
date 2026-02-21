@@ -1,7 +1,3 @@
-// =============================================
-//   Deep Ocean Lab — script.js
-//   Ocean Zone Educational Adventure
-// =============================================
 
 // ── Zone Data ────────────────────────────────
 const ZONES = [
