@@ -3693,6 +3693,18 @@
       "github": "https://github.com/neeru24"
     }
   },
+    {
+    "title": "Smart Color Palette Extractor",
+    "description": "An interactive tool that extracts accessible color palettes from images, ensuring compliance with WCAG standards.",
+    "tags": ["HTML", "CSS", "JavaScript", "Color Theory", "Accessibility"],
+    "links": {
+      "live": "./projects/Smart-Color-Palette-Extractor/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
   {
     "title": "Interactive Periodic Table",
     "description": "An interactive periodic table that provides detailed information about each element, including atomic number, symbol, atomic mass, and electron configuration. Features search functionality and responsive design for easy access on all devices.",
