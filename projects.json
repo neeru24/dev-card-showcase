@@ -11894,6 +11894,32 @@
     }
   },
   {
+    "title": "Hormonal Adaptation Tracking Panel",
+    "description": "Monitor your body's hormonal response and adaptation to stress, exercise, and lifestyle factors. Track key hormonal markers, symptoms, and recovery patterns to optimize hormonal balance and performance through comprehensive assessment and trend analysis.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Health",
+      "Hormones",
+      "Endocrine System",
+      "Adaptation",
+      "Recovery",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Progress Tracking",
+      "Hormonal Balance"
+    ],
+    "links": {
+      "live": "./projects/hormonal-adaptation-tracking-panel/index.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
     "title": "Stabilizer Muscle Activation Index",
     "description": "Monitor and track the activation levels of stabilizer muscles during exercises and daily activities. Assess core stability, joint support, and overall muscular balance to optimize performance and prevent injuries through targeted training.",
     "tags": [
