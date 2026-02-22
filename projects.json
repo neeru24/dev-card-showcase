@@ -11926,5 +11926,63 @@
       "name": "Gupta-02",
       "github": "https://github.com/Gupta-02"
     }
+  },
+  {
+    "title": "Rotational Power Symmetry Log",
+    "description": "Track rotational power symmetry across different movements like medicine ball throws, cable rotations, and woodchoppers. Monitor power output imbalances between left and right sides, assess symmetry percentages, and track progress over time to prevent injuries and optimize athletic performance.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Health",
+      "Fitness",
+      "Sports Performance",
+      "Rotational Power",
+      "Symmetry Analysis",
+      "Biomechanics",
+      "Injury Prevention",
+      "Athletic Training",
+      "Power Assessment",
+      "Movement Analysis",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Progress Tracking"
+    ],
+    "links": {
+      "live": "./rotational-power-symmetry-log/rotational-power-symmetry-log.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Adaptive Stress Capacity Index",
+    "description": "Monitor your adaptive stress capacity and allostatic load through comprehensive assessments. Track baseline stress levels, acute stress responses, recovery rates, and resilience scores. Includes interactive stress tests for breathing control, cognitive challenges, physical responses, and recovery capacity evaluation.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Mental Health",
+      "Stress Management",
+      "Resilience",
+      "Allostatic Load",
+      "Adaptive Capacity",
+      "Stress Testing",
+      "Recovery Assessment",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Progress Tracking",
+      "Biofeedback"
+    ],
+    "links": {
+      "live": "./adaptive-stress-capacity-index/adaptive-stress-capacity-index.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
   }
 ]
