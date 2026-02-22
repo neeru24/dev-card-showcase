@@ -2220,6 +2220,18 @@
       "github": "https://github.com/your-github-username"
     }
   },
+   {
+    "title": "Parametric Surface Visualizer",
+    "description": "A web-based visualization tool for parametric surfaces in 3D space. Features interactive controls, multiple surface types, and a responsive design for exploring mathematical surfaces.",
+    "tags": ["HTML", "CSS", "JavaScript", "Utility Tool"],
+    "links": {
+      "live": "./projects/Parametric-Surface/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
   {
     "title": "Vertical Clock",
     "description": "A vertical clock display with customizable 12-hour and 24-hour formats, featuring a card-themed design option and smooth animations for a visually appealing timekeeping experience.",
