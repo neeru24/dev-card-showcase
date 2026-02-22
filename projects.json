@@ -12042,5 +12042,33 @@
       "name": "Gupta-02",
       "github": "https://github.com/Gupta-02"
     }
+  },
+  {
+    "title": "Mental Downtime Optimization Tool",
+    "description": "Optimize your mental recovery through strategic downtime activities and cognitive restoration tracking. Monitor mental fatigue levels, cognitive recovery rates, attention quality, and emotional clarity while selecting optimal downtime activities for maximum mental restoration.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Mental Health",
+      "Cognitive Recovery",
+      "Mental Fatigue",
+      "Attention Restoration",
+      "Downtime Activities",
+      "Stress Management",
+      "Cognitive Performance",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Progress Tracking",
+      "Personalized Recommendations"
+    ],
+    "links": {
+      "live": "./mental-downtime-optimization-tool/mental-downtime-optimization-tool.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
   }
 ]
