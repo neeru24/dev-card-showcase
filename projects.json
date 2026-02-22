@@ -11984,5 +11984,34 @@
       "name": "Gupta-02",
       "github": "https://github.com/Gupta-02"
     }
+  },
+  {
+    "title": "Cellular Oxidation Balance Meter",
+    "description": "Monitor oxidative stress levels, antioxidant capacity, and cellular health markers to optimize your body's redox balance. Track inflammation markers, cellular energy production, and overall oxidation-reduction balance with personalized recommendations for maintaining cellular health.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Health",
+      "Cellular Health",
+      "Oxidative Stress",
+      "Antioxidants",
+      "Redox Balance",
+      "Inflammation",
+      "Mitochondrial Health",
+      "Biomarkers",
+      "Data Visualization",
+      "Chart.js",
+      "LocalStorage",
+      "Progress Tracking",
+      "Personalized Recommendations"
+    ],
+    "links": {
+      "live": "./cellular-oxidation-balance-meter/cellular-oxidation-balance-meter.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
   }
 ]
