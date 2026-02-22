@@ -1,11 +1,11 @@
-  <nav class="navbar">
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="nav-left">
       <div class="nav-logo">
           Community
       </div>
     </div>
 
-    <ul class="nav-links">
+    <ul class="nav-links" role="menubar">
       <!-- Primary -->
       <li><a href="index.html">
           <i data-lucide="home"></i>
@@ -33,8 +33,8 @@
       <!-- Dropdown -->
 <!-- Dro-->
       <li class="dropdown">
-    <button class="drop-btn">More ▾</button>
-    <ul class="dropdown-menu">
+    <button class="drop-btn" aria-haspopup="true" aria-expanded="false" aria-label="More options menu">More ▾</button>
+    <ul class="dropdown-menu" role="menu">
       <li><a href="about.html">About</a></li>
       <li><a href="faq.html">FAQ</a></li>
       <li><a href="guidelines.html">Guidelines</a></li>
@@ -89,10 +89,10 @@
     <div class="nav-right">
       <div class="nav-hints">
         <span class="keyboard-hint" title="Press ? for keyboard shortcuts">⌨️ ?</span>
-        <button id="themeToggle" class="theme-toggle" title="Toggle theme">🌙</button>
+        <button id="themeToggle" class="theme-toggle" title="Toggle theme" aria-label="Toggle dark and light theme">🌙</button>
       </div>
 
-      <div class="hamburger" id="hamburger">
+      <div class="hamburger" id="hamburger" role="button" aria-label="Open navigation menu" aria-expanded="false" tabindex="0">
         <span></span>
         <span></span>
         <span></span>

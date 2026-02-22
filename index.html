@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <div class="circle-container">
         <div class="circle"></div>
@@ -52,12 +53,12 @@
 
 
     <!-- NAVBAR START -->
-  <nav class="navbar">
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
   <div class="nav-left">
     <div class="nav-logo">🚀 Community</div>
   </div>
 
-  <ul class="nav-links">
+  <ul class="nav-links" role="menubar">
     <!-- Primary -->
     <li><a href="index.html">Home</a></li>
     <li><a href="projects.html">Projects</a></li>
@@ -66,8 +67,8 @@
 
     <!-- Dropdown -->
     <li class="dropdown">
-      <button class="drop-btn">More ▾</button>
-      <ul class="dropdown-menu">
+      <button class="drop-btn" aria-haspopup="true" aria-expanded="false" aria-label="More options menu">More ▾</button>
+      <ul class="dropdown-menu" role="menu">
         <li><a href="about.html">About</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="guidelines.html">Guidelines</a></li>
@@ -86,8 +87,8 @@
     </li>
   </ul>
   <div class="nav-right">
-    <button id="themeToggle" class="theme-toggle">🌙</button>
-    <div class="hamburger" id="hamburger">
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark and light theme" title="Toggle theme">🌙</button>
+    <div class="hamburger" id="hamburger" role="button" aria-label="Open navigation menu" aria-expanded="false" tabindex="0">
       <span></span>
       <span></span>
       <span></span>
@@ -118,6 +119,26 @@
     <!-- NAVBAR END -->
 
     <!-- 🔍 SEARCH & FILTER SECTION -->
+    <section class="search-filter-container">
+        <input type="text" id="searchInput" placeholder="🔍 Search by name..." onkeyup="filterCards()"
+            autocomplete="off" aria-label="Search contributors by name">
+
+        <div class="filter-buttons" role="group" aria-label="Filter contributors by role">
+            <button class="filter-btn active" onclick="filterByRole('all')" aria-pressed="true">All</button>
+            <button class="filter-btn" onclick="filterByRole('developer')" aria-pressed="false">Developers</button>
+            <button class="filter-btn" onclick="filterByRole('contributor')" aria-pressed="false">Contributors</button>
+            <button class="filter-btn" onclick="filterByRole('maintainer')" aria-pressed="false">Maintainers</button>
+        </div>
+
+        <select id="sortSelect" class="sort-select" onchange="sortCards()" aria-label="Sort contributors">
+            <option value="default">Sort: Default</option>
+            <option value="az">A-Z</option>
+            <option value="za">Z-A</option>
+            <option value="newest">Newest First</option>
+        </select>
+        <button id="viewToggle" class="view-toggle-btn" aria-label="Toggle between grid and list view">
+            <i class="fas fa-list"></i>
+        </button>
     <section class="search-filter-container"
     style="
         display: flex;
@@ -248,6 +269,7 @@
     </div>
 
     <!-- Container that holds all the profile cards -->
+    <main class="card-container" role="main" id="main-content">
     <main id="main-content" class="card-container" role="main">
     <div class="card-container">
 
@@ -258,7 +280,7 @@
                 <h2>Project Admin</h2>
                 <span class="role">Maintainer</span>
                 <p>"Welcome to the project! Fork this repo and add your card below."</p>
-                <a href="https://github.com/Jayanta2004" class="card-btn" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://github.com/Jayanta2004" class="card-btn" target="_blank" rel="noopener" aria-label="View Project Admin's GitHub profile">GitHub</a>
             </div>
         </div>
 
@@ -270,7 +292,7 @@
                 <h2>Contributor Name</h2>
                 <span class="role">Developer</span>
                 <p>"I learned how to make a Pull Request today!"</p>
-                <a href="#" class="card-btn" target="_blank">View Profile</a>
+                <a href="#" class="card-btn" target="_blank" aria-label="View Contributor Name's GitHub profile">View Profile</a>
             </div>
         </div>
         <!-- 👆 CONTRIBUTORS: END COPYING HERE 👆 -->
