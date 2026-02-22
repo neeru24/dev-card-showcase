@@ -2390,6 +2390,18 @@
     }
   },
   {
+    "title": "frantic-run-of-the-valorous-rabbit",
+    "description": "An endless runner game where players control a brave rabbit navigating through a perilous landscape filled with obstacles and enemies. The game features smooth animations, responsive controls, and an engaging gameplay loop that challenges players to survive as long as possible while collecting rewards and power-ups.",
+    "tags": ["HTML", "CSS", "JavaScript", "Utility Tool"],
+    "links": {
+      "live": "./projects/frantic-run-of-the-valorous-rabbit/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
+  {
     "title": "Truth & Dare Mini Game",
     "description": "A fun and interactive Truth & Dare mini game with a gamified scoring system, animated cards, and a clean modern UI. Designed to be fully responsive and engaging, making it ideal for casual play and party-style interactions across devices.",
     "tags": ["HTML", "CSS", "JavaScript", "Game", "UI/UX"],
