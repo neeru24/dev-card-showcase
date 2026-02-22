@@ -2437,6 +2437,18 @@
       "github": "https://github.com/omkarhole"
     }
   },
+    {
+    "title": "Traffic Run Game",
+    "description": "A 3D racing game built with Three.js. Players navigate through a track with obstacles and other vehicles, aiming to achieve the highest score possible.",
+    "tags": ["HTML", "CSS", "JavaScript", "Game", "Three.js"],
+    "links": {
+      "live": "./projects/Traffic-Run-Game/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
   {
     "title": "CSS CheatSheet",
     "description": "A comprehensive cheat sheet for CSS properties, selectors, and best practices. Designed to help developers quickly reference and learn CSS concepts with clear examples and explanations.",
