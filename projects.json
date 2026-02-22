@@ -2269,6 +2269,18 @@
       "github": "https://github.com/your-github-username"
     }
   },
+    {
+    "title": "Solar System project",
+    "description": "An interactive 3D visualization of our solar system with realistic planet sizes and orbital paths. Features include zoom controls, planet information panels, and a responsive design for all devices.",
+    "tags": ["HTML", "CSS", "JavaScript", "3D Visualization"],
+    "links": {
+      "live": "./projects/Solar-css-System/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
   {
     "title": "3D Periodic Table",
     "description": "An interactive 3D periodic table that allows users to explore elements in a visually engaging way. Features include rotating the table, clicking on elements for detailed information, and a modern design with smooth animations.",
