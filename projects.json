@@ -12379,5 +12379,39 @@
       "name": "Gupta-02",
       "github": "https://github.com/Gupta-02"
     }
+  },
+  {
+    "title": "Multimodal Input Synchronizer",
+    "description": "A comprehensive tool for capturing, synchronizing, and analyzing multiple input modalities including keyboard, mouse, touch, and voice inputs. Record user interactions in real-time, playback synchronized events, run detailed analytics, and export data for further processing. Features include multimodal event capture, synchronized playback with adjustable speed, timeline visualization, frequency analysis, input correlation detection, pattern recognition, and extensive customization options.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Input Capture",
+      "Multimodal",
+      "Event Synchronization",
+      "Real-time Analytics",
+      "Data Visualization",
+      "Canvas API",
+      "Web Audio API",
+      "Touch Events",
+      "Keyboard Events",
+      "Mouse Events",
+      "Voice Recognition",
+      "Playback Engine",
+      "Timeline Analysis",
+      "Pattern Recognition",
+      "Correlation Analysis",
+      "LocalStorage",
+      "Settings Management",
+      "Responsive Design"
+    ],
+    "links": {
+      "live": "./multimodal-input-synchronizer/multimodal-input-synchronizer.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
   }
 ]
