@@ -12323,5 +12323,32 @@
       "name": "Gupta-02",
       "github": "https://github.com/Gupta-02"
     }
+  },
+  {
+    "title": "Session Continuity Snapshots",
+    "description": "Take snapshots of your current session data to maintain continuity across browser sessions. Save and restore localStorage data, track changes over time, and ensure you never lose your progress in other tools. Features include timestamped snapshots, selective loading, and data visualization.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Data Persistence",
+      "Session Management",
+      "LocalStorage",
+      "Snapshot",
+      "Continuity",
+      "Data Backup",
+      "Browser Storage",
+      "Progress Tracking",
+      "State Management",
+      "JSON",
+      "Data Visualization"
+    ],
+    "links": {
+      "live": "./session-continuity-snapshots/session-continuity-snapshots.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
   }
 ]
