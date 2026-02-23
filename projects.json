@@ -12491,5 +12491,42 @@
       "name": "Gupta-02",
       "github": "https://github.com/Gupta-02"
     }
+  },
+  {
+    "title": "Automated Documentation Synthesizer",
+    "description": "AI-powered documentation generator that analyzes codebases and automatically creates comprehensive documentation. Features include multi-language support, code analysis, API documentation generation, usage examples, installation guides, and multiple export formats (HTML, Markdown, JSON, PDF). Supports drag-and-drop file uploads, syntax highlighting, and customizable documentation templates.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "AI/ML",
+      "Documentation Generation",
+      "Code Analysis",
+      "API Documentation",
+      "Multi-language Support",
+      "Syntax Highlighting",
+      "Prism.js",
+      "File Upload",
+      "Drag & Drop",
+      "Export/Import",
+      "Markdown",
+      "JSON",
+      "PDF Generation",
+      "Template System",
+      "Code Parsing",
+      "Function Analysis",
+      "Class Analysis",
+      "Dependency Tracking",
+      "LocalStorage",
+      "Responsive Design",
+      "Font Awesome"
+    ],
+    "links": {
+      "live": "./automated-documentation-synthesizer/automated-documentation-synthesizer.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
   }
 ]
