@@ -12532,5 +12532,66 @@
       "name": "Gupta-02",
       "github": "https://github.com/Gupta-02"
     }
+  },
+  {
+    "title": "Dynamic Token Allocation Manager",
+    "description": "Advanced token allocation system with multiple AI-driven strategies including reinforcement learning, adaptive learning, and priority-based allocation. Features real-time analytics, simulation capabilities, customizable settings, and comprehensive dashboards for monitoring token distribution across agents.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Token Allocation",
+      "AI/ML",
+      "Reinforcement Learning",
+      "Adaptive Algorithms",
+      "Data Visualization",
+      "Chart.js",
+      "Real-time Analytics",
+      "Simulation",
+      "Resource Management",
+      "Algorithm Optimization",
+      "LocalStorage",
+      "Responsive Design"
+    ],
+    "links": {
+      "live": "./dynamic-token-allocation-manager/dynamic-token-allocation-manager.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
+    "title": "Cross-Platform Rendering Engine",
+    "description": "A powerful cross-platform graphics rendering engine supporting 2D and WebGL rendering with real-time preview across multiple platforms. Create, manipulate, and animate shapes with platform-specific optimizations, export capabilities, and comprehensive rendering controls for web, mobile, tablet, and desktop environments.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Canvas API",
+      "WebGL",
+      "Graphics Rendering",
+      "Cross-Platform",
+      "Animation",
+      "Shape Manipulation",
+      "Real-time Preview",
+      "Export Functionality",
+      "Platform Optimization",
+      "2D Graphics",
+      "3D Graphics",
+      "Interactive Design",
+      "Visual Effects",
+      "Performance Monitoring",
+      "Responsive Design",
+      "LocalStorage",
+      "Modern Web APIs"
+    ],
+    "links": {
+      "live": "./projects/cross-platform-rendering-engine/cross-platform-rendering-engine.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
   }
 ]
