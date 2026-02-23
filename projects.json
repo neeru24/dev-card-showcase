@@ -1858,6 +1858,18 @@
       "github": "https://github.com/PriyanshuSingh00-hub"
     }
   },
+   {
+    "title": "Windows-10 Simulator",
+    "description": "A web application that simulates the Windows 10 desktop environment with a modern UI, taskbar, and application launcher. Features a responsive design, interactive elements, and a realistic desktop experience built using HTML, CSS, and JavaScript.",
+    "tags": ["HTML", "CSS", "JavaScript", "Web Application"],
+    "links": {
+      "live": "./projects/Windows-10/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
   {
     "title": "Platform Jump Pro",
     "description": "A polished 2D platformer game built using pure HTML, CSS, and JavaScript. Players control a character with smooth left-right movement and realistic jump physics while collecting coins and avoiding falling off platforms. Features gravity simulation, accurate collision detection, animated elements, structured game state management, score tracking, and a proper restart system without page reload.",
