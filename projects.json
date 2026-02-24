@@ -12872,5 +12872,42 @@
       "name": "Gupta-02",
       "github": "https://github.com/Gupta-02"
     }
+  },
+  {
+    "title": "User Journey Heatmap Visualizer #5059",
+    "description": "Comprehensive user interaction tracking and heatmap visualization system for analyzing user behavior patterns. Record clicks, hovers, and scroll events in real-time, generate interactive heatmaps, track session analytics, and visualize user journeys. Features include real-time recording controls, customizable heatmap overlays, session management, interaction analytics, timeline visualization, element interaction tracking, data export/import, and responsive design with dark/light themes.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "User Experience",
+      "Heatmap Visualization",
+      "User Behavior Analysis",
+      "Interaction Tracking",
+      "Click Tracking",
+      "Hover Tracking",
+      "Scroll Tracking",
+      "Session Analytics",
+      "Real-time Recording",
+      "Data Visualization",
+      "Chart.js",
+      "Canvas API",
+      "LocalStorage",
+      "Session Management",
+      "Timeline Analysis",
+      "Element Interaction",
+      "Export/Import",
+      "Responsive Design",
+      "Dark/Light Theme",
+      "User Journey Mapping",
+      "Behavioral Analytics"
+    ],
+    "links": {
+      "live": "./projects/user-journey-heatmap-visualizer/user-journey-heatmap-visualizer.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
   }
 ]
