@@ -12920,5 +12920,36 @@
       "name": "Gupta-02",
       "github": "https://github.com/Gupta-02"
     }
+  },
+  {
+    "title": "Predictive Conversation Routing Framework #5192",
+    "description": "An intelligent framework for routing conversations to the most appropriate agents using predictive analytics. Features multiple routing algorithms (sentiment-based, topic-modeling, intent-classification, urgency-scoring, multi-modal), real-time visualization of routing decisions, agent workload balancing, and performance metrics tracking for optimal conversation handling in customer service environments.",
+    "tags": [
+      "HTML",
+      "CSS", 
+      "JavaScript",
+      "AI/ML",
+      "Conversation Routing",
+      "Predictive Analytics", 
+      "Customer Service",
+      "Agent Management",
+      "Sentiment Analysis",
+      "Topic Modeling",
+      "Intent Classification",
+      "Urgency Scoring",
+      "Multi-modal Analysis",
+      "Data Visualization",
+      "Canvas API",
+      "Real-time Processing",
+      "Performance Metrics",
+      "Workload Balancing"
+    ],
+    "links": {
+      "live": "./predictive-conversation-routing-framework/predictive-conversation-routing-framework.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
   }
 ]
