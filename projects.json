@@ -1684,6 +1684,28 @@
     }
   },
   {
+  "title": "Mind Manipulator – Psychological Strategy Game",
+  "description": "A narrative-driven psychological strategy game built using modular HTML, CSS, and JavaScript architecture. Players influence NPCs through strategic dialogue choices to gain access, extract information, or build trust. Features a chat-style interface, dynamic trust and suspicion meter systems, multiple NPC personalities with distinct behavioral traits, branching dialogue trees, timer-based decision pressure, immersive sound effects, and multiple endings determined by player choices and relationship states.",
+  "tags": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Game Development",
+    "Strategy Game",
+    "Dialogue System",
+    "State Management",
+    "Interactive Fiction",
+    "Narrative Design"
+  ],
+  "links": {
+    "live": "./projects/social-engineering-simulator/index.html"
+  },
+  "author": {
+    "name": "Priyanshu",
+    "github": "https://github.com/PriyanshuSingh00-hub"
+  }
+},
+  {
   "title": "Quantum Timeline Hacker",
   "description": "A reality-shifting cyber puzzle game built using modular HTML, CSS, and JavaScript architecture. Players navigate across three alternate timelines (Reality A / B / C) using a real-time timeline switching mechanic (Press T) to manipulate environment states. Objects exist in specific timelines, requiring strategic dimension shifting to solve puzzles, bypass security systems, and access locked areas. Features adaptive AI security drones, interactive terminal hacking nodes, dynamic state-based rendering, and seamless progression without page reload.",
   "tags": [
