@@ -5556,6 +5556,18 @@
     }
   },
   {
+  "title": "Encoder / Decoder Pro",
+  "description": "A modern full-screen text encoding and decoding web application with a clean glassmorphism UI. Supports multiple encoding methods including Base64, Binary, Hexadecimal, and Caesar Cipher with real-time processing, dark/light mode toggle, file upload support, and clipboard integration for a seamless user experience.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/encoder-decoder/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
     "title": "Time Leakage Detector",
     "description": "A radar-style interactive tool that tracks daily activities and detects time leaks. Features animated scanning UI, visual activity radar chart, and automatic leak alerts for excessive time usage.",
     "tags": [
