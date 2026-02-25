@@ -1891,6 +1891,18 @@
       "github": "https://github.com/omkarhole"
     }
   },
+  {
+  "title": "Mini Maze Game",
+  "description": "A dark-themed, neon-styled Mini Maze Game where players navigate through randomized mazes using arrow keys or on-screen buttons. Features include collision detection with walls, timer tracking, restart functionality, responsive design, and a visually appealing dark/neon interface for an interactive and portfolio-ready experience.",
+  "tags": ["HTML", "CSS", "JavaScript", "Game"],
+  "links": {
+    "live": "./projects/mini-maze/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
     {
     "title": "Mix and Blend",
     "description": "A utility tool that adds a motion blur effect to the mouse cursor, creating a visually appealing trail effect as the cursor moves across the screen.",
