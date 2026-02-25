@@ -42,6 +42,18 @@
     "github": "https://github.com/your-github-username"
   }
 },
+{
+  "title": "Flexbox Playground",
+  "description": "An interactive Flexbox Playground with a cyber/neon-themed UI. Users can dynamically change flex properties like direction, justify-content, align-items, and wrap using a futuristic button dashboard. Features include live preview of flex items, hover effects, active highlights, reset functionality, and responsive design, making it perfect for learning and portfolio showcase.",
+  "tags": ["HTML", "CSS", "JavaScript", "Flexbox", "UI/UX"],
+  "links": {
+    "live": "./projects/flexbox-play-ground/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
   {
   "title": "Priority Matrix (Eisenhower Matrix)",
   "description": "An interactive drag-and-drop task management web application based on the Eisenhower Productivity Principle. Users can organize tasks into four priority quadrants (Urgent & Important, Not Urgent & Important, Urgent & Not Important, Not Urgent & Not Important). Features include real-time task updates, LocalStorage persistence, responsive design, and a modern glassmorphism UI for an engaging productivity experience.",
