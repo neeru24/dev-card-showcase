@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noise-to-Story City Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Noise-to-Story City Explorer</h1>
+        <nav>
+            <button id="navCapture" class="active">Capture</button>
+            <button id="navMap">City Mood Map</button>
+            <button id="navStories">Stories</button>
+        </nav>
+        <section id="captureSection" class="active">
+            <h2>Capture Ambient Sound</h2>
+            <button class="sound-btn" id="startCaptureBtn">Start Capture</button>
+            <div id="captureStatus"></div>
+            <form id="locationForm" class="card">
+                <label>Location:</label>
+                <input type="text" id="locationInput" placeholder="e.g. Bandra, Mumbai" required>
+                <button type="submit">Save Mood</button>
+            </form>
+        </section>
+        <section id="mapSection">
+            <h2>City Mood Map</h2>
+            <div class="map" id="moodMap"></div>
+            <div id="zoneSuggest"></div>
+        </section>
+        <section id="storiesSection">
+            <h2>Location-Based Stories</h2>
+            <ul id="storyList" class="story-list"></ul>
+        </section>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
