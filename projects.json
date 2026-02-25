@@ -1725,6 +1725,18 @@
       "github": "https://github.com/your-github-username"
     }
   },
+      {
+    "title": "CSS3 Loading animations",
+    "description": "A collection of visually appealing loading animations created entirely with CSS3 and JavaScript. Features smooth transitions, customizable styles, and responsive design for seamless integration into any web project.",
+    "tags": ["HTML", "CSS", "JavaScript", "Animations", "UI/UX"],
+    "links": {
+      "live": "./projects/CSS3-Loading-animations/index.html"
+    },
+    "author": {
+      "name": "Omkar",
+      "github": "https://github.com/omkarhole"
+    }
+  },
   {
     "title": "Risk vs Reward Strategy",
     "description": "A fast-paced strategy game where players choose between safe, balanced, and risky moves to maximize their score. Features progressive rounds, high-score tracking, animated neon UI, and a dynamic risk system that tests decision-making skills under uncertainty.",
