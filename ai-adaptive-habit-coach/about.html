@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - AI Adaptive Habit Coach</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="navbar-container"></div>
+  <div id="app">
+    <h1>About Adaptive Habit Coach</h1>
+    <div class="habit-card">
+      <h2>What is Adaptive Habit Coach?</h2>
+      <p>This tool helps you build consistent habits by adapting reminders and feedback based on your real completion behavior. It’s perfect for students, creators, fitness users, and remote workers who want to stay on track.</p>
+    </div>
+    <div class="habit-card">
+      <h2>How It Works</h2>
+      <ul>
+        <li>Add your habits to the dashboard.</li>
+        <li>Mark them complete each day you do them.</li>
+        <li>The coach adapts its encouragement and reminders based on your streaks and consistency.</li>
+      </ul>
+    </div>
+    <div class="habit-card">
+      <h2>Why Use It?</h2>
+      <ul>
+        <li>Break the cycle of inconsistency.</li>
+        <li>Get feedback that matches your real progress.</li>
+        <li>Stay motivated with adaptive encouragement.</li>
+      </ul>
+    </div>
+    <div style="text-align:center; margin-top:32px;">
+      <a href="index.html" style="color:#2193b0; text-decoration:underline;">Back to Home</a>
+    </div>
+  </div>
+  <script>
+    fetch('navbar.html').then(r => r.text()).then(html => {
+      document.getElementById('navbar-container').innerHTML = html;
+    });
+  </script>
+</body>
+</html>
