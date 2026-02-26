@@ -11308,6 +11308,18 @@
     }
   },
   {
+  "title": "Interactive Risk Assessment Tool",
+  "description": "A modern and interactive Risk Assessment Tool with a dashboard layout, dynamic color-coded risk cards, live risk scoring, delete/edit functionality, and visual chart summaries. Features include high/medium/low risk classification, responsive design, dark/light mode toggle, and JSON export for reporting. Built with HTML, CSS, JavaScript, and Chart.js for a visually engaging and portfolio-ready experience.",
+  "tags": ["HTML", "CSS", "JavaScript", "Chart.js"],
+  "links": {
+    "live": "./projects/risk-assessment-tool/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
     "title": "Hydration-Electrolyte Balance Index",
     "description": "Track hydration status and electrolyte balance with integrated scoring for athletic performance and health. Monitor water intake, sodium, potassium, and magnesium levels while considering activity intensity and environmental factors for comprehensive balance assessment.",
     "tags": [
