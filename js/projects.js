@@ -1980,12 +1980,12 @@ const staticProjects = [
         }
     },
     {
-        title: "Intelligent Data Anomaly Detector",
+        title: "Distributed Event Orchestration Hub",
         description:
-            "Real-time anomaly detection system using statistical analysis and machine learning techniques. Detects unusual patterns across multiple data streams with configurable algorithms, sensitivity controls, and real-time alerting for high-volume transactional systems.",
-        tags: ["HTML", "CSS", "JavaScript", "Machine Learning", "Data Analysis", "Real-time", "Statistics"],
+            "A comprehensive event orchestration system that coordinates asynchronous events across microservices with deterministic ordering and dependency resolution. Demonstrates event-driven architecture with real-time monitoring, multiple orchestration modes, and workflow management.",
+        tags: ["HTML", "CSS", "JavaScript", "Event-Driven Architecture", "Microservices", "Distributed Systems", "Real-Time", "Data Visualization"],
         links: {
-            live: "./projects/intelligent-data-anomaly-detector/index.html",
+            live: "./projects/distributed-event-orchestration-hub/index.html",
         },
         author: {
             name: "Gupta-02",
