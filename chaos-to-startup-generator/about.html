@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Chaos-to-Startup Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="navbar-container"></div>
+  <div id="app">
+    <h1>About Chaos-to-Startup Generator</h1>
+    <div class="startup-section">
+      <h2>What is Chaos-to-Startup Generator?</h2>
+      <p>Paste random complaints or problems and instantly get a startup idea, lean canvas, and landing page copy. It helps founders and builders turn chaos into opportunity and structure ideas fast.</p>
+    </div>
+    <div class="startup-section">
+      <h2>How It Works</h2>
+      <ul>
+        <li>Paste a complaint or problem from social media or real life.</li>
+        <li>The platform generates a startup concept, market summary, MVP scope, pricing, and pitch deck outline.</li>
+        <li>Get a lean canvas and landing page copy for your idea.</li>
+      </ul>
+    </div>
+    <div class="startup-section">
+      <h2>Why Use It?</h2>
+      <ul>
+        <li>Save time finding validated problems.</li>
+        <li>Get structured startup ideas instantly.</li>
+        <li>Draft a pitch deck and landing page copy in one click.</li>
+      </ul>
+    </div>
+    <div style="text-align:center; margin-top:32px;">
+      <a href="index.html" style="color:#0072ff; text-decoration:underline;">Back to Home</a>
+    </div>
+  </div>
+  <script>
+    fetch('navbar.html').then(r => r.text()).then(html => {
+      document.getElementById('navbar-container').innerHTML = html;
+    });
+  </script>
+</body>
+</html>

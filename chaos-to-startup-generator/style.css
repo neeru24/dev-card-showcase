@@ -1,0 +1,200 @@
+/* Startup output styles */
+.startup-section {
+  background: #f0faff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 198, 255, 0.09);
+  margin-bottom: 22px;
+  padding: 22px 18px 18px 18px;
+  position: relative;
+  transition: box-shadow 0.2s;
+}
+.startup-section:hover {
+  box-shadow: 0 4px 24px rgba(0, 198, 255, 0.13);
+}
+.startup-concept h2 {
+  color: #0072ff;
+  font-size: 1.35rem;
+  margin-top: 0;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+.lean-canvas h3, .landing-copy h3 {
+  color: #00c6ff;
+  font-size: 1.18rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.lean-canvas ul {
+  margin: 0 0 0 18px;
+  padding: 0;
+  font-size: 1.08rem;
+}
+.lean-canvas li {
+  margin-bottom: 7px;
+  line-height: 1.6;
+}
+.landing-copy p {
+  font-size: 1.05rem;
+  color: #0072ff;
+  margin-bottom: 8px;
+}
+/* Navbar styles */
+.navbar {
+  width: 100vw;
+  background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+  box-shadow: 0 2px 12px rgba(0, 198, 255, 0.08);
+  padding: 0;
+  margin-bottom: 18px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.navbar-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 58px;
+}
+.navbar-logo {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+}
+.navbar-links li {
+  display: inline-block;
+}
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: background 0.18s, color 0.18s;
+}
+.navbar-links a:hover {
+  background: #fff;
+  color: #0072ff;
+}
+@media (max-width: 700px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 0 8vw;
+  }
+  .navbar-links {
+    gap: 10px;
+    margin-top: 6px;
+  }
+}
+
+/* Footer styles */
+.footer {
+  width: 100vw;
+  background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+  color: #fff;
+  text-align: center;
+  padding: 18px 0 10px 0;
+  margin-top: 40px;
+  font-size: 1.05rem;
+  box-shadow: 0 -2px 12px rgba(0, 198, 255, 0.08);
+}
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+@media (max-width: 700px) {
+  .footer-container {
+    padding: 0 8vw;
+  }
+}
+body {
+  background: linear-gradient(120deg, #00c6ff 0%, #0072ff 100%);
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+#app {
+  max-width: 700px;
+  margin: 60px auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(60, 60, 60, 0.18);
+  padding: 40px 36px 32px 36px;
+  animation: fadeIn 1.2s;
+}
+h1 {
+  text-align: center;
+  color: #0072ff;
+  font-size: 2.5rem;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+label {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+}
+textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1.5px solid #00c6ff;
+  padding: 16px;
+  font-size: 1.1rem;
+  margin-top: 8px;
+  margin-bottom: 18px;
+  resize: vertical;
+  background: #f0faff;
+  transition: border 0.2s;
+}
+textarea:focus {
+  border: 2px solid #0072ff;
+  outline: none;
+}
+button[type="submit"] {
+  background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 198, 255, 0.08);
+  transition: background 0.2s, transform 0.1s;
+}
+button[type="submit"]:hover {
+  background: linear-gradient(90deg, #0072ff 0%, #00c6ff 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+#startup-output {
+  margin-top: 32px;
+  min-height: 120px;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 800px) {
+  #app {
+    max-width: 98vw;
+    padding: 18px 6vw 18px 6vw;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+}
