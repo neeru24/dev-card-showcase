@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Meeting Memory Wall that converts transcripts into decisions, action items, owners, and open questions.">
+  <title>AI Meeting Memory Wall</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero reveal">
+      <p class="eyebrow">Team Ops</p>
+      <h1>AI Meeting Memory Wall</h1>
+      <p class="lead">Paste meeting notes/transcripts and auto-organize decisions, action items, owners, and open questions into one collaborative follow-up board.</p>
+      <div class="hero-actions">
+        <button id="demoBtn" class="btn btn-soft" type="button">Load Demo Transcript</button>
+        <button id="clearBtn" class="btn btn-ghost" type="button">Clear Workspace</button>
+      </div>
+    </section>
+
+    <section class="layout">
+      <article class="panel reveal">
+        <div class="panel-head">
+          <h2>Ingest Meeting</h2>
+          <p>Supports rough transcripts, bullet notes, or chat-export snippets.</p>
+        </div>
+
+        <form id="meetingForm" autocomplete="off">
+          <div class="field-grid">
+            <label class="field">
+              <span>Meeting Title</span>
+              <input id="meetingTitle" type="text" maxlength="90" placeholder="Sprint Planning - Mobile" required>
+            </label>
+            <label class="field">
+              <span>Date</span>
+              <input id="meetingDate" type="date" required>
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Participants (comma separated)</span>
+            <input id="participants" type="text" maxlength="160" placeholder="Ayaan, Jayanta, Priya">
+          </label>
+
+          <label class="field">
+            <span>Meeting Notes / Transcript</span>
+            <textarea id="transcript" rows="12" maxlength="7000" placeholder="Decision: We will ship feature flags this Friday.
+Action: @Ayaan to finalize QA checklist by 2026-03-02.
+Open question: Which analytics events are mandatory?"></textarea>
+          </label>
+
+          <div class="form-actions">
+            <p id="formHint" class="hint">Tip: Prefix lines with Decision:, Action:, or Open question: for strongest extraction.</p>
+            <button class="btn btn-primary" type="submit">Analyze + Save</button>
+          </div>
+        </form>
+      </article>
+
+      <article class="panel reveal">
+        <div class="panel-head">
+          <h2>Meeting Intelligence</h2>
+          <p>Track what was agreed, pending work, and unresolved questions.</p>
+        </div>
+
+        <div class="score-grid">
+          <div class="score-card"><p class="label">Decisions</p><p id="decisionCount" class="value">0</p></div>
+          <div class="score-card"><p class="label">Action Items</p><p id="actionCount" class="value">0</p></div>
+          <div class="score-card"><p class="label">Open Questions</p><p id="questionCount" class="value">0</p></div>
+          <div class="score-card"><p class="label">Needs Follow-Up</p><p id="followCount" class="value">0</p></div>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Meeting sections">
+          <button class="tab is-active" data-tab="decisions" type="button">Decisions</button>
+          <button class="tab" data-tab="actions" type="button">Actions</button>
+          <button class="tab" data-tab="questions" type="button">Questions</button>
+          <button class="tab" data-tab="summary" type="button">Summary</button>
+        </div>
+
+        <div id="tabContent" class="tab-content"></div>
+      </article>
+    </section>
+
+    <section class="panel reveal">
+      <div class="panel-head">
+        <h2>Memory Wall</h2>
+        <p>Recent meetings are stored locally for follow-up and handoff continuity.</p>
+      </div>
+      <div id="meetingWall" class="meeting-wall"></div>
+    </section>
+  </main>
+
+  <template id="decisionTemplate">
+    <section class="stack" id="decisionList"></section>
+  </template>
+
+  <template id="actionsTemplate">
+    <section class="stack">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Owner</th>
+              <th>Due</th>
+              <th>Status</th>
+              <th>Follow-up</th>
+            </tr>
+          </thead>
+          <tbody id="actionRows"></tbody>
+        </table>
+      </div>
+    </section>
+  </template>
+
+  <template id="questionTemplate">
+    <section class="stack" id="questionList"></section>
+  </template>
+
+  <template id="summaryTemplate">
+    <section class="stack">
+      <article class="insight-card">
+        <h3>Meeting Snapshot</h3>
+        <p id="snapshotText"></p>
+      </article>
+      <article class="insight-card">
+        <h3>Follow-Up Checklist</h3>
+        <ul id="summaryList"></ul>
+      </article>
+    </section>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
