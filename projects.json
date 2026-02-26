@@ -4716,6 +4716,18 @@
     }
   },
   {
+  "title": "Interactive SWOT Analyzer",
+  "description": "A modern, interactive SWOT Analyzer with a 4-quadrant UI. Features include drag-and-drop ready cards, color-coded quadrants, editable items, dark/light mode toggle, export to JSON, and responsive design. Built with HTML, CSS, and JavaScript for a visually appealing and highly interactive user experience.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/swot-analyzer/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
     "title": "Code Snippet Manager",
     "description": "A web application that allows users to save, organize, and manage code snippets in various programming languages. Features include syntax highlighting, categorization, and search functionality for easy retrieval of snippets.",
     "tags": ["HTML", "CSS", "JavaScript"],
