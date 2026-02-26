@@ -3,15 +3,253 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fragmented Collaboration Hub</title>
+  <meta name="description" content="Skill Gap Radar - upload resume, parse job requirements, and build a focused 30-day learning roadmap.">
+  <title>Skill Gap Radar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Fragmented Collaboration Hub</h1>
-    <p>Unify tasks, chats, docs, and files for small teams.</p>
-    <div id="app"></div>
-  </div>
+  <div class="noise-overlay" aria-hidden="true"></div>
+  <main class="page-shell">
+    <header class="hero-card reveal">
+      <p class="eyebrow">Career Intelligence</p>
+      <h1>Skill Gap Radar</h1>
+      <p class="hero-copy">
+        Upload your resume and target role details to map missing skills, compute a gap score,
+        and generate a practical 30-day roadmap with project recommendations.
+      </p>
+      <div class="hero-actions">
+        <button id="loadDemoBtn" class="btn btn-secondary" type="button">Load Demo Data</button>
+        <button id="analyzeBtn" class="btn btn-primary" type="button">Analyze Skill Gaps</button>
+      </div>
+      <div class="meta-row">
+        <span class="meta-chip">Resume parser</span>
+        <span class="meta-chip">JD skill extractor</span>
+        <span class="meta-chip">Progress tracker</span>
+      </div>
+    </header>
+
+    <section class="workspace-grid">
+      <article class="panel form-panel reveal">
+        <div class="panel-head">
+          <h2>Candidate Inputs</h2>
+          <p>Add resume text and target role details.</p>
+        </div>
+
+        <form id="skillForm" autocomplete="off">
+          <div class="field-grid">
+            <label class="field">
+              <span>Full Name</span>
+              <input id="candidateName" type="text" maxlength="80" placeholder="Ayaan Shaikh" required>
+            </label>
+            <label class="field">
+              <span>Experience Level</span>
+              <select id="experienceLevel">
+                <option value="Student">Student</option>
+                <option value="Fresher">Fresher</option>
+                <option value="Junior (1-2 yrs)">Junior (1-2 yrs)</option>
+                <option value="Mid (3-5 yrs)">Mid (3-5 yrs)</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="field-grid">
+            <label class="field">
+              <span>Target Role</span>
+              <select id="targetRole" required>
+                <option value="">Select role</option>
+                <option value="Frontend Developer">Frontend Developer</option>
+                <option value="Backend Developer">Backend Developer</option>
+                <option value="Full Stack Developer">Full Stack Developer</option>
+                <option value="Data Analyst">Data Analyst</option>
+                <option value="Product Manager">Product Manager</option>
+                <option value="UI/UX Designer">UI/UX Designer</option>
+                <option value="DevOps Engineer">DevOps Engineer</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Weekly Study Hours</span>
+              <input id="weeklyHours" type="number" min="2" max="40" step="1" placeholder="10" value="10">
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Job Description Links (one per line)</span>
+            <textarea id="jobLinks" rows="3" maxlength="500" placeholder="https://company.com/jobs/frontend-intern"></textarea>
+          </label>
+
+          <label class="field">
+            <span>Target Job Description Text</span>
+            <textarea id="jobDescription" rows="5" maxlength="2000" placeholder="Paste JD content: React, TypeScript, REST APIs, testing, communication..." required></textarea>
+          </label>
+
+          <label class="field">
+            <span>Resume Text</span>
+            <textarea id="resumeText" rows="7" maxlength="3500" placeholder="Paste your resume text here including projects, skills, tools, certifications..." required></textarea>
+          </label>
+
+          <div class="field-grid">
+            <label class="field">
+              <span>Preferred Learning Mode</span>
+              <select id="learningMode">
+                <option value="Mixed">Mixed (videos + docs + projects)</option>
+                <option value="Project-first">Project-first</option>
+                <option value="Documentation-first">Documentation-first</option>
+                <option value="Video-first">Video-first</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Goal Timeline</span>
+              <select id="goalTimeline">
+                <option value="30 days">30 days</option>
+                <option value="60 days">60 days</option>
+                <option value="90 days">90 days</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="form-footer">
+            <p id="formHint" class="form-hint">Tip: add detailed JD text for better skill extraction.</p>
+            <button id="resetBtn" class="btn btn-ghost" type="reset">Reset</button>
+          </div>
+        </form>
+      </article>
+
+      <article class="panel result-panel reveal">
+        <div class="panel-head">
+          <h2>Skill Intelligence Report</h2>
+          <p>Gap scoring, roadmap, and recommendations.</p>
+        </div>
+
+        <div class="score-grid" id="scoreGrid">
+          <div class="score-card">
+            <p class="score-label">Current Match</p>
+            <p class="score-value" id="matchScore">--</p>
+          </div>
+          <div class="score-card">
+            <p class="score-label">Gap Severity</p>
+            <p class="score-value" id="gapScore">--</p>
+          </div>
+          <div class="score-card">
+            <p class="score-label">Roadmap Fit</p>
+            <p class="score-value" id="roadmapScore">--</p>
+          </div>
+          <div class="score-card">
+            <p class="score-label">Interview Readiness</p>
+            <p class="score-value" id="readinessScore">--</p>
+          </div>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Skill report sections">
+          <button class="tab is-active" data-tab="summary" type="button">Summary</button>
+          <button class="tab" data-tab="skills" type="button">Skill Gap</button>
+          <button class="tab" data-tab="roadmap" type="button">30-Day Plan</button>
+          <button class="tab" data-tab="projects" type="button">Projects</button>
+          <button class="tab" data-tab="progress" type="button">Progress Tracker</button>
+          <button class="tab" data-tab="next" type="button">Next Steps</button>
+        </div>
+
+        <div id="tabContent" class="tab-content"></div>
+
+        <div class="result-actions">
+          <button id="copyReportBtn" class="btn btn-secondary" type="button">Copy Report</button>
+          <button id="downloadReportBtn" class="btn btn-primary" type="button">Download JSON</button>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <template id="summaryTemplate">
+    <section class="stack">
+      <div class="insight-card">
+        <h3>Candidate Summary</h3>
+        <p id="candidateSummaryText"></p>
+      </div>
+      <div class="insight-card">
+        <h3>Strong Areas</h3>
+        <ul id="strengthList"></ul>
+      </div>
+      <div class="insight-card">
+        <h3>Priority Gaps</h3>
+        <ul id="priorityGapList"></ul>
+      </div>
+      <div class="insight-card">
+        <h3>Score Insight</h3>
+        <p id="scoreInsightText"></p>
+      </div>
+    </section>
+  </template>
+
+  <template id="skillsTemplate">
+    <section class="stack">
+      <div class="insight-card">
+        <h3>Role Skill Matrix</h3>
+        <p id="roleSkillHead"></p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Skill</th>
+              <th>Status</th>
+              <th>Importance</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="skillRows"></tbody>
+        </table>
+      </div>
+    </section>
+  </template>
+
+  <template id="roadmapTemplate">
+    <section class="stack">
+      <div class="insight-card">
+        <h3>Personalized 30-Day Plan</h3>
+        <p id="roadmapIntro"></p>
+      </div>
+      <div class="roadmap-grid" id="roadmapGrid"></div>
+    </section>
+  </template>
+
+  <template id="projectsTemplate">
+    <section class="stack">
+      <div class="insight-card">
+        <h3>Project Recommendations</h3>
+        <p id="projectIntro"></p>
+      </div>
+      <div class="project-grid" id="projectGrid"></div>
+    </section>
+  </template>
+
+  <template id="progressTemplate">
+    <section class="stack">
+      <div class="insight-card">
+        <h3>Daily Progress Tracker</h3>
+        <p id="progressText"></p>
+        <div class="meter">
+          <div id="progressFill" class="meter-fill"></div>
+        </div>
+      </div>
+      <div id="progressChecklist" class="checklist"></div>
+    </section>
+  </template>
+
+  <template id="nextTemplate">
+    <section class="stack">
+      <div class="insight-card">
+        <h3>Interview Prep Action Plan</h3>
+        <ul id="nextStepsList"></ul>
+      </div>
+      <div class="insight-card">
+        <h3>Suggested Monetization for This Tool</h3>
+        <ul id="monetizationList"></ul>
+      </div>
+    </section>
+  </template>
+
   <script src="app.js"></script>
 </body>
 </html>
