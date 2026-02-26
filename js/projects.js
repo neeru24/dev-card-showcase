@@ -2069,6 +2069,19 @@ const staticProjects = [
             name: "Gupta-02",
             github: "https://github.com/Gupta-02"
         }
+    },
+    {
+        title: "Resource Contention Resolver",
+        description:
+            "An intelligent resource management system that identifies and mitigates resource contention across competing workloads through automated redistribution and throttling policies. Features real-time monitoring, automated resolution strategies, workload prioritization, and comprehensive analytics for high-density computing environments.",
+        tags: ["HTML", "CSS", "JavaScript", "Resource Management", "AI", "Automation", "Performance", "Monitoring"],
+        links: {
+            live: "./projects/resource-contention-resolver/index.html",
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
     }
 
 ];
