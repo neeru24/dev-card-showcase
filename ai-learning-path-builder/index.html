@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Learning Path Builder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="navbar-container"></div>
+  <div id="app">
+    <h1>AI Learning Path Builder</h1>
+    <form id="goalForm">
+      <label for="goal">Enter your learning goal:</label><br>
+      <input id="goal" name="goal" type="text" placeholder="e.g. Become a React Developer" required />
+      <button type="submit">Build Path</button>
+    </form>
+    <div id="plan-output">
+      <!-- Learning plan will appear here -->
+    </div>
+  </div>
+  <script src="components.js"></script>
+  <script src="app.js"></script>
+  <script>
+    fetch('navbar.html').then(r => r.text()).then(html => {
+      document.getElementById('navbar-container').innerHTML = html;
+    });
+    fetch('footer.html').then(r => r.text()).then(html => {
+      const footerDiv = document.createElement('div');
+      footerDiv.innerHTML = html;
+      document.body.appendChild(footerDiv);
+    });
+  </script>
+</body>
+</html>

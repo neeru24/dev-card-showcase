@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - AI Learning Path Builder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="navbar-container"></div>
+  <div id="app">
+    <h1>About AI Learning Path Builder</h1>
+    <div class="plan-card">
+      <h2>What is AI Learning Path Builder?</h2>
+      <p>This tool helps you turn your learning goals into clear, step-by-step daily plans. It’s perfect for students, self-taught devs, and career switchers who want to avoid information overload and learn with clarity.</p>
+    </div>
+    <div class="plan-card">
+      <h2>How It Works</h2>
+      <ul>
+        <li>Enter your learning goal in the main form.</li>
+        <li>The tool generates a daily plan with actionable steps and encouragement.</li>
+        <li>Mark each day as done and track your progress.</li>
+      </ul>
+    </div>
+    <div class="plan-card">
+      <h2>Why Use It?</h2>
+      <ul>
+        <li>Beat information overload with a clear path.</li>
+        <li>Stay motivated with daily encouragement.</li>
+        <li>See your progress and celebrate wins.</li>
+      </ul>
+    </div>
+    <div style="text-align:center; margin-top:32px;">
+      <a href="index.html" style="color:#f7971e; text-decoration:underline;">Back to Home</a>
+    </div>
+  </div>
+  <script>
+    fetch('navbar.html').then(r => r.text()).then(html => {
+      document.getElementById('navbar-container').innerHTML = html;
+    });
+  </script>
+</body>
+</html>
