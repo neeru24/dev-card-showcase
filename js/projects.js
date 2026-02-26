@@ -1904,6 +1904,30 @@ const staticProjects = [
             name: "Gupta-02",
             github: "https://github.com/Gupta-02"
         }
+    },
+    {
+        title: "Intelligent Resource Consumption Optimizer 🌿",
+        description: "Continuously forecasts workloads and adapts scaling policies to balance utilization, cost, and sustainability goals.",
+        tags: ["HTML", "CSS", "JavaScript", "Optimization", "Sustainability", "Scaling"],
+        links: {
+            live: "./projects/intelligent-resource-consumption-optimizer/index.html"
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Context-Aware Error Mitigation Engine 🧠",
+        description: "Analyzes failure patterns and context signals to generate targeted recovery workflows and reduce downtime.",
+        tags: ["HTML", "CSS", "JavaScript", "Reliability", "Automation", "Observability"],
+        links: {
+            live: "./projects/context-aware-error-mitigation-engine/index.html"
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
     }
 
 ];
