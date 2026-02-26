@@ -1880,6 +1880,18 @@ const staticProjects = [
             name: "Gupta-02",
             github: "https://github.com/Gupta-02"
         }
+    },
+    {
+        title: "Autonomous Conversation Risk Assessor 🧭",
+        description: "A contextual risk scoring cockpit that flags sensitive interactions, assigns oversight tiers, and captures audit-ready guidance for moderation teams.",
+        tags: ["HTML", "CSS", "JavaScript", "Safety", "Moderation", "Analytics"],
+        links: {
+            live: "./projects/autonomous-conversation-risk-assessor/index.html"
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
     }
 
 ];
