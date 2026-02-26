@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Product Brief Translator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="loader.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <div id="navbar-container"></div>
+  <div id="app">
+    <h1>AI Product Brief Translator</h1>
+    <form id="briefForm">
+      <label for="brief">Enter your product idea/brief:</label><br>
+      <textarea id="brief" name="brief" rows="8" cols="60" required></textarea><br>
+      <button type="submit">Generate Roadmap</button>
+    </form>
+    <div id="output">
+      <!-- Results will appear here -->
+    </div>
+  </div>
+  <script src="components.js"></script>
+  <script src="app.js"></script>
+  <script>
+    // Load navbar
+    fetch('navbar.html').then(r => r.text()).then(html => {
+      document.getElementById('navbar-container').innerHTML = html;
+    });
+    // Load footer
+    fetch('footer.html').then(r => r.text()).then(html => {
+      const footerDiv = document.createElement('div');
+      footerDiv.innerHTML = html;
+      document.body.appendChild(footerDiv);
+    });
+  </script>
+</body>
+</html>
