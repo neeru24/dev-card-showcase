@@ -128,7 +128,6 @@ function drawFocusVisual(ctx, canvas) {
 function lerp(a, b, t) {
     return a + (b - a) * t;
 }
-}
 
 function drawRelaxVisual(ctx, canvas) {
     // Animated waves for relax
@@ -275,7 +274,6 @@ function drawCustomVisual(ctx, canvas) {
     ctx.font = '32px Segoe UI';
     ctx.fillStyle = '#fff';
     ctx.fillText('Custom Mood', canvas.width / 2 - 80, canvas.height / 2);
-}
 }
 
 function renderPlaylist(mood) {
