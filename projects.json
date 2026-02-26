@@ -13397,5 +13397,35 @@
       "name": "Gupta-02",
       "github": "https://github.com/Gupta-02"
     }
+  },
+  {
+    "title": "Distributed Knowledge Synchronization Node #5333",
+    "description": "Monitor and manage distributed knowledge synchronization across multiple nodes in real-time. Features include node status tracking, sync operation monitoring, conflict resolution, data flow visualization, performance metrics, and comprehensive dashboard for distributed system management.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Distributed Systems",
+      "Knowledge Synchronization",
+      "Real-time Monitoring",
+      "Node Management",
+      "Conflict Resolution",
+      "Data Visualization",
+      "Chart.js",
+      "Canvas API",
+      "Network Topology",
+      "Sync Operations",
+      "Performance Metrics",
+      "Dashboard",
+      "Data Flow",
+      "System Health"
+    ],
+    "links": {
+      "live": "./projects/distributed-knowledge-synchronization-node/index.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
   }
 ]
