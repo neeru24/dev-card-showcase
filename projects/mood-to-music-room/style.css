@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #181a20;
+    color: #fff;
+}
+#app {
+    max-width: 900px;
+    margin: 40px auto;
+    background: rgba(30, 32, 40, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    padding: 32px;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+#mood-select, #ai-detect {
+    font-size: 1.1em;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    margin-left: 12px;
+}
+#visuals {
+    height: 300px;
+    margin-bottom: 24px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #3a3d4d 0%, #23243a 100%);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+#music-player {
+    margin-bottom: 24px;
+}
+#playlist {
+    min-height: 120px;
+    background: #23243a;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+#presets {
+    display: flex;
+    gap: 16px;
+}
+.preset {
+    background: #2e8b57;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.preset:hover {
+    background: #3cb371;
+}

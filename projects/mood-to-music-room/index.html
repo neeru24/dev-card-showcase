@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood-to-Music Room</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Mood-to-Music Room</h1>
+            <select id="mood-select">
+                <option value="focus">Focus</option>
+                <option value="relax">Relax</option>
+                <option value="stress">Stress Relief</option>
+                <option value="sleep">Sleep</option>
+                <option value="custom">Custom</option>
+            </select>
+            <button id="ai-detect">AI Detect Mood</button>
+        </header>
+        <section id="visuals"></section>
+        <section id="music-player">
+            <div id="playlist"></div>
+        </section>
+        <section id="presets">
+            <button class="preset" data-mood="focus">Focus Room</button>
+            <button class="preset" data-mood="relax">Relax Room</button>
+            <button class="preset" data-mood="sleep">Sleep Room</button>
+        </section>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
