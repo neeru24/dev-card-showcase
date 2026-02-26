@@ -31,6 +31,18 @@
     }
   },
   {
+  "title": "Word Chain Arena",
+  "description": "A modern, turn-based Word Chain Game with Player vs Player and Player vs CPU modes. Features include a colorful dashboard UI, word history tracking, turn-based scoreboard, last-letter validation, difficulty levels for AI, and responsive design. Built with HTML, CSS, and JavaScript for a fun and engaging experience.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": {
+    "live": "./projects/word-chain-game/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
   "title": "Keyword Density Analyzer",
   "description": "An analytics-style Keyword Density Analyzer that calculates real-time word frequency and keyword density. Features stop-word filtering, reading time estimation, top keyword ranking with progress visualization, custom keyword highlight, and report copy functionality. Designed with a modern dashboard UI for an engaging SEO analysis experience.",
   "tags": ["HTML", "CSS", "JavaScript"],
