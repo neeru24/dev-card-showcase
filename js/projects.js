@@ -1991,6 +1991,19 @@ const staticProjects = [
             name: "Gupta-02",
             github: "https://github.com/Gupta-02"
         }
+    },
+    {
+        title: "Autonomous Feature Flag Manager",
+        description:
+            "An intelligent feature flag management system that automates rollout strategies, monitors system health, and makes autonomous decisions based on safety thresholds and risk assessment. Features gradual rollout, canary deployments, user segmentation, and emergency rollback capabilities.",
+        tags: ["HTML", "CSS", "JavaScript", "DevOps", "Feature Flags", "Automation"],
+        links: {
+            live: "./projects/autonomous-feature-flag-manager/index.html",
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
     }
 
 ];
