@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Local Skills Exchange Map - match nearby people to exchange skills affordably.">
+  <title>Local Skills Exchange Map</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero reveal">
+      <p class="eyebrow">Community Learning</p>
+      <h1>Local Skills Exchange Map</h1>
+      <p class="lead">List what you can teach and what you want to learn. We match nearby people for one-on-one skill swaps.</p>
+      <div class="hero-actions">
+        <button id="demoBtn" class="btn btn-soft" type="button">Load Demo</button>
+        <button id="clearBtn" class="btn btn-ghost" type="button">Clear Data</button>
+      </div>
+    </section>
+
+    <section class="layout">
+      <article class="panel reveal">
+        <div class="panel-head">
+          <h2>Create Profile</h2>
+          <p>Add your skills and location for local matching.</p>
+        </div>
+
+        <form id="profileForm" autocomplete="off">
+          <div class="field-grid">
+            <label class="field">
+              <span>Name</span>
+              <input id="name" type="text" maxlength="50" placeholder="Ayaan" required>
+            </label>
+            <label class="field">
+              <span>City / Area</span>
+              <input id="area" type="text" maxlength="60" placeholder="Andheri East">
+            </label>
+          </div>
+
+          <div class="field-grid three">
+            <label class="field">
+              <span>Latitude</span>
+              <input id="lat" type="number" step="0.000001" min="-90" max="90" required>
+            </label>
+            <label class="field">
+              <span>Longitude</span>
+              <input id="lng" type="number" step="0.000001" min="-180" max="180" required>
+            </label>
+            <label class="field">
+              <span>Max Distance (km)</span>
+              <input id="radius" type="number" min="1" max="100" value="10">
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Skills You Offer (comma separated)</span>
+            <input id="offerSkills" type="text" maxlength="180" placeholder="Graphic design, JavaScript, Spoken English" required>
+          </label>
+
+          <label class="field">
+            <span>Skills You Want to Learn (comma separated)</span>
+            <input id="learnSkills" type="text" maxlength="180" placeholder="UI design, Python, Public speaking" required>
+          </label>
+
+          <div class="form-actions">
+            <button id="locateBtn" class="btn btn-soft" type="button">Use My Location</button>
+            <button class="btn btn-primary" type="submit">Save Profile</button>
+          </div>
+          <p id="hint" class="hint">Tip: use clear skill names for better matching.</p>
+        </form>
+      </article>
+
+      <article class="panel reveal">
+        <div class="panel-head">
+          <h2>Exchange Matches</h2>
+          <p>Nearby two-way matches where both people can help each other.</p>
+        </div>
+
+        <div class="metrics">
+          <div class="metric"><p>Profiles</p><strong id="totalProfiles">0</strong></div>
+          <div class="metric"><p>Nearby Candidates</p><strong id="nearbyCount">0</strong></div>
+          <div class="metric"><p>Two-way Matches</p><strong id="matchCount">0</strong></div>
+          <div class="metric"><p>Avg Distance</p><strong id="avgDistance">--</strong></div>
+        </div>
+
+        <div class="map-wrap">
+          <canvas id="mapCanvas" width="900" height="330" aria-label="Nearby profile map" role="img"></canvas>
+        </div>
+
+        <section class="insight-card">
+          <h3>Top Matches</h3>
+          <ul id="matchList"></ul>
+        </section>
+      </article>
+    </section>
+
+    <section class="panel reveal">
+      <div class="panel-head">
+        <h2>Community Profiles</h2>
+        <p>Saved local profiles for skill swap opportunities.</p>
+      </div>
+      <div id="profileGrid" class="profile-grid"></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

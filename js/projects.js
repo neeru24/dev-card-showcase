@@ -1928,6 +1928,160 @@ const staticProjects = [
             name: "Gupta-02",
             github: "https://github.com/Gupta-02"
         }
+    },
+    {
+        title: "Adaptive Model Precision Regulator ⚡",
+        description: "Dynamically adjust model inference granularity based on task criticality and resource availability to balance performance and computational expense.",
+        tags: ["HTML", "CSS", "JavaScript", "AI/ML", "Performance", "Optimization"],
+        links: {
+            live: "./projects/adaptive-model-precision-regulator/index.html"
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Predictive Conversation Termination Advisor 💬",
+        description: "Analyzes conversational signals and suggests optimal closure points to improve efficiency and prevent prolonged or redundant conversations.",
+        tags: ["HTML", "CSS", "JavaScript", "AI/ML", "Conversational AI", "Productivity"],
+        links: {
+            live: "./projects/predictive-conversation-termination-advisor/index.html"
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Distributed Log Integrity Validator",
+        description:
+            "A comprehensive tool for validating log integrity across distributed systems using cryptographic hashing and cross-node consistency checks. Demonstrates distributed security concepts with real-time tampering simulation and integrity scoring.",
+        tags: ["HTML", "CSS", "JavaScript", "Cryptography", "Distributed Systems", "Security"],
+        links: {
+            live: "./projects/distributed-log-integrity-validator/index.html",
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Data Retention Compliance Auditor",
+        description:
+            "An automated compliance auditing tool that continuously monitors data retention policies, identifies violations, and ensures regulatory compliance across financial, user data, logs, and communication records with real-time alerts and remediation workflows.",
+        tags: ["HTML", "CSS", "JavaScript", "Compliance", "Data Governance", "Security", "Audit"],
+        links: {
+            live: "./projects/data-retention-compliance-auditor/index.html",
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Predictive Maintenance Scheduler",
+        description:
+            "An intelligent maintenance scheduling system that forecasts equipment failures using historical data and sensor readings. Features multiple prediction models (statistical, ML-based, hybrid), cost-benefit analysis, and optimized maintenance planning to prevent unexpected downtime.",
+        tags: ["HTML", "CSS", "JavaScript", "Data Visualization", "Machine Learning", "IoT", "Predictive Analytics", "Industrial IoT"],
+        links: {
+            live: "./projects/predictive-maintenance-scheduler/index.html",
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Threat Response Orchestrator",
+        description:
+            "An automated threat mitigation and incident response orchestration system that coordinates security responses across multiple systems. Features real-time threat detection, automated playbook execution, incident management, security metrics tracking, and manual override capabilities for comprehensive cybersecurity operations.",
+        tags: ["HTML", "CSS", "JavaScript", "Security", "Automation", "Incident Response", "Threat Intelligence", "Cybersecurity"],
+        links: {
+            live: "./projects/threat-response-orchestrator/index.html",
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Knowledge Prioritization Engine",
+        description:
+            "An intelligent knowledge management system that dynamically ranks stored knowledge based on contextual relevance, recency, usage patterns, and importance. Features real-time scoring algorithms, contextual analysis, interactive prioritization controls, and comprehensive analytics for optimal knowledge organization and retrieval.",
+        tags: ["HTML", "CSS", "JavaScript", "AI", "Knowledge Management", "Prioritization", "Analytics", "Real-time"],
+        links: {
+            live: "./projects/knowledge-prioritization-engine/index.html",
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Real-Time Dependency Impact Analyzer",
+        description:
+            "An advanced system for analyzing service dependencies and their cascading failure impacts in real-time. Features interactive dependency graph visualization, impact simulation controls, service health monitoring, automated mitigation strategy generation, and comprehensive system resilience assessment.",
+        tags: ["HTML", "CSS", "JavaScript", "System Architecture", "Dependency Analysis", "Real-time Monitoring", "Impact Simulation", "Resilience Engineering"],
+        links: {
+            live: "./projects/real-time-dependency-impact-analyzer/index.html",
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Adaptive Session Persistence Layer",
+        description:
+            "An intelligent session data management system that dynamically determines which session data to persist based on usage patterns, relevance, recency, and importance. Features real-time scoring algorithms, adaptive persistence controls, storage optimization, and comprehensive analytics for efficient session state management.",
+        tags: ["HTML", "CSS", "JavaScript", "AI", "Session Management", "Persistence", "Storage Optimization", "Real-time Analytics"],
+        links: {
+            live: "./projects/adaptive-session-persistence-layer/index.html",
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Resource Contention Resolver",
+        description:
+            "An intelligent resource management system that identifies and mitigates resource contention across competing workloads through automated redistribution and throttling policies. Features real-time monitoring, automated resolution strategies, workload prioritization, and comprehensive analytics for high-density computing environments.",
+        tags: ["HTML", "CSS", "JavaScript", "Resource Management", "AI", "Automation", "Performance", "Monitoring"],
+        links: {
+            live: "./projects/resource-contention-resolver/index.html",
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Predictive Conversation Termination Advisor",
+        description:
+            "An intelligent system that analyzes conversational signals and determines optimal conversation closure points to improve efficiency. Features real-time monitoring, automated termination detection, signal analysis, and contextually appropriate wrap-up responses for chatbots and automated customer service systems.",
+        tags: ["HTML", "CSS", "JavaScript", "AI", "NLP", "Conversation Analysis", "Automation", "Customer Service"],
+        links: {
+            live: "./projects/predictive-conversation-termination-advisor/index.html",
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
+    },
+    {
+        title: "Predictive Data Integrity Sentinel",
+        description:
+            "Proactively detects potential data corruption before it impacts system reliability through real-time monitoring, predictive modeling, and anomaly detection. Features data trend analysis, automated alerting, integrity scoring, and comprehensive analytics for mission-critical databases and data pipelines.",
+        tags: ["HTML", "CSS", "JavaScript", "Data Integrity", "AI", "Monitoring", "Anomaly Detection", "Predictive Analytics"],
+        links: {
+            live: "./projects/predictive-data-integrity-sentinel/index.html",
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
     }
 
 ];
