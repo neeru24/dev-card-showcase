@@ -2030,6 +2030,19 @@ const staticProjects = [
             name: "Gupta-02",
             github: "https://github.com/Gupta-02"
         }
+    },
+    {
+        title: "Adaptive Session Persistence Layer",
+        description:
+            "An intelligent session data management system that dynamically determines which session data to persist based on usage patterns, relevance, recency, and importance. Features real-time scoring algorithms, adaptive persistence controls, storage optimization, and comprehensive analytics for efficient session state management.",
+        tags: ["HTML", "CSS", "JavaScript", "AI", "Session Management", "Persistence", "Storage Optimization", "Real-time Analytics"],
+        links: {
+            live: "./projects/adaptive-session-persistence-layer/index.html",
+        },
+        author: {
+            name: "Gupta-02",
+            github: "https://github.com/Gupta-02"
+        }
     }
 
 ];
