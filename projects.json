@@ -13872,5 +13872,36 @@
       "name": "Gupta-02",
       "github": "https://github.com/Gupta-02"
     }
+  },
+  {
+    "title": "AURALTIDE · Fluid Acoustic Canvas #5972",
+    "description": "A generative sound installation featuring synchronized visual waves and audio textures. Interactive Web Audio API implementation with real-time synthesis, fluid wave animations, harmonic analysis, and multiple interaction modes including ripple creation, wave drawing, and autonomous generation. Features include parametric audio controls (waveform type, frequency, harmonics, modulation), visual parameters (wave speed, amplitude, color schemes), educational harmonic analysis, and performance monitoring.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Web Audio API",
+      "Canvas API",
+      "Generative Art",
+      "Audio Synthesis",
+      "Interactive Sound",
+      "Wave Animation",
+      "Harmonic Analysis",
+      "Real-time Audio",
+      "Visual Effects",
+      "Audio-Visual Synchronization",
+      "Performance Monitoring",
+      "Interactive Canvas",
+      "Fluid Dynamics",
+      "Sound Design",
+      "Algorithmic Composition"
+    ],
+    "links": {
+      "live": "./projects/auraltide-fluid-acoustic-canvas/index.html"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
   }
 ]
