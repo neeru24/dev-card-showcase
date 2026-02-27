@@ -4812,6 +4812,18 @@
     }
   },
   {
+  "title": "Mini Puzzle Slider – Neon Arcade Edition",
+  "description": "A visually striking neon-themed sliding puzzle game featuring smooth tile animations, glassmorphism UI, move counter, live timer, and multiple difficulty levels (Easy, Medium, Hard). Includes win detection with animated celebration, responsive layout, and interactive gameplay mechanics. Built using HTML, CSS, and JavaScript with a modern arcade-inspired design.",
+  "tags": ["HTML", "CSS", "JavaScript", "Game", "Puzzle", "Interactive UI", "Arcade Style"],
+  "links": {
+    "live": "./projects/mini-puzzle-slider/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
+  {
     "title": "Grammar Fixer",
     "description": "A tool that fixes grammar errors in sentences with explanations of changes made.",
     "tags": ["HTML", "CSS", "JavaScript"],
