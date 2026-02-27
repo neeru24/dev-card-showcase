@@ -1980,90 +1980,12 @@ const staticProjects = [
         }
     },
     {
-        title: "Distributed Event Orchestration Hub",
+        title: "Predictive Maintenance Scheduler",
         description:
-            "A comprehensive event orchestration system that coordinates asynchronous events across microservices with deterministic ordering and dependency resolution. Demonstrates event-driven architecture with real-time monitoring, multiple orchestration modes, and workflow management.",
-        tags: ["HTML", "CSS", "JavaScript", "Event-Driven Architecture", "Microservices", "Distributed Systems", "Real-Time", "Data Visualization"],
+            "An intelligent maintenance scheduling system that forecasts equipment failures using historical data and sensor readings. Features multiple prediction models (statistical, ML-based, hybrid), cost-benefit analysis, and optimized maintenance planning to prevent unexpected downtime.",
+        tags: ["HTML", "CSS", "JavaScript", "Data Visualization", "Machine Learning", "IoT", "Predictive Analytics", "Industrial IoT"],
         links: {
-            live: "./projects/distributed-event-orchestration-hub/index.html",
-        },
-        author: {
-            name: "Gupta-02",
-            github: "https://github.com/Gupta-02"
-        }
-    },
-    {
-        title: "Autonomous Feature Flag Manager",
-        description:
-            "An intelligent feature flag management system that automates rollout strategies, monitors system health, and makes autonomous decisions based on safety thresholds and risk assessment. Features gradual rollout, canary deployments, user segmentation, and emergency rollback capabilities.",
-        tags: ["HTML", "CSS", "JavaScript", "DevOps", "Feature Flags", "Automation"],
-        links: {
-            live: "./projects/autonomous-feature-flag-manager/index.html",
-        },
-        author: {
-            name: "Gupta-02",
-            github: "https://github.com/Gupta-02"
-        }
-    },
-    {
-        title: "Real-Time Interaction Quality Evaluator",
-        description:
-            "A comprehensive system for measuring and analyzing user-system interaction quality in real-time. Features multi-dimensional scoring (relevance, timing, satisfaction, clarity), automated quality assessment algorithms, interactive feedback collection, and performance analytics with trend visualization.",
-        tags: ["HTML", "CSS", "JavaScript", "Real-time Analytics", "Quality Assessment", "User Experience", "Machine Learning"],
-        links: {
-            live: "./projects/real-time-interaction-quality-evaluator/index.html",
-        },
-        author: {
-            name: "Gupta-02",
-            github: "https://github.com/Gupta-02"
-        }
-    },
-    {
-        title: "Adaptive Security Policy Engine",
-        description:
-            "An intelligent security system that dynamically adjusts security policies based on real-time threat intelligence, risk scoring, and behavior analysis. Features automated threat response, policy optimization, and comprehensive security monitoring.",
-        tags: ["HTML", "CSS", "JavaScript", "Security", "AI", "Automation", "Threat Intelligence"],
-        links: {
-            live: "./projects/adaptive-security-policy-engine/index.html",
-        },
-        author: {
-            name: "Gupta-02",
-            github: "https://github.com/Gupta-02"
-        }
-    },
-    {
-        title: "Intelligent Cache Eviction Controller",
-        description:
-            "An advanced cache management system that uses intelligent algorithms to analyze access patterns, data relevance, and usage frequency to make optimal eviction decisions. Supports multiple strategies including LRU, LFU, FIFO, and adaptive intelligent eviction for high-performance distributed systems.",
-        tags: ["HTML", "CSS", "JavaScript", "Caching", "Algorithms", "Performance", "Distributed Systems"],
-        links: {
-            live: "./projects/intelligent-cache-eviction-controller/index.html",
-        },
-        author: {
-            name: "Gupta-02",
-            github: "https://github.com/Gupta-02"
-        }
-    },
-    {
-        title: "Load Balancing Advisor",
-        description:
-            "An intelligent load balancing system that optimizes traffic distribution across services and nodes in real time. Features multiple routing strategies, performance monitoring, auto-scaling recommendations, and adaptive traffic management for enhanced resilience and reduced latency.",
-        tags: ["HTML", "CSS", "JavaScript", "Load Balancing", "DevOps", "Performance", "Auto-scaling"],
-        links: {
-            live: "./projects/load-balancing-advisor/index.html",
-        },
-        author: {
-            name: "Gupta-02",
-            github: "https://github.com/Gupta-02"
-        }
-    },
-    {
-        title: "Cross-Domain Semantic Integrator",
-        description:
-            "An intelligent system that unifies data and insights across multiple domains into coherent semantic frameworks. Features entity mapping, relationship discovery, knowledge graph generation, and cross-domain correlation analysis for enterprise analytics and AI training.",
-        tags: ["HTML", "CSS", "JavaScript", "AI", "Data Integration", "Knowledge Graph", "Semantic Web", "Analytics"],
-        links: {
-            live: "./projects/cross-domain-semantic-integrator/index.html",
+            live: "./projects/predictive-maintenance-scheduler/index.html",
         },
         author: {
             name: "Gupta-02",
