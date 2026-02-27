@@ -436,3 +436,107 @@
     from { transform: translateX(100%); opacity: 0; }
     to { transform: translateX(0); opacity: 1; }
 }
+
+.duration-warning-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    animation: fadeIn 0.3s ease;
+}
+
+.warning-content {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.warning-content h3 {
+    color: #FF9800;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.warning-content p {
+    color: #34495e;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.warning-content ul {
+    margin: 15px 0;
+    padding-left: 20px;
+    color: #7f8c8d;
+}
+
+.warning-content li {
+    margin-bottom: 5px;
+}
+
+.warning-content .recommendation {
+    background: #e8f5e8;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-weight: 500;
+}
+
+.warning-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+.warning-actions button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.warning-actions .cancel-btn {
+    background: #e9ecef;
+    color: #34495e;
+}
+
+.warning-actions .cancel-btn:hover {
+    background: #dee2e6;
+}
+
+.warning-actions .confirm-btn {
+    background: #FF9800;
+    color: white;
+}
+
+.warning-actions .confirm-btn:hover {
+    background: #F57C00;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.activity-item .long-session-badge {
+    display: inline-block;
+    background: #FF9800;
+    color: white;
+    font-size: 0.8em;
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-left: 10px;
+}

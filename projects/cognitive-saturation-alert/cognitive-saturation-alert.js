@@ -9,6 +9,7 @@ class CognitiveSaturationTracker {
         this.breakTimer = null;
         this.breakDuration = 0;
         this.breakStartTime = null;
+        this.pendingActivity = null; 
 
         this.init();
     }
@@ -32,6 +33,88 @@ class CognitiveSaturationTracker {
             return;
         }
 
+        if (duration > 120) {
+            this.showDurationWarning(duration, activityType, intensity, notes);
+            return; 
+        }
+
+        this.saveActivity(activityType, duration, intensity, notes);
+    }
+
+    showDurationWarning(duration, activityType, intensity, notes) {
+        const warningModal = document.createElement('div');
+        warningModal.className = 'duration-warning-modal';
+        warningModal.innerHTML = `
+            <div class="warning-content">
+                <h3>⚠️ Long Duration Detected</h3>
+                <p>You're about to log an activity of <strong>${duration} minutes</strong> (${(duration/60).toFixed(1)} hours).</p>
+                <p>Research suggests that continuous cognitive work beyond <strong>120 minutes (2 hours)</strong> can lead to:</p>
+                <ul>
+                    <li>Mental fatigue and burnout</li>
+                    <li>Reduced focus and productivity</li>
+                    <li>Increased error rates</li>
+                    <li>Diminished cognitive performance</li>
+                </ul>
+                <p class="recommendation">💡 <strong>Recommendation:</strong> Break this into smaller sessions (e.g., ${Math.ceil(duration/60)} x 60-minute sessions with breaks in between).</p>
+                <div class="warning-actions">
+                    <button class="cancel-btn" onclick="tracker.cancelDurationWarning()">Adjust Duration</button>
+                    <button class="confirm-btn" onclick="tracker.confirmLongDuration()">Continue Anyway</button>
+                </div>
+            </div>
+        `;
+
+        this.pendingActivity = {
+            activityType,
+            duration,
+            intensity,
+            notes
+        };
+
+        document.body.appendChild(warningModal);
+    }
+
+    cancelDurationWarning() {
+        const modal = document.querySelector('.duration-warning-modal');
+        if (modal) {
+            modal.remove();
+        }
+        this.pendingActivity = null;
+        document.getElementById('activityDuration').focus();
+    }
+
+    confirmLongDuration() {
+        const modal = document.querySelector('.duration-warning-modal');
+        if (modal) {
+            modal.remove();
+        }
+
+        if (this.pendingActivity) {
+            this.saveActivity(
+                this.pendingActivity.activityType,
+                this.pendingActivity.duration,
+                this.pendingActivity.intensity,
+                this.pendingActivity.notes
+            );
+            this.pendingActivity = null;
+            this.logLongDurationAlert(this.pendingActivity?.duration || 0);
+        }
+    }
+
+    logLongDurationAlert(duration) {
+        const alert = {
+            id: Date.now(),
+            level: 'warning',
+            message: `Long duration activity logged: ${duration} minutes. Remember to take regular breaks.`,
+            timestamp: new Date().toISOString(),
+            type: 'duration_warning'
+        };
+
+        this.alerts.push(alert);
+        this.saveData();
+        this.updateStats();
+    }
+
+    saveActivity(activityType, duration, intensity, notes) {
         const activity = {
             id: Date.now(),
             type: activityType,
@@ -317,6 +400,7 @@ class CognitiveSaturationTracker {
                     Duration: ${activity.duration} min | Intensity: ${activity.intensity}/10<br>
                     Cognitive Load: ${Math.round(activity.cognitiveLoad)}<br>
                     ${activity.notes ? `Notes: ${activity.notes}` : ''}
+                    ${activity.duration > 120 ? '<br><span style="color: #FF9800;">⚠️ Long session</span>' : ''}
                 </div>
             </div>
         `).join('');
@@ -388,3 +472,5 @@ function endBreak() {
 document.addEventListener('DOMContentLoaded', () => {
     window.tracker = new CognitiveSaturationTracker();
 });
+
+window.tracker = window.tracker || new CognitiveSaturationTracker();
